@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dad3d3;
+}
+
+#contact {
+    width: 1200px;
+    margin: 50px auto 0;
+    background-color: #fff;
+    padding: 20px 20px;
+}
+
+.page-title {
+    font-weight: lighter;
+    margin:34px 0 0 40px;
+
+}
+
+.page-title::after{
+    content:'';
+    width: 60px;
+    height: 4px;
+    background: orange;
+    display: block;
+    margin-top: 8px;
+}
+
+.sub-title {
+    font-weight: lighter;
+    margin: 34px 0;
+}
+
+.container {
+    display: flex;
+    padding: 0 20px;
+}
+
+.container .description {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.container .description p {
+    padding: 15px 0;
+    color: #757575;
+}
+
+.description i[class*="fa-"] {
+    font-size: 24px;
+    display: inline-block;
+    width: 35px;
+}
+
+.description i[class*="fa-"] + span {
+    display: inline-block;
+}
+
+.container .contact-form {
+    flex: 2;
+    padding: 0 20px;
+}
+
+.contact-form input {
+    display: block;
+    padding: 8px;
+    margin: 15px 0;
+    width: 100%;
+    outline: none;
+}
+
+.contact-form textarea {
+    padding: 8px;
+    outline: none;
+}
+
+.contact-form .btn {
+    padding: 12px 21px;
+    background-color: rgb(0, 157, 149);
+    border: none;
+    color: #fff;
+    margin: 15px 0;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai tap 3.3</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <form class="sign-in" action="">
+      <div class="row">
+        <label for="name">Username:</label>
+        <input id="name" type="text" required />
+      </div>
+
+      <div class="row">
+        <label for="password">Password:</label>
+        <input id="password" type="password" required />
+      </div>
+
+      <div class="row">
+        <label for="city">City of Employment:</label>
+        <input id="city" type="text" required />
+      </div>
+
+      <div class="row">
+        <label for="">Web server</label>
+        <select name="" id="">
+          <option value="" hidden>-Choose a server-</option>
+          <option value="0">Apache</option>
+          <option value="1">Nginx</option>
+          <option value="2">IIS</option>
+          <option value="3">LiteSpeed</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="">Please specify your role:</label>
+        <div>
+          <div>
+            <label><input type="radio" name="position" /> Admin</label>
+          </div>
+          <div>
+            <label><input type="radio" name="position" /> Engineer</label>
+          </div>
+          <div>
+            <label><input type="radio" name="position" /> Manager</label>
+          </div>
+          <div>
+            <label><input type="radio" name="position" /> Guest</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="">Single Sign-on to the following:</label>
+        <div>
+          <div>
+            <label><input type="checkbox" name="sign-on" /> Mail</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="sign-on" /> Payroll</label>
+          </div>
+          <div>
+            <label><input type="checkbox" name="sign-on" /> Self-service</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn">
+        <button type="submit">Login</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </body>
+</html>
