@@ -16,6 +16,7 @@ body {
     width: 380px;
     background-color: #ccc;
     padding: 6px;
+    margin: 50px auto 0;
 }
 
 .sign-in label {
@@ -39,6 +40,7 @@ body {
     padding-top: 3px;
     padding-bottom: 5px;
     display: flex;
+    align-items: center;
 }
 
 .btn {
