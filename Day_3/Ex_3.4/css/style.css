@@ -27,7 +27,6 @@ section.map .nav {
 
 .nav .map-list > li{
     display: inline-block;
-    /* padding: 0 34px; */
 }
 
 .nav .map-list > li a {
@@ -53,19 +52,16 @@ section.map .content .description {
     padding: 50px 40px;
 }
 
-.content .description p {
-    line-height: 1.5;
-}
-
-.description p > a.email {
+.description li > a.email {
     color: var(--color);
 }
 
 .row {
     padding-top: 30px;
+    list-style: none;
+    line-height: 1.5;
 }
 
 .content .google-map {
     flex: 3;
 }
-
