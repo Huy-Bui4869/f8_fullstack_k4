@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai tap 4.2</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h3 class="sub-title">Reservation</h3>
+      <h2 class="title">Book your table</h2>
+      <form action="#">
+        <div class="row">
+          <div class="col">
+            <input type="text" placeholder="NAME" />
+            <input
+              type="text"
+              placeholder="DATE"
+              onfocus="(this.type='date')"
+              id="date"
+            />
+            <input
+              type="text"
+              placeholder="PEOPLE"
+              onfocus="(this.type='number')"
+            />
+          </div>
+          <div class="col">
+            <input type="email" placeholder="EMAIL" />
+            <input
+              type="text"
+              placeholder="TIME"
+              onfocus="(this.type='time')"
+            />
+            <button class="btn" type="submit">Find A Table</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>

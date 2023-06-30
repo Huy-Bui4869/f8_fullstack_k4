@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+:root {
+    --color: orange;
+}
+
+.subscribe {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    background-color: rgb(68, 68, 99);
+    border-radius: 6px;
+    padding: 15px 20px 20px;
+}
+
+.subscribe h2.title {
+    font-weight: 550;
+    padding: 8px 0;
+}
+
+.subscribe h2.title > span {
+    color: var(--color);
+}
+
+.contact-form {
+    margin-top: 8px;
+}
+
+.contact-form > input {
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 30%;
+}
+
+.contact-form > button {
+    padding: 8px 14px;
+    border-radius: 3px;
+    border: none;
+    background-color: yellow;
+}
+
+.subscribe:hover {
+    .contact-form > input {
+        background-color: #ddd;
+    }
+    .contact-form > input::placeholder {
+        color: var(--color); 
+    }
+    .contact-form > button {
+        background-color: var(--color);
+        color: #fff;
+    }
+
+}
+
+
