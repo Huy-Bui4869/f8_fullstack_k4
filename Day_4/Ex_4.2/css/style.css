@@ -17,15 +17,15 @@ section {
 }
 
 .title {
-    font-family: "Alfa Slab One";
+    font-family: 'Alfa Slab One', cursive;
     font-size: 64px;
     padding: 20px 0;
 }
 
 .sub-title {
-    font-family: "Bebas Neue";
-    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 26px;
+    text-transform: uppercase;
 }
 
 .row {
@@ -42,7 +42,7 @@ input {
     display: block;
     width: 100%;
     margin-top: 20px;
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue", sans-serif;
     padding: 10px 20px;
     outline: none;
     border: 1px solid #ccc;
@@ -58,10 +58,9 @@ input::placeholder {
     display: block;
     width: 100%;
     margin-top: 20px;
-    font-family: "Alfa Slab One";
+    font-family: 'Alfa Slab One', cursive;
     padding: 10px 20px;
     font-size: 20px;
-    font-weight: bold;
     background-color: brown;
     color: #fff;
     border: none;

@@ -117,11 +117,20 @@ input[type="radio"] {
     display: none;
 }
 
-input[id="skincare"]:checked ~ .navigation .list-items li:first-of-type label,
+/* input[id="skincare"]:checked ~ .navigation .list-items li:first-of-type label,
 input[id="haircare"]:checked ~ .navigation .list-items li:nth-of-type(2) label,
 input[id="cosmetics"]:checked ~ .navigation .list-items li:nth-of-type(3) label,
 input[id="fragrance"]:checked ~ .navigation .list-items li:nth-of-type(4) label,
 input[id="makeup"]:checked ~ .navigation .list-items li:last-of-type label {
+    color: #fff;
+    background-color: var(--color);
+} */
+
+input[id="skincare"]:checked ~ .navigation li:first-of-type label,
+input[id="haircare"]:checked ~ .navigation li:nth-child(2) label,
+input[id="cosmetics"]:checked ~ .navigation li:nth-child(3) label,
+input[id="fragrance"]:checked ~ .navigation li:nth-child(4) label,
+input[id="makeup"]:checked ~ .navigation li:last-of-type label {
     color: #fff;
     background-color: var(--color);
 }
