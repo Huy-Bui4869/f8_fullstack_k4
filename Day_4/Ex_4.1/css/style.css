@@ -36,7 +36,7 @@ body {
     margin-top: 8px;
 }
 
-.contact-form > input {
+.contact-form > .import-email {
     padding: 8px 12px;
     border-radius: 3px;
     border: none;
@@ -44,7 +44,7 @@ body {
     width: 30%;
 }
 
-.contact-form > button {
+.contact-form > .btn {
     padding: 8px 14px;
     border-radius: 3px;
     border: none;
@@ -52,13 +52,13 @@ body {
 }
 
 .subscribe:hover {
-    .contact-form > input {
+    .contact-form > .import-email {
         background-color: #ddd;
     }
-    .contact-form > input::placeholder {
+    .contact-form > .import-email::placeholder {
         color: var(--color); 
     }
-    .contact-form > button {
+    .contact-form > .btn {
         background-color: var(--color);
         color: #fff;
     }
