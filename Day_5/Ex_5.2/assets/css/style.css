@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000af;
+}
+
+.post {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    background-color: #fff;
+    padding: 10px 6px;
+}
+
+.post ul.list-post {
+    list-style: none;
+}
+
+/* title */
+.item-post .title {
+    background-color: rgb(226, 85, 3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.item-post .title > i {
+    padding: 0 10px;
+}
+
+.item-post .title > i:first-of-type {
+    display: none;
+}
+
+.item-post .title .sub-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* content */
+.item-post .content {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    padding: 15px;
+    display: none;
+    cursor: default;
+}
+
+.item-post .content .list-content {
+    list-style-type: upper-greek;
+    margin-left: 18px;
+}
+
+.item-post .title:focus + .content {
+    display: block;
+}
+
+.item-post .title:focus i:last-of-type {
+    display: none;
+}
+
+.item-post .title:focus i:first-of-type {
+    display: block;
+}
+

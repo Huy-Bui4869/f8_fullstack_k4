@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai tập 5.1</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fontawesome-free-6.4.0-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="contact">
+      <h2 class="title">Hey there</h2>
+      <p class="instruct">
+        <span>We'd like to hear from you.</span> Send us your message or just
+        say hy with our contact form or directly via phone, we love to chat.
+      </p>
+      <!-- Begin: contact-form -->
+      <form action="#!" class="contact-form">
+        <ul class="list-contact">
+
+          <!-- input first -->
+          <li class="item">
+            <input id="name" type="text" placeholder="Your name" required />
+            <label class="sub-item" for="name">
+              <i class="fa-solid fa-user"></i>
+            </label>
+            <div class="request">Enter your name</div>
+            <i class="fa-solid fa-star star"></i>
+            <i class="fa-solid fa-xmark exit"></i>
+          </li>
+
+          <!-- input second -->
+          <li class="item">
+            <input id="email" type="email" placeholder="your@domain.com" required />
+            <label class="sub-item" for="email">
+              <i class="fa-solid fa-envelope"></i>
+            </label>
+            <div class="request">Enter your email</div>
+            <i class="fa-solid fa-star star"></i>
+            <i class="fa-solid fa-xmark exit"></i>
+          </li>
+
+          <!-- input third -->
+          <li class="item">
+            <input id="phone" type="text" placeholder="+44 00 123" required />
+            <label class="sub-item" for="phone">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </label>
+            <div class="request">Enter your phone</div>
+            <i class="fa-solid fa-xmark exit"></i>
+          </li>
+
+          <!-- input fourth -->
+          <li class="item">
+            <select name="" id="subject">
+              <option value="" hidden>Subject</option>
+              <option value="1">a</option>
+              <option value="2">b</option>
+              <option value="3">c</option>
+              <option value="5">d</option>
+            </select>
+            <div class="sort">
+              <i class="fa-solid fa-sort"></i>
+            </div>
+            <label class="sub-item" for="subject">
+              <i class="fa-solid fa-book"></i>
+            </label>
+            <div class="request">Enter your subject</div>
+          </li>
+
+          <!-- input fifth -->
+          <li class="item">
+            <textarea
+            name=""
+            id="message"
+            cols="6"
+            rows="10"
+            placeholder="Message"
+            ></textarea>
+            <label class="sub-item" for="message">
+              <i class="fa-solid fa-message"></i>
+            </label>
+            <div class="request">Enter your message</div>
+            <i class="fa-solid fa-star star"></i>
+          </li>
+        </ul>
+        <!-- checked or button -->
+        <div class="submit">
+          <div class="checked">
+            <input id="send" type="checkbox" />
+            <i class="fa-solid fa-check"></i>
+            <label for="send">Send me a copy of this mesage</label>
+          </div>
+          <button class="btn" type="submit">SEND</button>
+        </div>
+      </form>
+      <!-- End: contact-form -->
+    </section>
+  </body>
+</html>

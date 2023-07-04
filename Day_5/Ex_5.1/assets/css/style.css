@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); */
+
+:root {
+    --color: #3333334d;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap');
+
+html {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.816);
+}
+
+.contact {
+    background-color: #fff;
+    max-width: 800px;
+    padding: 20px 40px;
+    margin: 50px auto 100px;
+}
+
+
+
+/* title */
+.contact h2.title {
+    font-family: 'Lobster', cursive;
+    font-size: 34px;
+    font-style: italic;
+    padding: 10px 0;
+}
+
+.contact .instruct {
+    line-height: 1.4;
+    padding: 10px 0;
+
+}
+
+.contact .instruct > span {
+    color: red;
+}
+
+/*  */
+.contact-form .list-contact {
+    list-style: none;
+}
+
+.contact-form .list-contact .item {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 30px 0;
+    position: relative;
+}
+
+/*  */
+.contact-form .list-contact .sub-item > i {
+    display: block;
+    width: 54px;
+    font-size: 24px;
+    background-color: var(--color);
+    color: #fff;
+    text-align: center;
+    line-height: 54px;
+}
+
+.list-contact .item i.star {
+    position: absolute;
+    top:22px;
+    right: 18px;
+    color: var(--color);
+    font-size: 10px;
+}
+
+.list-contact .item i.exit {
+    position: absolute;
+    top:50%;
+    right: 18px;
+    transform: translateY(-50%);
+    color: #757575;
+    display: none;
+    
+}
+
+/* input???? */
+.list-contact .item select,
+.list-contact .item  input {
+    width: calc(100% - 54px);
+    border: 1px solid var(--color);
+    padding: 0 10px;
+    outline: none;
+    font-size: 16px;
+    color: #7f7f7f;
+}
+
+.list-contact .item .sort {
+    background-color: #fff;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 3px;
+    font-size: 16px;
+    padding-right: 16px;
+    color: var(--color);
+}
+
+.list-contact .item > textarea {
+    padding: 12px;
+    outline: none;
+    border: 1px solid var(--color);
+    font-size: 16px;
+    width: calc(100% - 54px);
+    height: 210px;
+}
+
+.item > textarea ~ .sub-item i {
+    height: 210px;
+}
+
+.list-contact .item  .request {
+    position: absolute;
+    top: -65px;
+    left: 30px;
+    background-color: #000;
+    color: #fff;
+    padding: 14px;
+    font-size: 15px;
+    display: none;
+}
+
+.list-contact .item .request::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #000;
+    position: absolute;
+    bottom: -6px;
+    left: 20px;
+    transform: rotate(45deg);
+}
+
+/* hover-active-focus */
+.list-contact .item > input:hover,
+.list-contact .item > input:focus,
+.list-contact .item > select:hover,
+.list-contact .item > select:focus,
+.list-contact .item > textarea:hover,
+.list-contact .item > textarea:focus {
+   border: 2px solid #000;
+}
+
+.list-contact .item input:hover ~ label,
+.list-contact .item input:focus ~ label,
+.list-contact .item select:hover ~ label,
+.list-contact .item select:focus ~ label,
+.list-contact .item textarea:hover ~ label,
+.list-contact .item textarea:focus ~ label {
+    background-color: #000;
+}
+
+
+.list-contact .item input:active ~ .request,
+.list-contact .item select:active ~ .request,
+.list-contact .item textarea:active ~ .request,
+.list-contact .item input:focus ~ .request,
+.list-contact .item select:focus ~ .request,
+.list-contact .item textarea:focus ~ .request {
+    display: block;
+}
+
+.list-contact .item input:active ~ i.star,
+.list-contact .item textarea:active ~ i.star,
+.list-contact .item input:focus ~ i.star,
+.list-contact .item textarea:focus ~ i.star {
+    display: none;
+}
+
+.list-contact .item input:active ~ i.exit,
+.list-contact .item textarea:active ~ i.exit,
+.list-contact .item input:focus ~ i.exit,
+.list-contact .item textarea:focus ~ i.exit {
+    display: block;
+}
+
+/* checked or button */
+.contact-form .submit {
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    /* align-items: center; */
+    padding-bottom: 40px;
+    color: var(--color);
+}
+
+.contact-form .submit .btn {
+    font-size: 17px;
+    padding: 10px 40px;
+    background-color: rgba(255, 0, 0, 0.85);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.submit .checked label::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--color);
+    margin-right: 8px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 3px;
+}
+
+.submit .checked > i {
+    font-size: 18px;
+    color: #000000e3;
+    position: absolute;
+    left: 46px;
+    bottom: -6px;
+    display: none;
+}
+
+.submit .checked input[type="checkbox"] {
+    display: none;
+}
+
+.submit .checked input[type=checkbox]:checked ~ i {
+    display: block;
+}
