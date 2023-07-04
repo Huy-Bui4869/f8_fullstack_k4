@@ -209,6 +209,12 @@ body {
     cursor: pointer;
 }
 
+.submit .checked {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 .submit .checked label::before {
     content: "";
     display: inline-block;
@@ -216,18 +222,23 @@ body {
     height: 22px;
     border: 3px solid var(--color);
     margin-right: 8px;
-    position: relative;
+    position: absolute;
     top: 50%;
+    left: 0;
     transform: translateY(-50%);
     border-radius: 3px;
+}
+
+.submit .checked > label {
+    margin-left: 35px;
 }
 
 .submit .checked > i {
     font-size: 18px;
     color: #000000e3;
     position: absolute;
-    left: 46px;
-    bottom: -6px;
+    left: 6px;
+    top: 11px;
     display: none;
 }
 
@@ -236,5 +247,5 @@ body {
 }
 
 .submit .checked input[type=checkbox]:checked ~ i {
-    display: block;
+    display: inline;
 }
