@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    background-color: #333333c1;
+}
+
+.container {
+    max-width: 1100px;
+    background-color: #ebf5fe;
+    padding: 14px 50px;
+    margin: 50px auto 0;
+}
+
+.container .row {
+    display: flex;
+    column-gap: 25px;
+}
+
+.container .row ~ .row {
+    margin-top: 25px;
+}
+
+.container .row .item {
+    /* flex: 1; */
+    background-color: #fff;
+    padding: 15px 20px;
+    width: 33.33%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px #dcedfb;
+}
+
+/* shadow icon title */
+.item_01 .item-title > i {
+    box-shadow: 0 0 3px 3px pink;
+}
+.item_02 .item-title > i {
+    box-shadow: 0 0 3px 3px rgba(58, 249, 239, 0.3);
+}
+.item_03 .item-title > i {
+    box-shadow: 0 0 3px 3px rgba(255, 255, 0, 0.3);
+}
+.item_04 .item-title > i {
+    box-shadow: 0 0 3px 3px rgba(98, 98, 255, 0.3);
+}
+.item_05 .item-title > i {
+    box-shadow: 0 0 3px 3px rgba(255, 58, 255, 0.3);
+}
+.item_06 .item-title > i {
+    box-shadow: 0 0 3px 3px rgba(2, 190, 2, 0.3);
+}
+
+/* Backfround-icon title */
+.item_01 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(252, 37, 116), rgb(254, 190, 73));
+}
+.item_02 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(5, 141, 200), rgb(79, 252, 79));
+}
+.item_03 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(243, 159, 3), rgb(213, 213, 3));
+}
+.item_04 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(76, 76, 249), rgb(92, 181, 254));
+}
+.item_05 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(159, 52, 253), rgb(248, 5, 248));
+}
+.item_06 > .item-title i {
+    background-image: linear-gradient(90deg, rgb(54, 152, 1), rgb(130, 222, 2));
+}
+
+/* Hover */
+.item:hover {
+    outline: 2px solid;
+}
+.item_01:hover {
+    outline-color: red;
+}
+.item_02:hover {
+    outline-color: rgb(147, 147, 251);
+}
+.item_03:hover {
+    outline-color: rgba(255, 166, 0, 0.676);
+}
+.item_04:hover {
+    outline-color: blue;
+}
+.item_05:hover {
+    outline-color: violet;
+}
+.item_06:hover {
+    outline-color: greenyellow;
+}
+
+.container .item .item-title {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.container .item .item-title > i {
+    font-size: 1.7rem;
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 56px;
+    margin-right: 14px;
+    color: #fff;
+}
+
+.container .item p.desc {
+    color: #666666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.container .item > a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 20px 0 10px;
+    font-weight: 600;
+    color: #4949fbfa;
+}
+

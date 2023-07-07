@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="./assets/fontawesome-free-6.4.0-web/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="contact">
@@ -20,7 +26,6 @@
       <!-- Begin: contact-form -->
       <form action="#!" class="contact-form">
         <ul class="list-contact">
-
           <!-- input first -->
           <li class="item">
             <input id="name" type="text" placeholder="Your name" required />
@@ -34,7 +39,12 @@
 
           <!-- input second -->
           <li class="item">
-            <input id="email" type="email" placeholder="your@domain.com" required />
+            <input
+              id="email"
+              type="email"
+              placeholder="your@domain.com"
+              required
+            />
             <label class="sub-item" for="email">
               <i class="fa-solid fa-envelope"></i>
             </label>
@@ -45,7 +55,7 @@
 
           <!-- input third -->
           <li class="item">
-            <input id="phone" type="text" placeholder="+44 00 123" required />
+            <input id="phone" type="number" placeholder="+44 00 123" required />
             <label class="sub-item" for="phone">
               <i class="fa-solid fa-mobile-screen-button"></i>
             </label>
@@ -74,17 +84,18 @@
           <!-- input fifth -->
           <li class="item">
             <textarea
-            name=""
-            id="message"
-            cols="6"
-            rows="10"
-            placeholder="Message"
+              name=""
+              id="message"
+              cols="6"
+              rows="10"
+              placeholder="Message"
             ></textarea>
             <label class="sub-item" for="message">
               <i class="fa-solid fa-message"></i>
             </label>
             <div class="request">Enter your message</div>
             <i class="fa-solid fa-star star"></i>
+            <i class="fa-solid fa-xmark exit"></i>
           </li>
         </ul>
         <!-- checked or button -->

@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 13px;
+    color: var(--text);
+    background-color: #333333bb;
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* body {
+    background-color: #333333bb;
+    font-family: 'Nunito', sans-serif;
+} */
+
+:root {
+    --mycolor:#ff574d;
+    --text: #717171;
+}
+
+section {
+    background: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg) no-repeat 0 100% gray;
+    background-size: cover;
+    max-width: 1200px;
+    height: 600px;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width: 630px;
+    height: 370px;
+    background-color: palegreen;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/* first column */
+.container .just-log {
+    /* flex: 2; */
+    width: 42%;
+    background-color: var(--mycolor);
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.just-log .arrow {
+    --height: 34px;
+    display: block;
+    width: var(--height);
+    height: var(--height);
+    color: var(--mycolor);
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: var(--height);
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.just-log .sub-just-log {
+    padding: 8px;
+}
+
+.sub-just-log .title {
+    padding-bottom: 14px;
+    font-size: 1.3rem;
+}
+
+.logo-just-log {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    color: var(--mycolor);
+    background-color: #fff;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.sub-just-log .btn {
+    padding: 8px 24px;
+    border: none;
+    color: var(--mycolor);
+    margin: 25px 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sub-just-log .icon {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.icon .item-icon > a > i {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    display: block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.icon .item-icon > a > i:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* second column */
+.container .login {
+    /* flex: 3; */
+    width: 58%;
+    padding: 30px 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+}
+
+.login .title-login {
+    color: #272323;
+    padding: 12px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.login .title-login::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: var(--mycolor);
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    transform: translateX(-50%);
+}
+
+.login .title-login > span {
+    color: var(--mycolor);
+}
+
+.form-login input {
+    border: 2px solid #ddd;
+    outline: none;
+}
+
+.form-login input:not(input[type="checkbox"]) {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.form-login input:not(input[type="checkbox"])::placeholder {
+    color: var(--text);
+}
+
+.form-login .sub-login {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.form-login .btn-login {
+    width: 100%;
+    padding: 12px 0;
+    background-color: var(--mycolor);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.sub-just-log .btn:active,
+.form-login .btn-login:active {
+    transform: scale(0.95);
+}

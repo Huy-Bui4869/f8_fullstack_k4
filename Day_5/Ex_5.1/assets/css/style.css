@@ -4,14 +4,9 @@
     box-sizing: border-box;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); */
-
 :root {
     --color: #3333334d;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Lobster&display=swap');
 
 html {
     font-family: 'Lato', sans-serif;
@@ -27,8 +22,6 @@ body {
     padding: 20px 40px;
     margin: 50px auto 100px;
 }
-
-
 
 /* title */
 .contact h2.title {
@@ -81,9 +74,9 @@ body {
 
 .list-contact .item i.exit {
     position: absolute;
-    top:50%;
+    top:22px;
     right: 18px;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     color: #757575;
     display: none;
     
@@ -118,6 +111,7 @@ body {
     font-size: 16px;
     width: calc(100% - 54px);
     height: 210px;
+    font-family: 'Lato', sans-serif;
 }
 
 .item > textarea ~ .sub-item i {
