@@ -29,11 +29,12 @@ body {
     margin: auto 0;
     height: 19px;
     outline: none;
-    border: 1px solid var(--color);
+    border: 2px solid var(--color);
 }
 
 .sign-in select {
-    border-color:  var(--color);
+    border: 2px solid  var(--color);
+    width: 42%;
 }
 
 .row {
@@ -41,6 +42,68 @@ body {
     padding-bottom: 5px;
     display: flex;
     align-items: center;
+}
+
+.checked label {
+    position: relative;
+    top: 0;
+    left: 25px;
+}
+
+.checked > label::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--color);
+    border-radius: 2px;
+    position: absolute;
+    top: 1px;
+    left: -20px;
+}
+
+/* inout[type="radio"] */
+.radio > label::before {
+    border-radius: 50%;
+}
+
+.radio > label::after {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--color);
+    border: none;
+    position: absolute;
+    top: 4.5px;
+    left: -17px;
+    display: none;
+}
+
+/* 
+- input[type="checkbox"]
+- nhúng icon vào web
+ */
+.checkbox > label::after {
+    content: "\f00c";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: blue;
+    font-size: 12px;
+    position: absolute;
+    top: 3px;
+    left: -18px;
+    display: none;
+}
+
+
+.checked > input {
+    display: none;
+}
+
+.checked > input:checked ~ label::after {
+    display: block;
 }
 
 .btn {
@@ -51,6 +114,10 @@ body {
 .btn > button {
     padding: 3px 8px;
     border-radius: 4px;
-    border: 1px solid var(--color);
+    border: 2px solid var(--color);
+}
+
+.btn > button:active {
+    transform: scale(0.9);
 }
 

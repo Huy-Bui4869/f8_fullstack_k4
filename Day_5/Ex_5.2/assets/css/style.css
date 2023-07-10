@@ -73,3 +73,7 @@ html {
     display: block;
 }
 
+.item .title:focus + .content {
+    display: none;
+}
+

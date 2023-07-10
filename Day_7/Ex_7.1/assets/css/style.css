@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: SFU;
+    src: url(../fonts/SFUTradeGothic-BoldCondensedTwenty.woff2);
+}
+
+html {
+    font-family: 'Asap', sans-serif;
+    /* font-size: 10px; */
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+:root {
+    --title: #bf4240;
+    --text: #3f3424
+}
+
+.backgroud {
+    width: 100%;
+    height: 480px;
+    margin: 0 auto;
+    background: gray url(https://cdn.houseviet.vn/images/project/23042023/ha-noi-melody-residences-cover.jpg) no-repeat 10% center;
+    background-size: cover;
+}
+
+.backgroud .container {
+    position: relative;
+    top: 30%;
+    left: 14%;
+    width: 40%;
+}
+
+.backgroud .container .banner {
+    background-color: #ffffffcf;
+    padding: 15px 20px;
+    border-radius: 4px;
+}
+
+.banner .title-banner {
+    color: var(--title);
+    padding: 14px 0;
+    font-size: 1.8rem;
+}
+
+.banner .desc {
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.banner > a.location {
+    color: var(--text);
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 0 35px;
+}
+
+.banner > a.location::before {
+    content: "\f3c5";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-right: 3px;
+    color: var(--text);
+}
+
+.container .btn {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-family: SFU;
+    padding: 8px 22px;
+    background-color: var(--title);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    right: 7%;
+    bottom: 0;
+    z-index: 1;
+    transform: translateY(50%);
+}

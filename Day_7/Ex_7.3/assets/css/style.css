@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-family: 'Asap', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    background-color: #f4f2f0;
+}
+
+section {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 20px 50px;
+}
+
+section h2.title {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.prominent-area .list-area {
+    list-style: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+.prominent-area .list-area .area > a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding: 8px 24px;
+    text-align: center;
+    border-radius: 99px;
+    background-color: #dddddd;
+}
+
+.list-area .area p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.list-area .area p span {
+    font-size: 1.1rem;
+}
+
+.list-area .area:first-child > a,
+.list-area .area:hover > a {
+    background-color: #b87926;
+    color: #fff;
+}
+
+section .row {
+    display: flex;
+    column-gap: 25px;
+    margin-top: 25px;
+}
+
+section .card {
+    width: 33.33%;
+    height: 250px;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 6px;
+    color: #fff;
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+}
+
+.card_1 {
+    background: url(../images/quan-2_1.jpg);
+}
+.card_2 {
+    background: url(../images/quan-7_2.jpg);
+}
+.card_3 {
+    background: url(../images/quan-9_3.jpg);
+}
+.card_4 {
+    background: url(../images/tan-binh_4.jpg);
+}
+.card_5 {
+    background: url(../images/thu-duc_5.jpg);
+}
+.card_6 {
+    background: url(../images/binh-chanh_6.jpg);
+}
+
+.card_1,
+.card_2,
+.card_3,
+.card_4,
+.card_5,
+.card_6 {
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card > .card_title {
+    font-size: 2.3rem;
+    color: #fff;
+    font-weight: 600;
+    position: absolute;
+    top: 28px;
+    left: 25px;
+}
+
+.card > .card_title + p.card_desc {
+    font-size: 1.6rem;
+    position: absolute;
+    left: 25px;
+    bottom: 28px;
+}
+
+.card > .card_title + p.card_desc > b {
+    font-size: 1.8rem;
+}

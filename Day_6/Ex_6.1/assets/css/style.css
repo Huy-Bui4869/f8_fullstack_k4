@@ -14,7 +14,8 @@ body {
 
 :root {
     --color: #666;
-    --hover: #2da5da
+    --hover: #2da5da;
+    --boder: #ddd
 }
 
 a {
@@ -41,7 +42,7 @@ nav.navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid var(--color);
+    border: 1px solid var(--boder);
     margin: 0 auto;
 }
 
@@ -55,7 +56,7 @@ nav.navigation .menu {
 /* các mục */
 .menu .item-menu {
     padding: 13px 4px;
-    border-right: 1px solid var(--color);
+    border-right: 1px solid var(--boder);
     position: relative;
     top: 0;
     left: 0;
@@ -66,15 +67,15 @@ nav.navigation .menu {
     content: "";
     display: inline-block;
     width: 100%;
-    height: 9px;
-    /* background-color: transparent; */
+    height: 12px;
+    /* background-color: red; */
     position: absolute;
-    bottom: -9px;
+    bottom: -12px;
     left: 0;
 }
 
 .contacts {
-    border-left: 1px solid var(--color);
+    border-left: 1px solid var(--boder);
     padding: 13px 4px;
 }
 
@@ -91,7 +92,7 @@ i.fa-angle-down {
     width: 200px;
     list-style: none;
     position: absolute;
-    top: 57px;
+    top: 60px;
     left: 0px;
     box-shadow: 0 0 3px 3px #ddd;
     display: none;

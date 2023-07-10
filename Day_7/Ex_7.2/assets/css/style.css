@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-family: 'Asap', sans-serif;
+}
+
+body {
+    background-color: #ddd;
+}
+
+:root {
+    --red: #ef5350;
+    --w14: 14px;
+}
+
+.backgroud {
+    width: 100%;
+    height: 330px;
+    background: url(../images/tap-doan-vingroup.jpg) gray no-repeat 0 center;
+    background-size: 100% auto;
+    position: relative;
+}
+
+.backgroud::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backgroud .container {
+    /* background-color: rgba(0, 0, 0, 0.246); */
+    display: inline-block;
+    position: absolute;
+    left: 6%;
+    bottom: 0;
+    display: flex;
+}
+
+.backgroud .container .logo {
+    width: 240px;
+    height: 150px;
+    background: url(../images/tap-doan-vingroup-logo.png) #fff no-repeat center 100% ;
+    background-size: 90% auto;
+    border-radius: 5px 5px 0 0;
+}
+
+.backgroud .container .title {
+    padding: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.container .title h1.title-page {
+    font-size: 1.7rem;
+}
+
+.container .title .sub-title {
+    display: flex;
+    margin-top: 18px;
+    column-gap: 30px;
+}
+
+.title .sub-title span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+nav ul.menu {
+    display: flex;
+    list-style: none;
+    justify-content: end;
+    padding-right: 70px;
+    background-color: #fff;
+}
+
+nav ul.menu li > a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px var(--w14);
+    position: relative;
+}
+
+ul.menu li > a::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 4px;
+    background-color: var(--red);
+    position: absolute;
+    left: var(--w14);
+    bottom: 0;
+    transition: 0.3s ease-out;
+}
+
+/* hover */
+ul.menu li:first-child > a::after,
+ul.menu li:hover > a::after {
+    width: calc(100% - calc(var(--w14) * 2));
+}
+
+ul.menu li:first-child > a,
+ul.menu li:hover > a {
+    color: var(--red);
+}

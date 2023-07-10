@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bai tap 3.3</title>
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <form class="sign-in" action="">
+    <form class="sign-in">
       <div class="row">
         <label for="name">Username:</label>
         <input id="name" type="text" required />
@@ -24,9 +25,9 @@
       </div>
 
       <div class="row">
-        <label for="">Web server</label>
-        <select name="" id="">
-          <option value="" hidden>-Choose a server-</option>
+        <label for="sever">Web server</label>
+        <select name="sever" id="sever">
+          <option value="" hidden>-- Choose a server --</option>
           <option value="0">Apache</option>
           <option value="1">Nginx</option>
           <option value="2">IIS</option>
@@ -37,17 +38,21 @@
       <div class="row">
         <label>Please specify your role:</label>
         <div>
-          <div>
-            <label><input type="radio" name="position" /> Admin</label>
+          <div class="checked radio">
+            <input id="admin" type="radio" name="position" />
+            <label for="admin">Admin</label>
           </div>
-          <div>
-            <label><input type="radio" name="position" /> Engineer</label>
+          <div class="checked radio">
+            <input id="Engineer" type="radio" name="position" />
+            <label for="Engineer">Engineer</label>
           </div>
-          <div>
-            <label><input type="radio" name="position" /> Manager</label>
+          <div class="checked radio">
+            <input id="manager" type="radio" name="position" />
+            <label for="manager">Manager</label>
           </div>
-          <div>
-            <label><input type="radio" name="position" /> Guest</label>
+          <div class="checked radio">
+            <input id="guest" type="radio" name="position" />
+            <label for="guest">Guest</label>
           </div>
         </div>
       </div>
@@ -55,14 +60,17 @@
       <div class="row">
         <label>Single Sign-on to the following:</label>
         <div>
-          <div>
-            <label><input type="checkbox" name="sign-on" /> Mail</label>
+          <div class="checked checkbox">
+            <input id="mail" type="checkbox" name="sign-on" />
+            <label for="mail">Mail</label>
           </div>
-          <div>
-            <label><input type="checkbox" name="sign-on" /> Payroll</label>
+          <div class="checked checkbox">
+            <input id="payroll" type="checkbox" name="sign-on" />
+            <label for="payroll">Payroll</label>
           </div>
-          <div>
-            <label><input type="checkbox" name="sign-on" /> Self-service</label>
+          <div class="checked checkbox">
+            <input id="self" type="checkbox" name="sign-on" />
+            <label for="self">Self-service</label>
           </div>
         </div>
       </div>
