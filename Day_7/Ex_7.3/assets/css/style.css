@@ -41,14 +41,6 @@ section h2.title::after {
     left: 420px;
 }
 
-/* .strikethrough {
-    display: inline-block;
-    width: 50%;
-    height: 1px;
-    background-color: rgb(221, 220, 220);
-    padding-left: 20px;
-} */
-
 .prominent-area .list-area {
     list-style: none;
     display: flex;
