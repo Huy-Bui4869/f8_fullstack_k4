@@ -35,7 +35,7 @@ body {
     position: relative;
     top: 30%;
     left: 14%;
-    width: 40%;
+    width: 35%;
 }
 
 .backgroud .container .banner {
@@ -47,18 +47,18 @@ body {
 .banner .title-banner {
     color: var(--title);
     padding: 14px 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
 }
 
 .banner .desc {
     color: var(--text);
     line-height: 1.6;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .banner > a.location {
     color: var(--text);
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
     display: inline-block;
     padding: 10px 0 35px;
@@ -75,7 +75,7 @@ body {
 
 .container .btn {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: SFU;
     padding: 8px 22px;
     background-color: var(--title);
