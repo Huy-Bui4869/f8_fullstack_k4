@@ -96,6 +96,10 @@ img {
     color: var(--LightGray);
 }
 
+.cart-center .product:not(.product:first-of-type) {
+    border-top: 1px solid #e1e1e1;
+}
+
 .product .product-img {
     max-width: 85px;
     background-color: rgba(245, 245, 220, 0.61);
