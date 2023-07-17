@@ -5,40 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tổng Hợp</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+      }
+
       body {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        width: 100%;
+        height: 100vh;
+        /* animation: color 10s linear infinite; */
+        /* transition: background-image 6s ease-in-out; */
       }
 
       .list-exercise {
         list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       .item a {
         font-weight: bold;
         font-size: 20px;
         line-height: 1.5;
-        color: violet;
+        color: blue;
       }
       .row {
         display: flex;
-        /* flex-direction: row-reverse; */
-        justify-content: space-evenly;
-      }
-
-      .row ~ .row {
-        margin-top: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        padding: 20px;
       }
 
       .col {
+        flex-basis: calc((100% - 30px) / 4);
         border: 2px solid red;
-        padding: 20px;
+        padding: 10px;
+        height: 220px;
+      }
+
+      .col > h3 {
+        padding-bottom: 15px;
+        text-align: center;
+      }
+
+      @keyframes color {
+        25% {
+          background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        50% {
+          background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        75% {
+          background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        }
+
+        to {
+          background-image: linear-gradient(
+            to right,
+            #ff8177 0%,
+            #ff867a 0%,
+            #ff8c7f 21%,
+            #f99185 52%,
+            #cf556c 78%,
+            #b12a5b 100%
+          );
+        }
       }
     </style>
   </head>
   <body>
     <div class="row">
       <div class="col">
-        <h1>Bài tập về nhà buổi 3</h1>
+        <h3>Bài tập về nhà buổi 3</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_3/Ex_3.1/Ex_3_1.html" target="_blank">Bài tập 1</a>
@@ -59,7 +106,7 @@
       </div>
       <!-- <hr /> -->
       <div class="col">
-        <h1>Bài tập về nhà buổi 4</h1>
+        <h3>Bài tập về nhà buổi 4</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_4/Ex_4.1/Ex_4_1.html" target="_blank">Bài tập 1</a>
@@ -74,7 +121,7 @@
       </div>
       <!-- <hr /> -->
       <div class="col">
-        <h1>Bài tập về nhà buổi 5</h1>
+        <h3>Bài tập về nhà buổi 5</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_5/Ex_5.1/Ex_5_1.html" target="_blank">Bài tập 1</a>
@@ -87,10 +134,9 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="row">
+
       <div class="col">
-        <h1>Bài tập về nhà buổi 6</h1>
+        <h3>Bài tập về nhà buổi 6</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_6/Ex_6.1/Ex_6_1.html" target="_blank">Bài tập 1</a>
@@ -103,8 +149,9 @@
           </li>
         </ul>
       </div>
+
       <div class="col">
-        <h1>Bài tập về nhà buổi 7</h1>
+        <h3>Bài tập về nhà buổi 7</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_7/Ex_7.1/Ex_7_1.html" target="_blank">Bài tập 1</a>
@@ -117,8 +164,9 @@
           </li>
         </ul>
       </div>
+
       <div class="col">
-        <h1>Bài tập về nhà buổi 8</h1>
+        <h3>Bài tập về nhà buổi 8</h3>
         <ul class="list-exercise">
           <li class="item">
             <a href="./Day_8/Ex_8.1/Ex_8_1.html" target="_blank">Bài tập 1</a>
@@ -128,6 +176,21 @@
           </li>
           <li class="item">
             <a href="./Day_8/Ex_8.3/Ex_8_3.html" target="_blank">Bài tập 3</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>Bài tập về nhà buổi 9</h3>
+        <ul class="list-exercise">
+          <li class="item">
+            <a href="./Day_9/Ex_9.1/Ex_9_1.html" target="_blank">Bài tập 1</a>
+          </li>
+          <li class="item">
+            <a href="./Day_9/Ex_9.2/Ex_9_2.html" target="_blank">Bài tập 2</a>
+          </li>
+          <li class="item">
+            <a href="./Day_9/Ex_9.3/Ex_9_3.html" target="_blank">Bài tập 3</a>
           </li>
         </ul>
       </div>

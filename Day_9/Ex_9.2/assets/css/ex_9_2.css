@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+}
+
+.container {
+    --columns: 3;
+    --col-gap: 20px;
+    --row-gap:30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--row-gap) var(--col-gap);
+}
+
+.item {
+    flex-basis: calc((100% - (var(--col-gap) * calc(var(--columns) - 1))) / var(--columns));
+    border: 2px solid #ddd;
+    padding: 18px;
+    height: 292px;
+    position: relative;
+}
+
+.content {
+    padding: 22px;
+    border: 1px solid transparent;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.content > i {
+    font-size: 2.6rem;
+    padding: 10px 0;
+    color: #b1826e;
+    transition: transform .5s linear, color .2s linear .15s;
+    /* transform-origin: bottom; */
+}
+
+.content .title-content {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    margin: 15px 0;
+    top: 0;
+    transition: transform .6s ease-in-out;
+}
+
+.content .desc {
+    font-size: 15px;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.7);
+    transition: transform .6s ease-in-out .03s;
+}
+
+.content > a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #fff;
+    position: absolute;
+    left: 22px;
+    bottom: 35px;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: transform .6s ease-in-out, opacity .9s ease-in-out .1s;
+}
+
+.content > a > i.arrow {
+    margin-left: 5px;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 0.8rem;
+    transition: background .3s ease-in-out .05s;
+}
+
+/* Begin: hover */
+.item:hover {
+    background: url(https://picsum.photos/200) gray no-repeat 0 0 / cover;
+}
+
+.item:hover::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: #b1826e97;
+}
+
+.item:hover .content {
+    border-color: #dddddd70;
+}
+
+.item:hover .content > i {
+    transform: scale(0);
+    color: #fff;
+}
+
+.item:hover .content .desc,
+.item:hover .content .title-content {
+    transform: translateY(-80px);
+    color: #fff;
+}
+
+.item:hover .content > a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.item .content > a:hover > i {
+    color: black;
+    background: #fff;
+}

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    max-width: 1000px;
+    margin: 100px auto;
+    /* border: 1px solid green; */
+    padding: 0 20px;
+}
+
+section .title {
+    text-align: center;
+}
+
+section .title > p {
+    font-size: 15px;
+    padding: 20px 0;
+}
+
+.contact-form > .list-contact-form {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.contact-form > .list-contact-form > li {
+    flex-basis: calc((100% - 20px) / 2);
+}
+
+.contact-form select {
+    height: 45px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 0 10px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-form .btn {
+    display: block;
+    margin: 20px auto;
+    padding: 16px 28px;
+    border-radius: 99px;
+    background-color: rgb(71, 71, 248);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-form .btn:hover {
+    opacity: 0.8;
+}
+
+/* create pseudo input&textarea: The same attributes */
+.input-area,
+.input-group {
+    --position-left: 15px;
+    width: 100%;
+    border: 1px solid #ddd;
+    position: relative;
+    border-radius: 6px;
+}
+
+.input-area > textarea,
+.input-group > input {
+    width: 100%;
+    border-radius: 6px;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    padding-left: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-area > label,
+.input-group > label {
+    width: calc(100% - var(--position-left)); 
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 15px;
+    position: absolute;
+    left: var(--position-left);
+}
+
+/* create pseudo input */
+.input-group {
+    height: 45px;
+}
+.input-group > input {
+    height: 43px;
+    bottom: 0;
+}
+.input-group > label {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform .2s ease-in-out .1s, top .3s ease-in-out;
+}
+
+/* create pseudo textarea */
+.input-area {
+    margin-top: 20px;
+    height: 150px;
+}
+.input-area > textarea {
+    height: 100%;
+    top: 0;
+}
+.input-area > label {
+    top: 15px;
+    transition: top .3s ease-in-out;
+}
+
+/* Begin: focus */
+input:focus {
+    width: calc(100% - var(--position-left));
+    left: 15px;
+    height: 26px;
+    bottom: 3px;
+    padding-left: 0;
+}
+
+textarea:focus {
+    width: calc(100% - var(--position-left));
+    left: 15px;
+    height: calc(100% - var(--position-left));
+    top: 15px;
+    padding-left: 0;
+}
+
+textarea:focus ~ label,
+input:focus ~ label {
+    top: 2px;
+    transform: translateY(0);
+    font-size: 13px;
+}
