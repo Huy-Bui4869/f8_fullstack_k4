@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    background-color: #ddd;
+    line-height: 1.4;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+section {
+    max-width: 725px;
+    margin: 20px auto;
+}
+
+ul.list-menu {
+    display: flex;
+    column-gap: 2px;
+    justify-content: space-between;
+}
+
+.item-menu {
+    background-color: #fff;
+    padding: 5px;
+}
+
+.item-menu > label:hover {
+    color: #fff;
+    background-color: #1e90ff;
+}
+
+.item-menu > label {
+    display: block;
+    padding: 12px;
+}
+
+ul.list-content {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+ul.list-content .item-content {
+    background-color: #fff;
+    margin: 5px 0;
+    width: 100%;
+    overflow: auto;
+    padding: 10px;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .6s linear;
+    transition-property: transform, opacity;
+}
+
+ul.list-content .item-content .content {
+    width: 900px;
+    padding: 10px;
+}
+
+input[id="simples"]:checked ~ ul.list-menu .item-menu:first-child > label,
+input[id="algoritmo"]:checked ~ ul.list-menu .item-menu:nth-child(2) > label,
+input[id="barra"]:checked ~ ul.list-menu .item-menu:nth-child(3) > label,
+input[id="captcha"]:checked ~ ul.list-menu .item-menu:last-child  > label {
+    background-color: #1e90ff;
+    color: #fff;
+}
+
+input[id="simples"]:checked ~ ul.list-content .item-content:first-child,
+input[id="algoritmo"]:checked ~ ul.list-content .item-content:nth-child(2),
+input[id="barra"]:checked ~ ul.list-content .item-content:nth-child(3),
+input[id="captcha"]:checked ~ ul.list-content .item-content:last-child {
+    opacity: 1;
+    transform: rotateX(0);
+    transition-delay: .6s;
+}

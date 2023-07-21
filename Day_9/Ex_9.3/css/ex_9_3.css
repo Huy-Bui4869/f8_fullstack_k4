@@ -36,6 +36,8 @@ section .title > p {
 
 .contact-form > .list-contact-form > li {
     flex-basis: calc((100% - 20px) / 2);
+    /* ??? */
+    max-width: calc((100% - 20px) / 2);
 }
 
 .contact-form select {
@@ -141,9 +143,21 @@ textarea:focus {
     padding-left: 0;
 }
 
+textarea:valid ~ label,
 textarea:focus ~ label,
+input:valid ~ label,
 input:focus ~ label {
     top: 2px;
     transform: translateY(0);
     font-size: 13px;
+}
+
+input:valid {
+    height: 26px;
+    bottom: 3px;
+}
+
+textarea:valid {
+    height: calc(100% - var(--position-left));
+    top: 15px;
 }

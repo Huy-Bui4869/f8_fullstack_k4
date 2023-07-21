@@ -26,6 +26,8 @@ section {
 
 .item {
     flex-basis: calc((100% - (var(--col-gap) * calc(var(--columns) - 1))) / var(--columns));
+    /* ??? */
+    max-width: calc((100% - (var(--col-gap) * calc(var(--columns) - 1))) / var(--columns));
     border: 2px solid #ddd;
     padding: 18px;
     height: 292px;

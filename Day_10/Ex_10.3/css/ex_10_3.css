@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+:root {
+    --background: #e00000;
+    --color-top: #d80000;
+    --color-left: #e80000;
+    --color-right-bottom: #ff0000;
+}
+
+body {
+    background-color: #646464;
+    display: flex;
+    justify-content: center;
+}
+
+.envelope {
+    width: 300px;
+    height: 160px;
+    background: var(--background);
+    position: relative;
+    transition: translate .4s linear;
+}
+
+.container:hover .envelope {
+    translate: 0 50%;
+}
+
+.envelope:hover .top-envelope {
+    transform: rotateX(180deg);
+}
+
+.envelope:hover .letters {
+    height: 200px;
+}
+
+.envelope:hover ~ .shadow {
+    width: 180px;
+}
+
+.envelope .top-envelope,
+.envelope .left-envelope,
+.envelope .right-bottom-envelope {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.envelope .top-envelope {
+    border-width: 80px 150px 0;
+    border-color: var(--color-top) transparent;
+    transition: transform .8s ease-in-out .1s;
+    transform-origin: top;
+}
+
+.envelope .left-envelope {
+    border-width: 80px 0 80px 150px;
+    border-color: transparent var(--color-left);
+}
+
+.envelope .right-bottom-envelope {
+    border-width: 80px 150px;
+    border-color: transparent var(--color-right-bottom) var(--color-right-bottom) transparent;
+    /* right: 0; */
+}
+
+.envelope .letters {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 250px;
+    height: 0px;
+    translate: -50% 0;
+    transition: height .8s ease-in-out;
+    /* transition: height 1s cubic-bezier(.29, 1.01, 1, -0.68); */
+    transform-origin: top;
+    rotate: 180deg;
+    position: relative;
+    top: 110px;
+    left: 125px;
+    overflow: hidden;
+}
+
+.items-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.letters .items-top .item {
+    display: block;
+    width: 18px;
+    height: 12px;
+    background-color: red;
+    transform: skewX(-45deg);
+}
+
+.letters .row {
+    display: flex;
+}
+
+.letters .icon {
+    width: 100px;
+    height: 12px;
+    background-color: red;
+    position: absolute;
+    bottom: 27px;
+    right: 10px;
+}
+.letters .icon:last-of-type {
+    width: 50px;
+    height: 12px;
+    background-color: red;
+    position: absolute;
+    bottom: 54px;
+    right: 10px;
+}
+
+.letters .logo {
+    width: 50px;
+    height: 50px;
+    background: #fb5b5ba1;
+    position: absolute;
+    bottom: 50%;
+    left: 10px;
+    border-radius: 50%;
+}
+
+.container {
+    margin-top: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container .shadow {
+    margin-top: 95px;
+    width: 280px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px #333;
+    transform: rotateX(45deg);
+    transition: width .5s linear;
+}
