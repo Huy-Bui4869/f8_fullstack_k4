@@ -31,15 +31,15 @@ body {
     translate: 0 50%;
 }
 
-.envelope:hover .top-envelope {
+.container:hover .top-envelope {
     transform: rotateX(180deg);
 }
 
-.envelope:hover .letters {
+.container:hover .letters {
     height: 200px;
 }
 
-.envelope:hover ~ .shadow {
+.container:hover .envelope ~ .shadow {
     width: 180px;
 }
 
@@ -145,7 +145,7 @@ body {
 }
 
 .container .shadow {
-    margin-top: 95px;
+    margin-top: 85px;
     width: 280px;
     height: 10px;
     background: #333;
