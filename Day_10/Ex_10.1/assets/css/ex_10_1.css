@@ -35,7 +35,6 @@ section {
     width: 100%;
     height: 100vh;
     background: var(--my-color);
-    ;
 }
 
 section .title-page {
@@ -46,7 +45,7 @@ section .title-page {
     text-align: end;
 }
 
-.title-page .title {
+.title-page h1.title {
     color: #fff;
     font-size: 5.6rem;
     font-weight: 900;
@@ -60,52 +59,53 @@ section .title-page {
     font-size: 3.4rem;
 }
 
-.circle {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    /* position: relative; */
-}
-
-section nav.navbar {
-    background-color: #fff;
-    width: calc(100vw + 400px);
-    height: calc(100vw + 400px);
-    border-bottom-right-radius: 100%;
-    scale: 0.05;
-    transition: scale .5s linear;
-    transform-origin: top left;
-}
-
 i.overlay,
 i.burger {
     font-size: 2.8rem;
     color: var(--my-color);
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 18px;
+    left: 18px;
     z-index: 1;
-    transition: transform .6s linear, opacity .3s linear;
+    rotate: 0;
+    transition: rotate .5s linear, opacity .2s linear;
+    cursor: pointer;
 }
 
 i.burger {
     opacity: 1;
-    transform: rotate(0);
 }
 
 i.overlay {
     opacity: 0;
-    transform: rotate(0deg);
 }
 
+section nav.navbar {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+section nav.navbar .circle {
+    --size: 2000px;
+    background-color: #fff;
+    width: var(--size);
+    height: var(--size);
+    border-bottom-right-radius: 100%;
+    scale: 0.04;
+    transition: scale .5s linear;
+    transform-origin: top left;
+}
+
+
 nav.navbar ul.menu {
-    /* display: none; */
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     opacity: 0;
-    transform: opacity .2s linear .6s;
+    visibility: hidden;
+    transform: opacity .3s linear;
     margin-top: 60px;
 }
 
@@ -114,7 +114,6 @@ nav.navbar ul.menu a {
     color: var(--my-color);
     width: 170px;
     height: 30px;
-    /* border: 1px solid red; */
     line-height: 30px;
     padding-left: 45px;
     margin-bottom: 15px;
@@ -126,21 +125,21 @@ nav.navbar ul.menu a:focus {
     background-color: #f1f1f1;
 }
 
-input:checked ~ .circle nav.navbar {
+input[type="checkbox"]:checked ~ nav.navbar > .circle {
     scale: 1;
 }
 
-input:checked ~ .circle nav.navbar > ul.menu {
-    /* display: block; */
+input[type="checkbox"]:checked ~ nav.navbar > ul.menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+input[type="checkbox"]:checked ~ label > i.overlay {
+    rotate: 180deg;
     opacity: 1;
 }
 
-input:checked ~ label > i.overlay {
-    transform: rotate(180deg);
-    opacity: 1;
-}
-
-input:checked ~ label > i.burger {
-    transform: rotate(180deg);
+input[type="checkbox"]:checked ~ label > i.burger {
+    rotate: 180deg;
     opacity: 0;
 }
