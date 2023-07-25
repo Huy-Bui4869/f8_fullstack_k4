@@ -83,6 +83,11 @@
     .service {
         margin-bottom: 0;
     }
+
+    .section-delivery .content-section,
+    .section-feature .content-section {
+        margin: 100px 0 20px !important;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -230,8 +235,9 @@
         font-size: 2.2rem;
     }
 
-    .content-section:not(.section .content-section) {
-        margin-top: 120px;
+    .section-delivery .content-section,
+    .section-feature .content-section {
+        margin: 180px 0 20px !important;
     }
 
     footer .item-footer a,

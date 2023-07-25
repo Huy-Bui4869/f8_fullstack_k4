@@ -296,9 +296,13 @@ label.hamber {
     background-color: var(--bg);
 }
 
-.content-section {
+.content-section:not(.section .content-section) {
     text-align: center;
     margin: 80px 0 20px;
+}
+
+.content-section:first-of-type {
+    text-align: center;
 }
 
 h1.title {
