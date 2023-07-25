@@ -65,7 +65,7 @@ ul.list-content .item-content {
     top: 0;
     left: 0;
     opacity: 0;
-    transition: .6s linear;
+    transition: .3s linear;
     transition-property: transform, opacity;
 }
 
@@ -88,5 +88,6 @@ input[id="barra"]:checked ~ ul.list-content .item-content:nth-child(3),
 input[id="captcha"]:checked ~ ul.list-content .item-content:last-child {
     opacity: 1;
     transform: rotateX(0);
-    transition-delay: .6s;
+    transition-delay: .3s;
+    z-index: 1;
 }

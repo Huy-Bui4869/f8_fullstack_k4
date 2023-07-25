@@ -1,0 +1,328 @@
+@media screen and (min-width: 375px) {
+    .hearder-left .hearder-left-bottom .btn > i {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 421px) {
+    .hearder-left h1.title-page {
+        font-size: 3.8rem;
+    }
+
+    .content-section p,
+    .content-section .sub-title,
+    .hearder-left .sub-title-page,
+    .hearder-left h1.title-page ~ p {
+        font-size: 1.6rem;
+    }
+
+    .content-section .title-section {
+        font-size: 3.2rem;
+    }
+
+    .section-download-app .download-btn .btn-down > a {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 575px) {
+    .hearder-left .hearder-left-bottom a {
+        font-size: 1.6rem;
+        padding: 22px 36px;
+    }
+
+    .hearder-left .hearder-left-bottom .btn > i {
+        font-size: 1.5rem;
+        margin-left: 70px;
+    }
+
+    .section-download-app .download-btn {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+
+    .section-download-app .download-btn {
+        justify-content: center;
+        column-gap: 25px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .header .sub-header {
+        padding: 80px 0;
+    }
+
+    .hearder-left .sub-title-page {
+        margin-left: 0;
+    }
+
+    footer .contact-footer-bottom > p,
+    .content-section:not(.section .content-section),
+    .hearder-left {
+        text-align: start;
+    }
+
+    footer .contact-footer-bottom .link {
+        justify-content: end;
+    }
+
+    footer > .container > .row {
+        justify-content: space-between;
+    }
+
+    .section,
+    .section-download-app {
+        padding: 100px 0;
+    }
+
+    .service {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .hearder-left .hearder-left-bottom {
+        justify-content: flex-start;
+    }
+
+    .section-download-app .download-btn {
+        justify-content: flex-start;
+        column-gap: 55px;
+    }
+
+    footer .contact-footer-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* focus */
+@media screen and (max-width: 991px) {
+    nav.navbar > ul a:focus {
+        color: var(--color-focus-red);
+    }
+
+    .content-section .btn a:focus,
+    .hearder-left .hearder-left-bottom .btn:first-of-type > a:focus {
+    color: var(--color-btn);
+    background-color: transparent;
+    }
+
+    article.focus:focus .bg-red {
+        rotate: -3.5deg;
+    }
+
+    footer a:focus {
+        color: var(--color-title);
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .section-delivery {
+        padding: 50px 0;
+    }
+
+    .service {
+        padding: 40px 26px;
+        margin: 10px;
+    }
+
+    .bg-red {
+        width: calc(100% - 22px);
+        left: 11px;
+    }
+}
+
+/* focus -> hover */
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+
+    nav.navbar {
+        height: auto;
+        opacity: 1;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav.navbar > ul {
+        flex-direction: row;
+    }
+
+    nav.navbar > ul a {
+        padding: 0 15px;
+    }
+
+    nav.navbar .search {
+        margin-top: 0;
+    }
+
+    .section-delivery .row {
+        flex-direction: row-reverse;
+    }
+
+    .section-download-app .download-btn {
+        column-gap: 3px;
+    }
+
+    footer .contact-footer,
+    footer .item-footer {
+        text-align: start;
+    }
+
+    footer .contact-footer .logo-page {
+        margin: 0;
+    }
+
+    
+    /* focus -> hover */
+    nav.navbar > ul a:hover {
+        color: var(--color-focus-red);
+    }
+
+    .content-section .btn a:hover,
+    .hearder-left .hearder-left-bottom .btn:first-of-type > a:hover {
+    color: var(--color-btn);
+    background-color: transparent;
+    }
+
+    article.focus:hover .bg-red {
+        rotate: -3.5deg;
+    }
+
+    footer a:hover {
+        color: var(--color-title);
+    }
+
+}
+
+@media screen and (min-width: 1199px) {
+    .hearder-left h1.title-page {
+        font-size: 4.8rem;
+    }
+
+    .hearder-left h1.title-page ~ p {
+        font-size: 1.8rem;
+        max-width: 79%;
+    }
+
+    .hearder-left .hearder-left-bottom .btn > i {
+        margin-left: 36px;
+    }
+
+    .hearder-left .hearder-left-bottom a {
+        font-size: 2rem;
+        padding: 20px 40px;
+    }
+
+    .service h3.title-logo {
+        font-size: 2.2rem;
+    }
+
+    .content-section:not(.section .content-section) {
+        margin-top: 120px;
+    }
+
+    footer .item-footer a,
+    footer .item-footer > p,
+    footer .contact-footer > p.desc {
+        font-size: 1.6rem;
+    }
+    
+    footer .contact-footer > p.desc {
+        max-width: 75%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    footer .contact-footer > p.desc {
+        max-width: 100%;
+    }
+
+    .section-download-app .download-btn {
+        column-gap: 50px;
+    }
+}
+
+@media screen and (min-width: 1399px) {
+    .hearder-left h1.title-page {
+        font-size: 7.4rem;
+        line-height: 8.8rem;
+    }
+
+    .content-section .title-section {
+        font-size: 4rem;
+    }
+
+    .content-section .sub-title,
+    .content-section > p {
+        font-size: 1.8rem;
+    }
+
+    .content-section .btn a {
+        padding: 18px 40px;
+    }
+
+    .section-download-app .download-btn .btn-down > a,
+    .content-section .btn {
+        font-size: 2rem;
+    }
+
+    .section .content-section {
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .section-feature .content-section h2.title-section {
+        max-width: 75%;
+    }
+
+    .section-feature .content-section h2.title-section ~ p {
+        max-width: 70%;
+    }
+
+    .section-delivery .content-section h2.title-section {
+        max-width: 85%;
+    }
+
+    .section-delivery .content-section h2.title-section ~ p,
+    .section-download-app .content-section h2.title-section ~ p,
+    .section-download-app .content-section h2.title-section {
+        max-width: 80%;
+    }
+
+    .service {
+        padding: 50px 28px;
+        margin: 20px;
+    }
+
+    .bg-red {
+        width: calc(100% - 56px);
+        left: 35px;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+
+    .section-download-app .download-btn {
+        column-gap: 15px;
+    }
+}

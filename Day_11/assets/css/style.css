@@ -1,0 +1,516 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+html {
+    font-size: 10px;
+}
+
+:root {
+    --color-text :#676767;
+    --color-title: #2e2e2e;
+    --color-btn: #f86061;
+    --color-text-red: #f54748;
+    --bg: #FEF5F5;
+    --border-color: #eedcdc;
+    --color-focus-red: #F55556;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+p {
+    font-size: 1.4rem;
+}
+
+.logo-page {
+    max-width: 155px;
+}
+
+/* BEGIN: navbar */
+.header {
+    padding: 40px 0;
+}
+
+.header .sub-header {
+    padding: 60px 0 10px;
+}
+
+.logo-page > a {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+input[type="checkbox"]:checked ~ nav.navbar {
+    height: 266px;
+    opacity: 1;
+}
+
+nav.navbar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 0;
+   opacity: 0;
+   transition-property: height, opacity;
+   transition: .4s ease-in-out;
+}
+
+nav.navbar > ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav.navbar > ul > li {
+    flex: 1;
+    padding: 8px 0;
+}
+
+nav.navbar > ul a {
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* nav.navbar > ul a:focus, */
+nav.navbar > ul >li:first-of-type > a {
+    color: var(--color-focus-red);
+}
+
+nav.navbar .search-box {
+    display: flex;
+    align-items: center;
+    column-gap: 0px;
+    margin-top: 20px;
+    transition: opacity .3s ease;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+nav.navbar .search-box::after {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    right: 58px;
+    transform: translateY(-50%);
+}
+
+nav.navbar .search-box input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    margin-left: 5px;
+    padding: 4px 6px;
+    line-height: 2.4rem;
+}
+
+nav.navbar .search-box input ~ span {
+    position: absolute;
+    top: 0;
+    left: 32px;
+    line-height: 2.8rem;
+}
+
+nav.navbar .search-box input::placeholder {
+    font-size: 16px;
+    color: var(--color-title);
+    font-family: 'Poppins', sans-serif;
+}
+
+input[type="search"]:focus::placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+nav.navbar .search-box .cart > i {
+    font-size: 2rem;
+    color: var(--color-title);
+}
+
+nav.navbar .search-box .cart {
+    width: 50px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav.navbar .search-box .cart::before {
+    content: "2";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--color-text-red);
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -100%);
+}
+
+nav.navbar .search-box .cart::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: #ddd;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+label.hamber {
+    float: right;
+    font-size: 2.6rem;
+    padding: 0 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    line-height: 49.2px;
+}
+/* END: navbar */
+
+/*  */
+/* BEGIN: sub-header */
+.hearder-left {
+    text-align: center;
+}
+
+.hearder-left .sub-title-page {
+    color: var(--color-focus-red);
+    font-weight: 500;
+    padding: 12px 16px;
+    background-color: #fdecec;
+    width: 210px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    border-radius: 99px;
+    margin: 0 auto;
+    font-size: 1.4rem;
+}
+
+.hearder-left .sub-title-page .icon {
+    display: inline-block;
+    max-width: 25px;
+}
+
+.hearder-left h1.title-page {
+    color: var(--color-title);
+    font-size: 3rem;
+    line-height: 5.8rem;
+    margin: 22px 0;
+}
+
+.hearder-left h1.title-page > span {
+    color: var(--color-text-red);
+    font-weight: 500;
+}
+
+.hearder-left .hearder-left-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.hearder-left .hearder-left-bottom a {
+    font-size: 1.2rem;
+    padding: 15px 17px;
+    display: block;
+}
+
+.hearder-left .hearder-left-bottom .btn:first-of-type > a {
+    color: #fffafa;
+    background-color: var(--color-btn);
+    border: 1px solid var(--color-btn);
+    border-radius: 12px;
+}
+
+/* .content-section .btn a:focus,
+.hearder-left .hearder-left-bottom .btn:first-of-type > a:focus {
+    color: var(--color-btn);
+    background-color: transparent;
+} */
+
+.hearder-left .hearder-left-bottom .btn > i {
+    color: rgb(162, 162, 27);
+    margin-left: 50px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.hearder-left .hearder-left-bottom .btn:last-of-type {
+    display: flex;
+    align-items: center;
+}
+/* End: sub-header */
+/* END: Header------- */
+
+/*  */
+/* BEGIN: Main */
+
+/* Common attributes */
+.section-download-app,
+.section-feature,
+.section {
+    padding: 50px 0;
+}
+
+.section,
+.section-download-app {
+    background-color: var(--bg);
+}
+
+.content-section {
+    text-align: center;
+    margin: 80px 0 20px;
+}
+
+h1.title {
+    margin: 80px 0 20px 0;
+}
+
+.content-section .sub-title {
+        font-weight: 500;
+        color: var(--color-text-red);
+        margin-bottom: 8px;
+}
+
+.content-section .title-section {
+    font-size: 2.4rem;
+    color: var(--color-title);
+    margin-bottom: 22px;
+}
+
+.content-section .btn {
+    margin-top: 50px;
+}
+
+.content-section .btn a {
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 12px;
+    background-color: var(--color-btn);
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid var(--color-btn);
+}
+
+/*section first */
+.section .section-services {
+    margin: 60px 0 20px;
+}
+
+.section .service {
+    padding: 30px 22px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    position: relative;
+    z-index: 3;
+    margin-bottom: 18px;
+}
+
+article.focus {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* article.focus:focus .bg-red {
+    rotate: -3.5deg;
+} */
+
+.bg-red {
+   width: 100%;
+   height: 100%;
+   background-color: var(--color-btn);
+   border-radius: 13px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   rotate: 0;
+   transition: rotate .2s ease-in-out;
+   transform-origin: 45% top;
+}
+
+.service .service-logo > i {
+    font-size: 6.8rem;
+    color: var(--color-btn);
+}
+
+.service h3.title-logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-title);
+    margin: 60px 0 15px;
+}
+
+.service h3.title-logo ~ p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Section second */
+.section-feature .sub-title {
+    color: green;
+}
+
+/* Section third */
+.sub-titleivery {
+    padding-bottom: 100px;
+}
+
+.section-delivery .sub-title {
+    color: gold;
+}
+
+/* Section four */
+.section-download-app .image-section {
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+.section-download-app .download-btn {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0 20px;
+}
+
+.section-download-app .download-btn .btn-down > a {
+    display: block;
+    width: 160px;
+    height: 70px;
+    font-weight: 500;
+    color: var(--color-title);
+    border: 1px solid var(--border-color) ;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 25px;
+    font-size: 1.4rem;
+}
+
+.section-download-app .download-btn .btn-down > a .app-store {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--color-title);
+    color: #fff;
+    font-size: 2.6rem;
+}
+
+.section-download-app .download-btn .btn-down > a > i {
+    display: inline-block;
+    font-size: 3.8rem;
+}
+
+/*  */
+/* BEGIN: footer */
+footer {
+    padding: 50px 0 30px;
+}
+/* 
+footer a:focus {
+    color: var(--color-title);
+} */
+
+footer .item-footer {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+footer .contact-footer {
+    text-align: center;
+    margin: 20px auto;
+}
+
+footer .contact-footer .logo-page {
+    margin: 0 auto;
+}
+
+footer .item-footer > h3 {
+    font-size: 1.8rem;
+}
+
+footer .item-footer > ul {
+    margin: 30px 0 10px;
+    font-size: 1.4rem;
+}
+
+footer .item-footer > ul > li {
+    padding: 10px 0;
+}
+
+footer .contact-footer > p.desc,
+footer .item-footer > p {
+    margin: 25px 0 10px;
+    font-size: 1.4rem;
+}
+
+footer .item-footer > p {
+    color: #888888;
+}
+
+footer .contact-footer-bottom {
+    margin: 80px auto 0;
+}
+
+footer .contact-footer-bottom > p {
+    color: #8c8c8c;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+footer .contact-footer-bottom .link {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    font-weight: 500;
+}
+
+footer .contact-footer-bottom .link > a {
+    color: #747474;
+    font-size: 1.4rem;
+}
+/* END: footer */
