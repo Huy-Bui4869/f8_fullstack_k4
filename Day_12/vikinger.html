@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vikinger Pages</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- 400.900 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/grid.css" />
+    <link rel="stylesheet" href="./assets/css/vikinger.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  </head>
+  <body>
+    <section class="section-landing">
+      <!-- BEGIN:  -->
+      <div class="bg-right"></div>
+      <!-- END: -->
+
+      <div class="container">
+        <input name="btn" type="radio" id="login" hidden checked />
+        <input name="btn" type="radio" id="registe" hidden />
+
+        <!-- BEGIN: landing-info -->
+        <div class="landing-info">
+          <div class="logo">
+            <img src="./assets/images/logo_viking.png" alt="viking_logo" />
+          </div>
+          <div class="title-landing">
+            <h2 class="sub-title-landing">Welcome to</h2>
+            <h1 class="title">vikinger</h1>
+          </div>
+          <p class="desc-landing d-none d-xl-block">
+            The next generation social network & community! Connect with your
+            friends and play with our quests and badges gamification system!
+          </p>
+
+          <!-- Begin: btn_form -->
+          <div class="tab-form">
+            <label for="login">Login</label>
+            <label for="registe">Register</label>
+          </div>
+          <!-- End: btn_form -->
+        </div>
+        <!-- END: landing-info -->
+
+        <div class="landing-form-box">
+          <!-- Begin: form_login -->
+          <div class="form-login form-box">
+            <div class="rocket-icon d-none d-xl-block">
+              <img src="./assets/images/rocket-png.png" alt="rocket" />
+            </div>
+            <!-- Title_form_login -->
+            <div class="form-login-title">
+              <h2 class="title-form">Account Login</h2>
+            </div>
+
+            <!-- form_login_inner -->
+            <form action="">
+              <div class="input-form-top">
+                <label>
+                  <input type="text" required />
+                  <span>Username or Email</span>
+                </label>
+              </div>
+              <div class="input-form-top mr-top-28">
+                <label>
+                  <input type="password" required />
+                  <span>Password</span>
+                </label>
+              </div>
+              <div class="faq">
+                <div class="faq-before">
+                  <input id="save" type="checkbox" hidden checked />
+                  <label for="save">Remember Me</label>
+                </div>
+                <div class="faq-after">
+                  <a href="#!">Forgot Password?</a>
+                </div>
+              </div>
+              <button class="submit-form btn_login">
+                Login to your Account!
+              </button>
+              <p class="">Login with your Social Account</p>
+              <ul class="list-link-icon">
+                <li>
+                  <a href="#!">
+                    <i class="fa-brands fa-square-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="fa-brands fa-twitch"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </form>
+          </div>
+          <!-- End: form_login -->
+
+          <!-- Begin: form_register -->
+          <div class="form-register form-box">
+            <!-- Title_form_register -->
+            <div class="form-login-title">
+              <h2 class="title-form">Create your Account!</h2>
+            </div>
+            <!-- form_register_inner -->
+            <form action="">
+              <div class="input-form-top">
+                <label>
+                  <input type="text" />
+                  <span>Your Email</span>
+                </label>
+              </div>
+
+              <div class="input-form-top mr-top-28">
+                <label>
+                  <input type="text" required />
+                  <span>Username</span>
+                </label>
+              </div>
+
+              <div class="input-form-top mr-top-28">
+                <label>
+                  <input type="password" required />
+                  <span>Password</span>
+                </label>
+              </div>
+
+              <div class="input-form-top mr-top-28">
+                <label>
+                  <input type="password" required />
+                  <span>Reqeat Password</span>
+                </label>
+              </div>
+
+              <div class="faq">
+                <div class="faq-before">
+                  <input id="saves" type="checkbox" hidden checked />
+                  <label for="saves">Send me news and updates via email</label>
+                </div>
+              </div>
+              <button class="submit-form btn_register">Register Now!</button>
+              <div class="instruct-form">
+                <p class="desc-instruct-form">
+                  You'll receive a confirmation email in your inbox with a link
+                  to activate your account, if you have any problems,
+                  <a href="#!">contact us</a>!
+                </p>
+              </div>
+            </form>
+          </div>
+          <!-- End: form_register -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

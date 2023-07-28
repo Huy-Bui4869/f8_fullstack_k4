@@ -1,0 +1,95 @@
+@media screen and (min-width: 501px) {
+    .section-landing .landing-info .title-landing > h1.title {
+        font-size: 10.4rem;
+        line-height: 10.4rem;
+    }
+
+    .section-landing .landing-info .tab-form {
+        margin: 40px auto 0;
+    }
+
+    .section-landing .landing-info .tab-form label {
+        width: 180px;
+    }
+
+    .section-landing .landing-form-box {
+        margin: 80px auto 0;
+    }
+
+    .section-landing .landing-form-box .form-box {
+        padding: 64px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .section-landing .landing-form-box .form-box {
+        width: 484px;
+    }
+}
+
+@media screen and (min-width: 1365px) {
+    .section-landing {
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0 !important;
+    }
+
+    .section-landing input[type=radio]:first-of-type:checked ~ .landing-form-box .form-login,
+    .section-landing input[type=radio]:last-of-type:checked ~ .landing-form-box .form-register {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, -50%);
+        z-index: 1;
+    }
+
+    .section-landing .landing-info {
+        width: 584px;
+        position: absolute;
+        top: 16%;
+        left: 6%;
+    }
+
+    .section-landing .landing-form-box {
+        margin: 0;
+        width: 484px;
+        position: absolute;
+        top: 0;
+        right: 80px;
+    }
+
+    .section-landing .landing-form-box .form-box {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(50%, -50%);
+        transition-property: opacity, transform;
+        transition: .5s ease-in-out;
+    }
+}
+
+@media screen and (min-width: 1501px) {
+    .section-landing > .bg-right {
+        display: block;
+    }
+
+    .section-landing .landing-info {
+        left: 13%;
+    }
+
+    .section-landing .landing-info .tab-form {
+        margin-top: 90px;
+    }
+
+    .section-landing .landing-info p.desc-landing {
+        margin: 30px auto 0;
+    }
+
+    .section-landing .landing-form-box {
+        right: 13%;
+    }
+}
