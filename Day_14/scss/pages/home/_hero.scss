@@ -1,0 +1,284 @@
+.hero-section {
+    width: 100%;
+
+    .hero_content {
+
+        .hero_content-title {
+            font-weight: 800;
+            font-size: 3.66rem;
+            line-height: 4.8rem;
+        }
+
+        span {
+            display: block;
+            font-weight: 800;
+            font-size: 4.33rem;
+            line-height: 5.2rem;
+            text-transform: uppercase;
+            width: 390px;
+            margin-top: 11.17px;
+        }
+
+        p {
+            font-weight: 400;
+            line-height: 2rem;
+            margin-top: 27.67px;
+            width: 450px;
+        }
+    }
+
+    .hero_image {
+        width: calc(50vw - 21px);
+        height: 720px;
+        background-color: $bgSectionHero;
+        margin-left: 21px;
+        position: relative;
+
+        .hero_image-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            left: -165.83px;
+            transform-origin: top left;
+            rotate: 90deg;
+            transform: translateY(-100%);
+
+            .logo-section {
+                max-width: 720px;
+                rotate: -90deg;
+            }
+    
+            span {
+                display: block;
+                max-width: 560px;
+                font-weight: 800;
+                font-size: 16.6rem;
+                line-height: 16.6rem;
+                text-transform: uppercase;
+                color: #216000;
+                opacity: 0.15000000596046448;
+                margin-left: 55px;
+                // 
+                // rotate: 90deg;
+                // order: 2;
+                margin-bottom: -144px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1599px) {
+    .hero-section {
+        .hero_image {
+            .hero_image-inner {
+                span {
+                    line-height: 14.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1499px) {
+    .hero-section {
+        .hero_image {
+            height: 700px;
+
+            .hero_image-inner {
+
+                .logo-section {
+                    max-width: 700px;
+                }
+
+                span {
+                    font-size: 14rem;
+                    line-height: 14rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1399px) {
+    .hero-section {
+        .hero_image {
+            height: 600px;
+
+            .hero_image-inner {
+                left: -130px;
+
+                .logo-section {
+                    max-width: 600px;
+                }
+
+                span {
+                    font-size: 13rem;
+                    line-height: 13rem;
+                    max-width: 450px;
+                    margin: 0 auto -120px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    .hero-section {
+        .hero_image {
+            height: 500px;
+
+            .hero_image-inner {
+                .logo-section {
+                    max-width: 500px;
+                }
+
+                span {
+                    font-size: 12rem;
+                    line-height: 12rem;
+                    margin-bottom: -100px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1107px) {
+    .hero-section {
+        .hero_image {
+            margin-left: -10px;
+            width: calc(50vw + 10px);
+
+            .hero_image-inner {
+                span {
+                    line-height: 11rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .hero-section {
+        overflow: hidden;
+        padding-top: 80px;
+
+        .hero_content {
+            text-align: center;
+
+            .hero_content-title {
+                font-size: 30px;
+            }
+
+            span {
+                width: 100%;
+                font-size: 38px;
+            }
+
+            p {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        .hero_image {
+            width: 100%;
+            position: static;
+            margin-left: 0;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                transform: scaleX(2);
+                position: absolute;
+                background: $bgSectionHero;
+            }
+
+            .hero_image-inner {
+                position: static;
+                width: 500px;
+
+                span {
+                    margin-bottom: -80px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hero-section {
+        .hero_image {
+            height: 400px;
+
+            .hero_image-inner {
+                width: 400px;
+
+                .logo-section {
+                    max-width: 360px;
+                    margin: 0 auto;
+                }
+
+                span {
+                    font-size: 8rem;
+                    line-height: 8rem;
+                    max-width: 300px;
+                    margin-bottom: -60px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:575px) {
+    .hero-section {
+        .hero_image {
+            .hero_image-inner {
+
+                .logo-section {
+                    max-width: 310px;
+                }
+
+                span {
+                    font-size: 7rem;
+                    line-height: 6.5rem;
+                    max-width: 270px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero-section {
+        .hero_image {
+            height: 100%;
+            position: static;
+            background: $bgSectionHero;
+
+            &::before {
+                display: none;
+            }
+
+            .hero_image-inner {
+                height: 100%;
+                width: 100%;
+                rotate: none;
+                transform: none;
+
+                .logo-section {
+                    rotate: none;
+                }
+
+                span {
+                    margin-top: 20px;
+                    margin-bottom: 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

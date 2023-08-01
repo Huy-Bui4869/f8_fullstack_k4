@@ -58,6 +58,9 @@ img {
 .section-landing input[type=radio]:first-of-type:checked ~ .landing-form-box .form-login {
   display: block;
 }
+.section-landing input[type=radio]:first-of-type:checked ~ .landing-form-box .form-login .auto_check > input {
+  border-color: #615dfa;
+}
 .section-landing input[type=radio]:last-of-type:checked ~ .landing-info .tab-form label:last-of-type {
   background: #fff;
   color: #3e3f5e;
@@ -277,6 +280,20 @@ img {
   margin-top: 40px;
   margin-bottom: 0;
   line-height: 1.4rem;
+  position: relative;
+}
+.section-landing .landing-form-box .form-box form > p::after, .section-landing .landing-form-box .form-box form > p::before {
+  content: "";
+  width: calc((100% - 180px) / 2);
+  height: 1px;
+  background: #eaeaf5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+.section-landing .landing-form-box .form-box form > p::after {
+  left: calc(100% - (100% - 180px) / 2);
 }
 .section-landing .landing-form-box .form-box form ul.list-link-icon {
   display: flex;

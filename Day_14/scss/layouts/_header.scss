@@ -1,0 +1,153 @@
+.header {
+    box-shadow: 0px 1.6666666269302368px 8.333333015441895px 0px rgba(0, 0, 0, 0.15);
+    padding: 14px 0;
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .logo {
+        height: 75px;
+
+        img {
+            max-height: 100%;
+            width: auto;
+        }
+    }
+
+
+    .header-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        // cần có height
+        height: 100%;
+
+        .navbar {
+            ul {
+                display: flex;
+
+                li {
+                    padding: 0 25px;
+
+                    a {
+                        font-weight: 600;
+                        padding-bottom: 44px;
+                    }
+
+                    &.active {
+                        a {
+                            color: $primaryColor;
+                            border-bottom: 1.667px solid $primaryColor;
+                        }
+                    }
+
+                    &:hover {
+                        @extend .active
+                    }
+                }
+            }
+        }
+
+        .cart-icon {
+            padding: 0 25px;
+
+            a {
+                display:inline-block;
+                position: relative;
+
+                span {
+                    position: absolute;
+                    top: -4px;
+                    right: -8px;
+                    background-color: $secondaryColor;
+                    color: #fff;
+                    padding: 0 5px;
+                    border-radius: 50%;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .search-icon {
+            padding-left: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .header {
+
+        .menu-toggle {
+            display: flex;
+            align-items: center;
+            label {
+                font-size: 2.5rem;
+            }
+        }
+
+        .logo {
+            @include flexCenter;
+        }
+
+        .header-nav {
+
+            input[type="checkbox"] {
+                &:checked {
+                    ~ .navbar {
+                        translate: 0;
+                    }
+                    
+                    ~ .overlay {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 1;
+                opacity: 0;
+                visibility: hidden;
+                transition-property: opacity, visibility;
+                transition: .3s ease;
+            }
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 2;
+                background: $primaryColor;
+                padding: 20px 0;
+                min-width: 250px;
+                translate: -100%;
+                transition: translate .3s ease-in-out;
+
+                ul {
+                    display: block;
+                    li {
+                        a {
+                            color: #fff !important;
+                            border: 0 !important;
+                            display: block;
+                            padding: 10px 0;
+                        }
+                    }
+                }
+            }
+
+            .search-icon {
+                padding-left: 0;
+            }
+        }
+
+    }
+}
