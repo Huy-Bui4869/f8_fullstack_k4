@@ -93,7 +93,7 @@ ol {
 }
 .header .header-nav .navbar ul li a {
   font-weight: 600;
-  padding-bottom: 44px;
+  padding-bottom: 41px;
 }
 .header .header-nav .navbar ul li.active a, .header .header-nav .navbar ul li:hover a {
   color: #46b20f;
