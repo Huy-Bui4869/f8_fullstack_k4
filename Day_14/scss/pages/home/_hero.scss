@@ -33,6 +33,7 @@
         background-color: $bgSectionHero;
         margin-left: 21px;
         position: relative;
+        z-index: -1;
 
         .hero_image-inner {
             display: flex;
