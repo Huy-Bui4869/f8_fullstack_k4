@@ -4,6 +4,12 @@
     align-items: center;
 }
 
+@mixin flexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 @mixin size($width, $height: $width) {
     width: $width;
     height: $height;

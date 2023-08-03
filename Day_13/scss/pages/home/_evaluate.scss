@@ -1,26 +1,68 @@
+// SCSS chung
+main {
+    section {
+        &.section {
+            .title-section {
+                max-width: 644px;
+                margin: 0 auto;
+                text-align: center;
+                margin-bottom: 25px;
+                
+                .title {
+                    font-size: 3.16rem;
+                    font-weight: 800;
+                    line-height: 4.1rem;
+                    max-width: 558px;
+                    margin: 0 auto;
+                }
+        
+                .desc-title-section {
+                    font-weight: 400;
+                    line-height: 2rem;
+                    margin-top: 24.33px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    main {
+        section {
+            &.section {
+                .title-section {
+                    .title {
+                        font-size: 28px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .evaluate-section {
     margin-top: 100px;
 
-    .title-section {
-        max-width: 644px;
-        margin: 0 auto;
-        text-align: center;
-        margin-bottom: 25px;
+    // .title-section {
+    //     max-width: 644px;
+    //     margin: 0 auto;
+    //     text-align: center;
+    //     margin-bottom: 25px;
 
-        .title {
-            font-size: 3.16rem;
-            font-weight: 800;
-            line-height: 4.1rem;
-            max-width: 558px;
-            margin: 0 auto;
-        }
+    //     .title {
+    //         font-size: 3.16rem;
+    //         font-weight: 800;
+    //         line-height: 4.1rem;
+    //         max-width: 558px;
+    //         margin: 0 auto;
+    //     }
 
-        .desc-title-section {
-            font-weight: 400;
-            line-height: 2rem;
-            margin-top: 24.33px;
-        }
-    }
+    //     .desc-title-section {
+    //         font-weight: 400;
+    //         line-height: 2rem;
+    //         margin-top: 24.33px;
+    //     }
+    // }
 
     .evaluate-section-inner {
         height: 597px;

@@ -1,5 +1,6 @@
 .hero-section {
     width: 100%;
+    overflow: hidden;
 
     .hero_content {
 
@@ -28,12 +29,13 @@
     }
 
     .hero_image {
-        width: calc(50vw - 21px);
+        width: 50vw;
         height: 720px;
         background-color: $bgSectionHero;
         margin-left: 21px;
         position: relative;
         z-index: -1;
+        border-radius: 16.667px 0px 0px 16.667px;
 
         .hero_image-inner {
             display: flex;
@@ -52,36 +54,33 @@
     
             span {
                 display: block;
-                max-width: 560px;
+                max-width: 600px;
                 font-weight: 800;
                 font-size: 16.6rem;
-                line-height: 16.6rem;
+                line-height: 1;
                 text-transform: uppercase;
                 color: #216000;
-                opacity: 0.15000000596046448;
-                margin-left: 55px;
-                // 
-                // rotate: 90deg;
-                // order: 2;
-                margin-bottom: -144px;
+                opacity: 0.15;
+                margin: 0 auto -144px;
             }
         }
     }
 }
 
-@media screen and (max-width: 1599px) {
+@media screen and (max-width: 1599.98px) {
     .hero-section {
         .hero_image {
             .hero_image-inner {
                 span {
-                    line-height: 14.5rem;
+                    font-size: 15rem;
+                    max-width: 560px;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 1499px) {
+@media screen and (max-width: 1499.98px) {
     .hero-section {
         .hero_image {
             height: 700px;
@@ -94,14 +93,13 @@
 
                 span {
                     font-size: 14rem;
-                    line-height: 14rem;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 1399px) {
+@media screen and (max-width: 1399.98px) {
     .hero-section {
         .hero_image {
             height: 600px;
@@ -115,44 +113,28 @@
 
                 span {
                     font-size: 13rem;
-                    line-height: 13rem;
-                    max-width: 450px;
-                    margin: 0 auto -120px;
+                    max-width: 460px;
+                    margin-bottom: -120px;
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 1299px) {
+@media screen and (max-width: 1299.98px) {
     .hero-section {
         .hero_image {
             height: 500px;
 
             .hero_image-inner {
                 .logo-section {
-                    max-width: 500px;
+                    max-width: 480px;
                 }
 
                 span {
-                    font-size: 12rem;
-                    line-height: 12rem;
-                    margin-bottom: -100px;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1107px) {
-    .hero-section {
-        .hero_image {
-            margin-left: -10px;
-            width: calc(50vw + 10px);
-
-            .hero_image-inner {
-                span {
-                    line-height: 11rem;
+                    font-size: 11rem;
+                    margin-bottom: -105px;
+                    max-width: 400px;
                 }
             }
         }
@@ -161,7 +143,6 @@
 
 @media screen and (max-width: 991.98px) {
     .hero-section {
-        overflow: hidden;
         padding-top: 80px;
 
         .hero_content {
@@ -186,13 +167,13 @@
             width: 100%;
             position: static;
             margin-left: 0;
+            border-radius: 0;
             position: relative;
 
             &::before {
                 content: "";
                 display: block;
-                width: 100%;
-                height: 100%;
+                @include size(100%);
                 transform: scaleX(2);
                 position: absolute;
                 background: $bgSectionHero;
@@ -210,7 +191,7 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
     .hero-section {
         .hero_image {
             height: 400px;
@@ -225,7 +206,6 @@
 
                 span {
                     font-size: 8rem;
-                    line-height: 8rem;
                     max-width: 300px;
                     margin-bottom: -60px;
                 }
@@ -234,42 +214,22 @@
     }
 }
 
-@media screen and (max-width:575px) {
-    .hero-section {
-        .hero_image {
-            .hero_image-inner {
-
-                .logo-section {
-                    max-width: 310px;
-                }
-
-                span {
-                    font-size: 7rem;
-                    line-height: 6.5rem;
-                    max-width: 270px;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 576.98px) {
     .hero-section {
         .hero_image {
             height: 100%;
             position: static;
-            background: $bgSectionHero;
+            border-radius: 16.67px;
 
             &::before {
                 display: none;
             }
 
             .hero_image-inner {
-                height: 100%;
                 width: 100%;
-                rotate: none;
+                height: 100%;
                 transform: none;
-
+                rotate: none;
                 .logo-section {
                     rotate: none;
                 }
