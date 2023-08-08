@@ -207,4 +207,10 @@ function loop(n) {
     return 1 / n + loop(n - 1);
 }
 
-console.log(`Giá trị của biểu thức S = ${loop(5)}`);
+var n = 3;
+
+if (n % 1 !== 0 || n < 1) {
+    console.log(`Số không hợp lệ`)
+} else {
+    console.log(`Giá trị của biểu thức S = ${loop(n)}`);
+}
