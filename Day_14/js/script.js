@@ -10,7 +10,6 @@ var a = 8,
 a += b; // 18
 b = a - b; // 8
 a = a - b; // 10
-// b = (a + b) - a;
 
 console.log(`Kết quả là: ${a} ${b}`);
 
@@ -31,17 +30,16 @@ Bài 3: Tìm số lớn nhất
  Output: Tìm số lớn nhất trong 3 số và hiển thị kết quả
 */
 var j = 37,
-    k = 223,
-    m = 223,
-    biggestNumber;
+    k = 22,
+    m = -223;
+var biggestNumber = j;
 
-if (j >= k && j >= m) {
-    biggestNumber = j;
-} else if (k >= j && k >= m) {
-    biggestNumber = k;
-} else if (m >= j && m >= k) {
-    biggestNumber = m;
+if (biggestNumber < k) {
+    biggestNumber = k
+} else if (biggestNumber < m){
+    biggestNumber = m
 }
+
 console.log(`Số lớn nhất là : ${biggestNumber}`)
 
 
@@ -53,7 +51,6 @@ Input: Cho trước 2 số a, b
 Output:
 Kiểm tra 2 số cùng dấu hay không và hiển thị kết quả ra màn hình
 */
-
 var i = 1,
     d = -2;
     
@@ -75,13 +72,13 @@ Input: Cho trước 3 số a, b, c
 Output:
 Thực hiện đổi chỗ 3 số a, b, c sao cho 3 số có thứ tự tăng dần
 */
-
-var z = 10, x = 18, c = 0,
+var z = 20221, x = 1811, c = 120,
     biggest = z;
 
 if (z > x) {
     z = x // 18
     x = biggest // 10
+    biggest = z;
 }
 // 10, 18, 0
 if (z > c) {
@@ -97,27 +94,3 @@ if (x > c) {
 // 0, 10, 18
 
 console.log(`Sắp xếp 3 số tăng dần ${z}, ${x}, ${c}`);
-
-
-// var z = 2, x = 0, c = -4,
-//     smallest, biggest;
-
-// if (z <= x && z <= c) {
-//     smallest = z;
-// } else if (x <= z && x <= c) {
-//     smallest = x;
-// } else if (c <= x && c <= z) {
-//     smallest = c;
-// }
-
-// if (z >= x && z >= c) {
-//     biggest = z;
-// } else if (x >= z && x >= c) {
-//     biggest = x;
-// } else if (c >= x && c >= z) {
-//     biggest = c;
-// }
-
-// var fit = (z + x + c) - smallest - biggest;
-
-// console.log(`Sắp xếp ${smallest}, ${fit}, ${biggest}`);
