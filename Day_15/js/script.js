@@ -6,7 +6,7 @@
 // Nếu số km > 120 km sẽ được giảm 10% trên tổng số tiền
 console.log("Bài tập 1");
 
-var km = 0,
+const km = 440,
     money = 0;
 
 if (km > 0) {
