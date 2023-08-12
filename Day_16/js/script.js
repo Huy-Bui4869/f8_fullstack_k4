@@ -93,6 +93,8 @@ function convert(number) {
 
   if (number < 10) {
     return check(number);
+  } else if (number = 10) {
+    return "mười";
   }
 
   if (number > 10 && number < 100 ) {
@@ -118,7 +120,7 @@ function convert(number) {
   return result;
 }
 
-var numbers = 9900; // Số cần đổi
+var numbers = 10; // Số cần đổi
 
 if (numbers % 1 === 0 && 0 <= numbers && numbers < 10000) {
   console.log(convert(numbers));
