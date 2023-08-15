@@ -10,7 +10,7 @@ var fibonaci = function (a) {
   return fibonaci(a - 1) + fibonaci(a - 2);
 };
 
-var n = 3;
+var n = 5;
 
 if (n % 1 === 0 && n > 0) {
   var showFb = "";
@@ -33,7 +33,7 @@ if (n % 1 === 0 && n > 0) {
 // Viết hàm đảo ngược số nguyên với tham số là số cần đảo ngược
 // Ví dụ: Khi gọi hàm và truyền đối số 12345 sẽ trả về kết quả 54321
 
-var ramdomNumber = 12345; //Số cần đảo ngược
+var ramdomNumber = 1234567; //Số cần đảo ngược
 
 function reverse(e) {
   if (e < 10) {
@@ -68,6 +68,41 @@ if (ramdomNumber % 1 === 0 && ramdomNumber >= 0) {
 
 var check = ["không", "một", "hai", "ba", "bốn", "năm", "sáu", "bẩy", "tám", "chín"];
 
+// function a() {
+//   switch (check) {
+//     case 0:
+//       "không";
+//       break;
+//     case 1:
+//       "một";
+//       break;
+//     case 2:
+//       "hai";
+//       break;
+//     case 3:
+//       "ba";
+//       break;
+//     case 4:
+//       "bốn";
+//       break;
+//     case 5:
+//       "năm";
+//       break;
+//     case 6:
+//       "sáu";
+//       break;
+//     case 7:
+//       "bảy";
+//       break;
+//     case 8:
+//       "tám";
+//       break;
+//     case 9:
+//       "chín";
+//       break;
+//   }
+// }
+
 var ngan, tram, chuc, donVi, result, a;
 var showNumber = function(c) {
   ngan = parseInt(c / 1000); //lấy số hàng ngàn
@@ -92,10 +127,11 @@ function convert(number) {
   showNumber(number);
 
   if (number < 10) {
-    return check(number);
+    return check[number];
   } else if (number = 10) {
-    return "mười";
+    // return "mười";
   }
+
 
   if (number > 10 && number < 100 ) {
     if (number % 10 === 0) {
@@ -105,25 +141,23 @@ function convert(number) {
     } else {
         return check[chuc] + " " + check[donVi];
     }
-  }
-  exchange();
-
-  if (number % 1000 === 0 && number >= 1000) {
+  } else if (number >= 100 && number < 1000) {
+    exchange();
+    result = check[tram] + " trăm " + a;
+  } else if (number % 1000 === 0 && number >= 1000) {
     result = check[ngan] + " ngàn";
   } else {
+    exchange();
     result = check[ngan] + " ngàn " + check[tram] + " trăm " + a;
   }
 
-  if (number >= 100 && number < 1000) {
-    result = check[tram] + " trăm " + a;
-  }
   return result;
 }
 
-var numbers = 10; // Số cần đổi
+var number = 200; // Số cần đổi
 
-if (numbers % 1 === 0 && 0 <= numbers && numbers < 10000) {
-  console.log(convert(numbers));
+if (number % 1 === 0 && 0 <= number && number < 10000) {
+  console.log(convert(number));
 } else {
   console.log("Số không hợp lệ");
 }
