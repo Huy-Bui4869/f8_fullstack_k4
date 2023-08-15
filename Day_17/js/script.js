@@ -1,4 +1,4 @@
-var adc = `Lorem Ipsum is simply dummy`;
+var adc = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum have `;
 var content = adc;
 var content2 = adc;
 var position, result;
@@ -17,10 +17,9 @@ function about() {
 
     if (position === -1) {
         result = content2.slice(0, position2) + `<span style= "color: red;">${content.slice(0, content.length)}</span>`;
-
+        
         position2 = 0;
         content = adc;
-        content2 = adc;
     }
 
     document.getElementById("Creeping").innerHTML = result;
