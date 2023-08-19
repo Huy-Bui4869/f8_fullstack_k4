@@ -87,15 +87,13 @@ console.log(filterArrays(array));
 // Chèn thêm 1 số vào bất kỳ vị trí nào trong mảng mà không làm thay đổi thứ tự sắp xếp của mảng
 
 var arr = [5, 3, 8, 1, 2];
-var element = 11;
-
-console.log(arr.length);
-
-arr.sort(function (next, pre) {
-    return next - pre;
-});
+var element = 7;
 
 function insertElement(arr, element) {
+    arr.sort(function (next, pre) {
+        return next - pre;
+    });
+
     if (element > arr[arr.length - 1]) {
         arr.push(element);
     } else {
