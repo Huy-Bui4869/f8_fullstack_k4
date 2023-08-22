@@ -1,24 +1,27 @@
 // # Bài 01
 // Cho trước 1 mảng số nguyên, yêu cầu tìm số lớn nhất, nhỏ nhất trong mảng và vị trí
 var arrNumbers = [1, 10, 100, 700, 300, 8,666];
+var max, indexMax, min, indexMin;
 
-var max = arrNumbers[0], indexMax;
-var min = arrNumbers[0], indexMin;
-
-for (var i in arrNumbers) {
-    if (max < arrNumbers[i]) {
-        max = arrNumbers[i];
-        indexMax = i;
+if (arrNumbers.length > 0) {
+    max = arrNumbers[0];
+    min = arrNumbers[0]; 
+    for (var i in arrNumbers) {
+        if (max < arrNumbers[i]) {
+            max = arrNumbers[i];
+            indexMax = i;
+        }
+    
+        if (min > arrNumbers[i]) {
+            min = arrNumbers[i];
+            indexMin = i;
+        }
     }
-
-    if (min > arrNumbers[i]) {
-        min = arrNumbers[i];
-        indexMin = i;
-    }
+    console.log(`Số lớn nhất: ${max} - index[${indexMax}]`);
+    console.log(`Số nhỏ nhất: ${min} - index[${indexMin}]`);
+} else {
+    console.log("Danh sách rỗng");
 }
-
-console.log(`Số lớn nhất: ${max} - index[${indexMax}]`);
-console.log(`Số nhỏ nhất: ${min} - index[${indexMin}]`);
 
 
 
