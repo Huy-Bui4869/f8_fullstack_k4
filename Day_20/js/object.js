@@ -42,12 +42,18 @@ const customers = [
     { name: "Nguyễn Văn C", age: 12, address: "TP.HCM" },
   ];
 
+var condition = customers.every(function (customer) {
+    typeof customer.name === "string" && customer.name &&
+    typeof customer.age === "number" && customer.age && customer.age > 0 && customer.age % 1 === 0 &&
+    typeof customer.address === "string" && customer.address
+});
+
 var Constructor = function (name, age, address) {
     var current = this;
     current.name = name;
     current.age = age;
     current.address = address;
-}
+};
 
 var createCustomers = function (arr) { 
     var newArr = arr.map(function (item) {
@@ -55,12 +61,10 @@ var createCustomers = function (arr) {
         var news = new Constructor(item.name, item.age, item.address);
         news.shortName = shortName;
         return news;
-    })
-    arrange(newArr)
-
+    });
+    arrange(newArr);
     return newArr;
 };
-
 //Tạo shortName.
 function getName(item) {
     var names = item.split(" ");
@@ -81,7 +85,12 @@ function arrange(a) {
 
 // console.log(customers);
 const result = createCustomers(customers); // Tạo hàm createCustomers này. return về mảng mới.
-console.log(result);
+
+if (condition) {
+    console.log(result);
+} else {
+    console.log("Kiểm tra lại thông tin");
+}
 
 
 
@@ -104,7 +113,7 @@ var User = function (name, password, email) {
     current.email = email;
 }
 
-const data = [];
+const data = []; //
 var handleRegister = function (name, password, email) {
     if (name && password && email) {
         var newUser = new User(name, password, email)
