@@ -80,7 +80,7 @@ console.log(colors);
 
 
 
-
+console.log("Bài tập 4");
 // # Bài 4
 // Viết làm vòng lặp filter trong Array. Đặt tên là filter2()
 var users = ["Nam", "Dũng", "An", "Hoàng", "Lan"];
