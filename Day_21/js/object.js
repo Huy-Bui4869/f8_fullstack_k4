@@ -43,11 +43,13 @@ var datas =
 
 function buildTree(arr, parentId = 0) {
     var result = [];
+    if (!Array.isArray(arr) || arr.length === 0) return "Đầu vào không hợp lệ"
   
     for (var value of arr) {      
         if (value.parent === parentId) {
-
+            // console.log(value.id);
             var children = buildTree(arr, value.id)
+            // console.log(value.id, children);
             if (children.length > 0) { 
                 value.children = children;
             }
@@ -84,25 +86,9 @@ var result = numbers.reduce(function (pre, current) {
     return pre + current
 });
 var result2 = numbers.reduce2(function (pre, current) {
-    console.log(pre, current);
+    // console.log(pre, current);
     return pre + current;
 });
 
 console.log(result); //21.
 console.log(result2); //21.
-
-   // if (initialValue === undefined) {
-    //     prev = this[0];
-    //     for (var i = 1;i < this.length; i++) {
-    //         newPrev = cb(prev, this[i])
-    //         prev = newPrev;
-    //     }
-    //     return prev;
-    // } else {
-    //     prev = initialValue;
-    //     for (var i = 0;i < this.length; i++) {
-    //         returnPrev = cb(prev, this[i])
-    //         prev = returnPrev;
-    //     }
-    //     return prev;
-    // }
