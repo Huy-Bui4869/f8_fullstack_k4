@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dan Chi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <head class="header">
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/image/logo.svg" alt="" />
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li>
+              <button class="btns js-btn-form">
+                <span>Đăng Nhập</span>
+                <i class="fa-regular fa-user"></i>
+              </button>
+            </li>
+            <li>
+              <button class="btns">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </head>
+
+    <!-- form đăng nhập và đăng ký -->
+    <div class="form-container">
+      <div class="overlay"></div>
+      <div class="card-form">
+        <ul class="list-form">
+          <li><button class="js-form-login">Đăng nhập</button></li> <!-- đã bỏ .active-->
+          <li><button class="js-form-register">Đăng ký</button></li>
+        </ul>
+
+        <!-- Form đăng nhập -->
+        <div class="card-form-login"> <!-- đã bỏ .block -->
+          <p>với các tài khoản mạng xã hội</p>
+          <ul class="link-login">
+            <li>
+              <a href="">
+                <i class="fa-brands fa-google"></i>
+                <span>Google</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa-brands fa-facebook"></i>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+          <div class="line">
+            <span>hoặc</span>
+          </div>
+          <span class="notification login"></span>
+          <form action="">
+            <label class="input-form">
+              <span>Email</span>
+              <input type="email" class="email" placeholder="Email" required/>
+              <span class="email_error"></span>
+            </label>
+            <label class="input-form">
+              <span>Mật khẩu</span>
+              <input type="password" class="password" placeholder="Mật khẩu" required/>
+              <span class="password_error"></span>
+            </label class="input-form">
+            <div class="card-link">
+              <a href="">Quên mật khẩu?</a>
+            </div>
+            <button class="btn-form login">Đăng nhập</button>
+          </form>
+        </div>
+
+        <!-- form đăng ký -->
+        <div class="card-form-register">
+          <p>Hoàn thành đăng ký, và bắt đầu trải nghiệm ngay!</p>
+          <span class="notification register"></span>
+          <form>
+            <label class="input-form">
+              <span>Họ và tên</span>
+              <input type="text" class="text" placeholder="Họ và tên" required/>
+              <span class="text_errors"></span>
+            </label>
+            <label class="input-form">
+              <span>Email</span>
+              <input type="email" class="email" placeholder="Email" required/>
+              <span class="email_errors"></span>
+            </label>
+            <label class="input-form">
+              <span>Mật khẩu</span>
+              <input type="password" class="password" placeholder="Mật khẩu" required/>
+              <span class="password_errors"></span>
+            </label>
+            <div class="texts">
+              <p>
+                Bằng cách đăng ký tài khoản, bạn cũng đồng thời chấp nhận mọi
+                <a href="#">điều kiện về qui định và chính sách của Dân trí</a>
+              </p>
+            </div>
+            <button class="btn-form register">Đăng ký</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

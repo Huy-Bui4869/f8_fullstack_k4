@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: #757575;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+head.header {
+    background-color: #ddd;
+    border-bottom: 2px solid #757575;
+}
+
+.container {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.navbar > ul {
+    display: flex
+}
+
+.navbar > ul > li > button.btns {
+    background: transparent;
+    color: #757575;
+    font-size: 1.5rem;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.navbar > ul > li:first-child > button.btns {
+    border-left: 1px solid #757575;
+    padding: 6px 15px;
+}
+
+.navbar > ul > li > button.btns > i {
+    margin-left: 5px;
+    font-size: 1.8rem;
+}
+
+.navbar > ul a {
+    padding: 8px 12px;
+}
+
+/*form đăng nhập và đăng ký*/
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.js-block {
+    display: flex;
+}
+
+.form-container .card-form {
+    width: 460px;
+    background-color: #fff;
+}
+
+.form-container .card-form .card-form-login,
+.form-container .card-form .card-form-register {
+    padding: 0 40px 30px;
+    display: none;
+}
+
+.block {
+    display: block !important;
+}
+
+.form-container .card-form .list-form {
+    display: flex;
+}
+
+.form-container .card-form .list-form li {
+    width: 50%;
+}
+
+.form-container .card-form .list-form li > button {
+    width: 100%;
+    height: 56px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #eee;
+    color: #999;
+}
+
+button.active {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+.card-form-register > p,
+.card-form-login > p {
+    color: #1a1a1a;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 16px 0;
+}
+
+
+.card-form-login ul.link-login {
+    display: flex;
+    column-gap: 20px;
+}
+
+.card-form-login ul.link-login > li {
+    width: 100%;
+    height: 45px;
+    background-color: #e2e8f0;
+    border-radius: 5px;
+    line-height: 45px;
+}
+
+.card-form-login ul.link-login > li > a {
+    color: #333;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-form-login ul.link-login > li > a > i {
+    font-size: 2.4rem;
+    color: #0a0a56;
+}
+
+.card-form-login .line {
+    color: #1a1a1a;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 16px 0;
+    position: relative;
+}
+
+.card-form-login .line::after,
+.card-form-login .line::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 42%;
+    height: 1px;
+    background: #ddd;
+}
+
+.card-form-login .line::after {
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+label + label {
+    display: block;
+    margin-top: 16px;
+}
+
+label > input {
+    padding: 10px 16px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+label > span:first-of-type {
+    display: inline-block;
+    padding-bottom: 4px;
+    font-size: 1.4rem;
+}
+
+.card-form-login form .card-link {
+    font-size: 1.4rem;
+    margin: 16px 0;
+    display: flex;
+    justify-content: right;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.form-container .card-form .btn-form {
+    background: #1a7900;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    height: 44px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.card-form-register form .texts {
+    font-size: 1.4rem;
+    color: #757575;
+    margin: 16px 0;
+}
+
+.card-form-register form .texts a {
+    color: blue;
+}
+
+span.notification,
+input + span {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: red;
+    padding-top: 6px;
+    font-style: italic;
+}
+
+span.notification {
+    padding-bottom: 10px;
+    padding-top: 0;
+}
