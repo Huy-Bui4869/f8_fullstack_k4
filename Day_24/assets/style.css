@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+html {
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --color: #8758ff;
+}
+
+body {
+    background: var(--color);
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.container .todoWrapper {
+    background-color: #1a1a40;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.container .todoWrapper .title {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.container .todoWrapper .todoForm {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.todoForm .todoInput {
+    padding: 8px 16px;
+    width: 300px;
+    border: 1px solid var(--color);
+    background: transparent;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.todoForm .todoBtn {
+    padding: 9px;
+    color: #fff;
+    background-color: var(--color);
+    font-size: 1.6rem;
+}
+
+.todoList .todoItem {
+    background-color: var(--color);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.todoList .todoItem .iconItem {
+    display: flex;
+    gap: 10px;
+}

@@ -54,7 +54,6 @@ buyBtnRegister.addEventListener("click", function () {
 });
 
 //Lấy các thẻ input trong form
-// var handleInputs = $$(".input-form input")
 var handleInputLogin = $$(".card-form-login .input-form input")
 var handleInputRegister = $$(".card-form-register .input-form input")
 
@@ -168,7 +167,7 @@ handleBtn.forEach(function (item) {
     item.addEventListener("click", function () {
         if (item.classList.contains("login")) {           
             handleInputLogin.forEach(function (value) {
-                if (validate(value)) {
+                if (validate(value, "check")) {
                     notificationLogin.innerHTML = "Đăng nhập thành công";
                 }
             })
@@ -183,3 +182,5 @@ handleBtn.forEach(function (item) {
         }
     })
 });
+
+//Ẩn/Hiện mật khẩu

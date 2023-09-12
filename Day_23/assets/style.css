@@ -252,3 +252,21 @@ span.notification {
     padding-bottom: 10px;
     padding-top: 0;
 }
+
+label.input-form {
+    position: relative;
+}
+
+.icon-eye > .fa-regular {
+    color: #757575;
+    display: block;
+    background: #fff;
+    padding: 4px;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+}
+.d-none {
+    display: none !important;
+}
