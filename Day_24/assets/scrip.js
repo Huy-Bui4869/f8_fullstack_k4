@@ -48,25 +48,59 @@ todoList.addEventListener("click", function (e) {
         e.target.parentElement.parentElement.parentElement.remove();
     }
 });
-
 //Sửa
 todoList.addEventListener("click", function (e) {
     if (e.target.classList.contains("edit")) {
 
-        var el = e.target.parentElement.parentElement.parentElement;
+        var el = e.target.parentElement.parentElement.parentElement;//todoItem
         var value = el.querySelector(".textItem").innerText;
-        // console.log(value, el);
-        el.innerHTML = editForm(value);
+        console.log(value, el);
+        var c = el.innerHTML = editForm(value);// form sửa
+        console.log(c);
+        console.log(this);
+        //this_todoLisst
         this.addEventListener("click", function (e) {
+            if (e.target.classList.contains("todoInput")) {
+                e.preventDefault();
+                var items = e.target;
+                items.addEventListener("change", function () {
+                })
+            }
 
             if (e.target.classList.contains("todoBtn")) {
                 e.preventDefault();
-                var getForm = e.target.parentElement.parentElement;
+                var getForm = e.target.parentElement.parentElement;//.about_todoForm
+                // var a = e.target.parentElement;
+                console.log(getForm);
+                // var newValue = getForm.children[0].children[0];
+                var newValue = e.target.previousElementSibling;
+                console.log(newValue);
                 // console.log(getForm);
-                var newValue = getForm.querySelector(".todoInput").value;
-                // console.log(newValue);
-                getForm.innerHTML = addElTodoList(newValue)
+                // getForm.innerHTML = addElTodoList(a)
+                getForm.innerHTML = addElTodoList(newValue.value)
+                // a.outerHTML = addElTodoList(newValue);
+                // console.log(getForm);
             }
         })
     }
 });
+// todoList.addEventListener("click", function (e) {
+//     if (e.target.classList.contains("edit")) {
+
+//         var el = e.target.parentElement.parentElement;
+//         var value = el.querySelector(".textItem").innerText;
+//         // console.log(value, el);
+//         el.innerHTML = editForm(value);
+//         this.addEventListener("click", function (e) {
+
+//             if (e.target.classList.contains("todoBtn")) {
+//                 e.preventDefault();
+//                 var getForm = e.target.parentElement.parentElement;
+//                 // console.log(getForm);
+//                 var newValue = getForm.querySelector(".todoInput").value;
+//                 // console.log(newValue);
+//                 getForm.innerHTML = addElTodoList(newValue)
+//             }
+//         })
+//     }
+// });
