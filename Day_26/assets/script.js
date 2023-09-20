@@ -29,7 +29,7 @@ progressBar.addEventListener("mousedown", function (e) {
         document.addEventListener("mousemove", handleDrag)
         initialClientX = e.clientX
         currentValue = value;
-        handleInput(value)
+        handleInput(currentValue)
     }
 });
 
@@ -49,13 +49,14 @@ var handleDrag = function (e) {
 
 progressSpan.addEventListener("mousedown", function (e) {
     e.stopPropagation(); //Chặn hành động nổi bọt của span.
+    isDrag = true
 
     document.addEventListener("mousemove", handleDrag)
     initialClientX = e.clientX
 });
 
 document.addEventListener("mouseup", function () {
-    isDrag = false
+    // isDrag = false
     handleChange(value)
     document.removeEventListener("mousemove", handleDrag) 
     currentValue = value; //Lưu lần cuối cùng khi nhả chuột.
@@ -65,18 +66,24 @@ document.addEventListener("mouseup", function () {
 var times = 0;
 //1..Nhả chuột.
 var handleChange = function (value) {
-    
+    // audio.currentTime = (audio.duration * value) / 100;
 };
-var abc;
+
 //2..Bấm chuột xuống và kéo
 var handleInput = function (value) {//value__%.width
     times = (audio.duration * value) / 100;
     currentTimeElFirt.innerText = getTime(times);
-    // audio.currentTime = times;
-    if (!isDrag) {
-        audio.currentTime = times;
-    }
+    audio.currentTime = times;
+    // if (!isDrag) {
+    //     audio.currentTime = times;
+    // }
 };
+
+// var handleInput = function (value) {//value__%.width
+//     if (!isDrag) {
+//         audio.currentTime = (audio.duration * value) / 100;
+//     }
+// };
 
 //Hàm quy đổi tgian
 var getTime = function (seconds) {
