@@ -56,7 +56,7 @@ progressSpan.addEventListener("mousedown", function (e) {
 });
 
 document.addEventListener("mouseup", function () {
-    // isDrag = false
+    isDrag = false
     handleChange(value)
     document.removeEventListener("mousemove", handleDrag) 
     currentValue = value; //Lưu lần cuối cùng khi nhả chuột.
@@ -66,6 +66,9 @@ document.addEventListener("mouseup", function () {
 var times = 0;
 //1..Nhả chuột.
 var handleChange = function (value) {
+    if (!isDrag) {
+        audio.currentTime = times;
+    }
     // audio.currentTime = (audio.duration * value) / 100;
 };
 
@@ -73,10 +76,10 @@ var handleChange = function (value) {
 var handleInput = function (value) {//value__%.width
     times = (audio.duration * value) / 100;
     currentTimeElFirt.innerText = getTime(times);
-    audio.currentTime = times;
-    // if (!isDrag) {
-    //     audio.currentTime = times;
-    // }
+    // audio.currentTime = times;
+    if (!isDrag) {
+        audio.currentTime = times;
+    }
 };
 
 // var handleInput = function (value) {//value__%.width
@@ -128,6 +131,7 @@ audio.addEventListener("pause", function () {
 
 //kết thúc bài reset.
 audio.addEventListener("ended", function () {
-    audio.currentTime = 0
+    audio.currentTime = 0.01
     playBtn.innerHTML = playIcon
+    console.log(1);
 });

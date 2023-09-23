@@ -257,16 +257,26 @@ label.input-form {
     position: relative;
 }
 
-.icon-eye > .fa-regular {
-    color: #757575;
-    display: block;
-    background: #fff;
-    padding: 4px;
+.input-form .show-password {
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 16px;
-    transform: translateY(-50%);
+    bottom: 0;
+    color: #757575;
 }
+
+.input-form .show-password > i + i {
+    display: none;
+}
+
+.input-form .show-password.hidden > i:first-child {
+    display: none;
+}
+
+.input-form .show-password.hidden > i + i {
+    display: block;
+}
+
 .d-none {
     display: none !important;
 }

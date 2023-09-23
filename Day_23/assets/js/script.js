@@ -82,14 +82,13 @@ var resultCheckRegister = function () {
         }
     }
 }
-
 //Check sau khi thay đổi value
 handleInputLogin.forEach(function (value) {
-    value.addEventListener("blur", resultCheckLogin)
+    value.addEventListener("keydown", resultCheckLogin)
 });
 
 handleInputRegister.forEach(function (value) {
-    value.addEventListener("blur", resultCheckRegister)
+    value.addEventListener("keydown", resultCheckRegister)
 });
 
 // hàm check value
@@ -184,3 +183,17 @@ handleBtn.forEach(function (item) {
 });
 
 //Ẩn/Hiện mật khẩu
+var showPassword = document.querySelectorAll(".show-password")
+console.log(showPassword);
+showPassword.forEach((show) => {
+    show.addEventListener("click", function () {
+        var password = document.querySelector(".password")
+        if (this.classList.contains("hidden")) {
+            password.type = "text";
+            this.classList.remove("hidden")
+        } else {
+            password.type = "password"
+            this.classList.add("hidden")
+        }
+    })
+})
