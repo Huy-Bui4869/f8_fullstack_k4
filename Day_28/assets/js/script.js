@@ -165,7 +165,7 @@ function layoutWalk() {
   }
 
   divTop.innerText = "Tát nước đầu đình"
-  divBottom.innerText = "calvados"
+  divBottom.innerText = "Lynk Lee, Binz"
 }
 //layout
 function renderLyrics() {}
