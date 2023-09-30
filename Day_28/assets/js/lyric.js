@@ -5909,4 +5909,4 @@ var lyric2 = `
 // lyric = JSON.parse(lyric)
 
 // console.log(lyric);
-// console.log(lyric.data.sentences);
+var lyricss = lyric.data.sentences

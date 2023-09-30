@@ -140,7 +140,6 @@ body {
 
 .box-karaoke.open {
   transform: translateY(0);
-  /* transition: transform .5s ease-in; */
 }
 
 .header {
@@ -172,6 +171,7 @@ body {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  
 }
 
 .effect {

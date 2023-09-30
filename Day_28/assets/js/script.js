@@ -189,6 +189,8 @@ var divText = document.createElement("div")
 var divTop = document.createElement("p")
 var divBottom = document.createElement("p")
 divText.classList.add("html-music")
+divTop.style.textAlign = "center"
+divBottom.style.textAlign = "center"
 
 layoutWalk()
 header.append(divText)
@@ -304,7 +306,7 @@ function checkInLyric(lyric) {
 
       //Dạo nhạc khi thời gian giữa hai câu quá 5s...
       if ((nextStartTime - endTime) > 5000) {
-        // console.log(check);
+  
         // delay 1s sau đó hiện layout chờ...
         if (currTime > startTime && currTime < (endTime + 1000)) {
           var cauTruoc = [];
@@ -373,25 +375,3 @@ function checkInLyric(lyric) {
     }
   });
 };
-
-// if (check) {
-//   //Câu chẵn ở trên_mặc định.
-//   if (i % 2 === 0) {
-//     divTop.innerText = cauHienTai
-//     // divBottom.innerText = cauKeTiep //..............
-//   } else {
-//     // divTop.innerText = cauKeTiep //...........
-//     divBottom.innerText = cauHienTai
-//   }
-// } else {
-//   //Câu lẻ ở trên
-//   //sau khi dạo nhạc xong nếu bđ từ câu lẻ thì sẽ đẩy câu lẻ_trên, chẵn_xuống dưới.
-//   if (i % 2 !== 0) {
-//     divTop.innerText = cauHienTai
-//     // divBottom.innerText = cauKeTiep //...............
-//   } else {
-//     // divTop.innerText = cauKeTiep//............
-//     divBottom.innerText = cauHienTai
-//   }
-// }
-// console.log(check);
