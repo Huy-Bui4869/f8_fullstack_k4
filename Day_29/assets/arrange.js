@@ -67,6 +67,13 @@ function checkForConversion(curr) {
     handleMouseDown(items)
 }
 
+var scrolly = 0; //Lấy vị trí của thanh cuộn.
+window.addEventListener("scroll", function () {
+    //lấy tọa độ khi kéo thanh cuộn.
+    scrolly = window.scrollY
+    // scrollx = window.scrollX
+});
+
 var handleMouseDown = function (items) {
     Array.from(items).forEach(function (item) {
         item.addEventListener("mousedown", function (e) {
@@ -112,9 +119,16 @@ document.addEventListener("mousemove", function (e) {
         //Tạo bóng
         itemEl.style.opacity = 0.6
 
+        var positionY;
+        if (scrolly === 0) {
+            positionY = e.clientY - offsetY;
+        } else if (scrolly > 0) {
+            positionY = scrolly + (e.clientY - offsetY);
+        }
+
         //vị trí của bóng khi di chuyển.
-        floating.style.top = `${e.clientY - offsetY}px`;
-        floating.style.left = `${e.clientX - offsetX}px`
+        floating.style.top = `${positionY}px`;
+        floating.style.left = `${e.clientX - offsetX}px`;
 
         checkForConversion(e.clientY)
     }
