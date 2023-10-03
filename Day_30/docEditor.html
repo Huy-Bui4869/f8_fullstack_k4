@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doc Editor</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+    />
+    <link rel="stylesheet" href="./assets/docEditor.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="title-doc">Doc Editor</h3>
+
+      <div class="controls">
+        <div class="main-controls">
+          <div class="dropdown">
+            <button class="file">File</button>
+            <div class="sub-dropdown">
+              <button class="dropdown-item">New</button>
+              <button class="dropdown-item">Save as TXT</button>
+              <button class="dropdown-item">Save as PDF</button>
+            </div>
+          </div>
+
+          <input class="file-name" type="text" value="untitled" />
+        </div>
+
+        <div class="tools">
+          <button class="bold-btn"><b>b</b></button>
+          <button class="underline-btn"><u>u</u></button>
+          <button class="italic-btn"><i>i</i></button>
+          <input class="color-btn" type="color" />
+        </div>
+      </div>
+
+      <!-- <textarea
+        class="content"
+        contenteditable="true"
+        spellcheck="false"
+      ></textarea> -->
+      <div class="content" contenteditable="true" spellcheck="false"></div>
+
+      <div id="counter"></div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./assets/docEditor.js"></script>
+  </body>
+</html>
+
+<!-- 
+  - Thuộc tính spellcheck => chỉ định xem p.tử có được k.tra chính tả và ngữ pháp hay không.
+
+  - Thuộc tính contenteditable => xđ nội dung của p.tử có thể chỉnh sửa được hay không.
+    + Những điều sau đây có thể được kiểm tra chính tả:
+        ++Giá trị văn bản trong phần tử đầu vào (không phải mật khẩu)
+        ++V.bản trong phần tử <textarea>.
+        ++V.bản trong các phần tử có thể chỉnh sửa.
+
+  - Giá trị của 2 thuộc tính là true__false
+-->

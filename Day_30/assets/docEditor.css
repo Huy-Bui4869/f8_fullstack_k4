@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+.container {
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: 30px auto;
+    padding: 10px;
+}
+
+.container .title-doc {
+    padding: 8px 0;
+    border-bottom: 1px solid #8080809b;
+}
+
+.container .controls {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.controls .main-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.controls .main-controls .dropdown {
+    position: relative;
+}
+
+.controls .main-controls .dropdown .file {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 9px 12px;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.controls .main-controls .dropdown .file::after {
+    content: "\f0d7";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+.controls .main-controls .dropdown .sub-dropdown {
+    position: absolute;
+    left: 0;
+    top: 108%;
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.502);
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.controls .main-controls .dropdown .sub-dropdown.active {
+    display: block;
+}
+
+.controls .main-controls .dropdown .sub-dropdown .dropdown-item {
+    display: block;
+    width: 100%;
+    text-align: start;
+    padding: 5px 10px;
+    font-size: 1.6rem;
+    border: none;
+    background-color: transparent;
+    color: #525252;
+}
+
+.controls .main-controls .file-name {
+    font-size: 1.6rem;
+    padding: 0 4px;
+}
+
+.controls .tools {
+    display: flex;
+    gap: 8px;
+}
+
+.controls .tools > [class$="-btn"] {
+    width: 50px;
+    height: 100%;
+    background-color: #000000;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.controls .tools > [class$="-btn"]:hover {
+    opacity: 0.7;
+}
+
+.container .content {
+    width: 100%;
+    min-height: 300px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+.container #counter {
+    display: flex;
+    justify-content: end;
+    padding-top: 20px;
+    gap: 20px;
+}
