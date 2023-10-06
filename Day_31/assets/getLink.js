@@ -1,23 +1,22 @@
-"use strict";
-
 const counter = document.querySelector(".counter")
 const linkBtn = document.querySelector(".link-btn")
+linkBtn.style.cursor = "no-drop"
 
-let totalTime = 20;
+const totalTime = 20;
 let requestId, start;
 
-function checkTimes(currTime) {
+function checkTimes(timeStamp) {
   
   if (start === undefined) {
-    start = currTime
+    start = timeStamp;
   }
 
   //Tạo bộ đếm tính theo giây
-  let count = parseInt((currTime - start) / 1000);
+  let count = totalTime - parseInt((timeStamp - start) / 1000);
 
-  counter.textContent = (totalTime - count);
+  counter.textContent = count;
 
-  if ((totalTime - count) > 0) {
+  if (count > 0) {
     requestId = requestAnimationFrame(checkTimes);
   } else {
     linkBtn.disabled = false;
@@ -34,11 +33,6 @@ function checkTimes(currTime) {
 // });
 
 requestAnimationFrame(checkTimes)
-
-window.onload = function () {
-  linkBtn.disabled = true;
-  linkBtn.style.cursor = "no-drop"
-};
 
 linkBtn.addEventListener("click", function () {
   // console.log("click me");
