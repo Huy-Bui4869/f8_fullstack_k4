@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background: #03bdf0;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.container .content > h1 {
+    font-size: 38px;
+    line-height: 1;
+}
+
+.container .content > .counter {
+    font-size: 32px;
+    width: 55px;
+    height: 55px;
+    background: #fa581c;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+}
+
+.container .content > .link-btn {
+    font-size: 16px;
+    padding: 8px 32px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 99px;
+} 
