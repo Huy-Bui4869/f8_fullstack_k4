@@ -2,8 +2,17 @@ const counter = document.querySelector(".counter")
 const linkBtn = document.querySelector(".link-btn")
 linkBtn.style.cursor = "no-drop"
 
-const totalTime = 20;
-let requestId, start;
+const totalTime = 5;
+var requestId, start;
+
+const requestAnimationFrame =
+  window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame;
+
+const cancelAnimationFrame =
+  window.cancelAnimationFrame || window.mozCancelAnimationFrame;
 
 function checkTimes(timeStamp) {
   
@@ -18,23 +27,25 @@ function checkTimes(timeStamp) {
 
   if (count > 0) {
     requestId = requestAnimationFrame(checkTimes);
-  } else {
+  }
+  if (count === 0) {
     linkBtn.disabled = false;
     linkBtn.style.cursor = "pointer"
   }
 }
 
-// document.addEventListener("visibilitychange", (e) => {
-//   if (document.visibilityState === "visible") {
-//     requestAnimationFrame(checkTimes)
-//   } else {
-//     cancelAnimationFrame(requestId)
-//   }
-// });
+document.addEventListener("visibilitychange", (e) => {
+  if (document.visibilityState === "visible") {
+    requestAnimationFrame(checkTimes)
+  } else {
+    cancelAnimationFrame(requestId)
+  }
+});
 
-requestAnimationFrame(checkTimes)
+// requestAnimationFrame(checkTimes)
 
+// open(url, target)
 linkBtn.addEventListener("click", function () {
   // console.log("click me");
-  window.location.href="https://fullstack.edu.vn"
+  window.open("https://fullstack.edu.vn", "_blank")
 });
