@@ -22,13 +22,17 @@
   cursor: pointer;
 }
 
-.search-box .btn-voice:hover {
-  background-image: linear-gradient(90deg, #db0404, #d12d2d, #e44f4f);
+#search-box .btn-voice:hover {
+  background-image: linear-gradient(180deg, #db0404, #d12d2d, #e44f4f);
+}
+
+#search-box .btn-voice:active {
+  background:#bf0202
 }
 
 .notification {
-  margin-top: 15px;
-  font-size: 18;
+  margin-top: 20px;
+  font-size: 18px;
   color: green;
 }
 
@@ -41,5 +45,5 @@
   padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid green;
-  margin: 15px auto;
+  margin: 20px auto;
 }
