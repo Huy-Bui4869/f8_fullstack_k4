@@ -20,14 +20,34 @@
   color: #fff;
   background-image: linear-gradient(90deg, #6b0c6b, #c039c0, #c95cc9);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-#search-box .btn-voice:hover {
+#search-box .btn-voice > span {
+  position: relative;
+  z-index: 1;
+}
+
+#search-box .btn-voice::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  border-radius: 99px;
   background-image: linear-gradient(180deg, #db0404, #d12d2d, #e44f4f);
+  top: 0;
+  right: 0;
+  transition: width 0.5s ease;
 }
 
-#search-box .btn-voice:active {
-  background:#bf0202
+#search-box .btn-voice:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+#search-box .btn-voice:active::before {
+  background: #b60202;
 }
 
 .notification {
