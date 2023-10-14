@@ -6,7 +6,7 @@ var SpeechRecognitionEvent =
 const searchBox = document.querySelector("#search-box");
 const btnVoice = document.querySelector(".btn-voice");
 
-// Tạo một thể hiện mới của SpeechRecognition
+// Tạo một thể hiện mới của SpeechRecognition__xác định một phiên bản nhận dạng giọng nói để kiểm soát việc nhận dạng cho ứng dụng
 const recognition = new SpeechRecognition();
 
 // Đặt một số thuộc tính cho việc nhận diện
@@ -25,15 +25,19 @@ div.append(bottomContent);
 
 let isDarg; //xác định hành động nói
 let check;
+
+//Hàm hiển thị thông báo.
 function showNotification() {
   if (isDarg) {
     topContent.classList.add("active");
     topContent.innerHTML = "Hãy nói nội dung bạn muốn";
+
     bottomContent.innerText = "";
     bottomContent.classList.remove("style");
   } else {
     topContent.classList.remove("active");
     topContent.innerHTML = "Đã nói xong. Hy vọng kết quả như ý bạn.";
+
     bottomContent.classList.add("style");
 
     if (check) {
@@ -44,13 +48,14 @@ function showNotification() {
   }
 }
 
+//Hàm xử lý giọng nói.
 function handleVoice(text) {
   console.log(`Kết quả nhận được: ${text}.`);
   isDarg = false;
   check = true;
 
   text = text.toLowerCase().replaceAll(".", "").replaceAll("?", "");
-  console.log(text);
+  // console.log(text);
 
   switch (text) {
     case "facebook":
@@ -127,7 +132,6 @@ function handleVoice(text) {
 // Bắt đầu nhận diện khi màn hình được nhấp vào
 btnVoice.onclick = () => {
   recognition.start();
-  // console.log("Sẵn sàng nhận lệnh bằng giọng nói.");
   isDarg = true;
 
   showNotification();
