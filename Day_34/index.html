@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <main id="root">
+      <div class="todos-container">
+        <h1 class="title-todos"><span>Smatyx</span> Todos App</h1>
+
+        <div class="todos-search">
+          <div class="todos-search_inner">
+            <input type="text" placeholder="Search Todos" class="search" />
+            <button class="btn-search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <button class="add-btn">Add Todos</button>
+        </div>
+
+        <div class="list-task">
+          <div id="task-top"></div>
+
+          <button class="completed">
+            Completed Todos <span class="number-complated">0</span>
+            <i class="fa-regular fa-circle-down"></i>
+          </button>
+
+          <div id="task-bottom"></div>
+        </div>
+      </div>
+
+      <div class="shadow">
+        <div class="shadow_inner">
+          <input type="text" class="add-todos" placeholder="Add Todos" />
+          <div class="btn-shadow">
+            <button class="save">Save</button>
+            <button class="cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./assets/script.js"></script>
+  </body>
+</html>

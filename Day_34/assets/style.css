@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Nunito', sans-serif;
+}
+button,
+input {
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --color-btn-green: #047857;
+    --boder-input-btn: #cfcfcf;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    position: relative;
+}
+
+button:hover::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.todos-container {
+    max-width: 768px;
+    width: 768px;
+    /* margin: 100px auto 0; */
+    padding: 24px 16px;
+}
+
+.todos-container .title-todos {
+    text-align: center;
+    font-size: 3.6rem;
+}
+
+.todos-container .title-todos > span {
+    background: linear-gradient(90deg, #5ef3f3 0%, #1d8534 50%, #30c051 100%);
+    -webkit-background-clip: text; /* cắt nền theo ảnh*/
+    color: transparent;
+}
+
+
+.todos-container .todos-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 12px;
+}
+
+.todos-container .todos-search .todos-search_inner {
+    position: relative;
+    width: 100%;
+}
+
+.todos-container .todos-search .todos-search_inner > input {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--boder-input-btn);
+    border-radius: 8px;
+}
+
+.todos-container .todos-search .todos-search_inner .btn-search {
+    font-size: 1.6rem;
+    width: 48px;
+    height: 41.6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: #0d49b9;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    translate: 0 -50%;
+}
+
+.todos-container .todos-search .add-btn {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--color-btn-green);
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-wrap: nowrap;
+    position: relative;
+}
+
+.todos-container .todos-search .add-btn.focus::before {
+    content: "";
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 8px;
+    background-color: #3bc69f;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-task .card-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding: 16px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.list-task .card-task > span {
+    font-size: 16px;
+}
+
+.list-task .card-task .tools {
+    display: flex;
+    gap: 10px;
+}
+
+.list-task .card-task .tools > button {
+    font-size: 1.8rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.list-task .card-task .tools > button.focus::before {
+    content: "";
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.list-task .card-task .tools > button.delete {
+    background-color: #b60404;
+}
+
+.list-task .card-task .tools > button.edit {
+    background-color: #0d49b9;
+}
+
+.list-task .card-task .tools > button.add {
+    background-color: #808080;
+}
+
+.list-task .card-task .tools > button.delete.focus::before {
+    background-color: #b60404a3;
+}
+
+.list-task .card-task .tools > button.edit.focus::before {
+    background-color: #0d49b9af;
+}
+
+.list-task .card-task .tools > button.add.focus::before {
+    background-color: #3bc69f;
+}
+
+#task-bottom .card-task .tools > button.add,
+.list-task .card-task .tools > button.add:hover {
+    background-color: var(--color-btn-green);
+}
+
+.list-task button.completed {
+    font-size: 1.6rem;
+    padding: 10px 16px;
+    margin-top: 12px;
+    background: #b9b5b5;
+    color: #fff;
+    border-radius: 6px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.list-task button.completed ~ #task-bottom {
+    /* opacity: 0;
+    visibility: hidden;
+    transition: .1s ease-in-out;
+    transition-property: opacity,  visibility; */
+    display: none;
+}
+
+.list-task button.completed > i {
+    rotate: -90deg;
+    transition: rotate .2s ease-in;
+}
+
+.list-task button.completed.focus {
+    background: var(--color-btn-green);
+    position: relative;
+}
+
+.list-task button.completed.focus::before {
+    content: "";
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: #3bc69f;
+    z-index: -1;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-task button.completed.focus ~ #task-bottom {
+    /* opacity: 1;
+    visibility: visible; */
+    display: block;
+}
+
+.list-task button.completed.focus > i {
+    rotate: 0deg;
+}
+
+/*  */
+.shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.shadow.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.shadow .shadow_inner {
+    width: 448px;
+    padding: 24px 24px 16px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.shadow .shadow_inner input {
+    width: 100%;
+    font-size: 1.6rem;
+    padding: 16px;
+    border: 1px solid #bdbdbd;
+    border-radius: 8px;
+    color: #333;
+}
+
+.shadow .shadow_inner .btn-shadow {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.shadow .shadow_inner .btn-shadow > button {
+    font-size: 1.6rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #fff;
+    background: var(--color-btn-green);
+}
+
+.shadow .shadow_inner .btn-shadow > button:last-of-type {
+    color: gray;
+    background-color: transparent;
+    border: 0.5px solid var(--boder-input-btn);
+}
