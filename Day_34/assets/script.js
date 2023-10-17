@@ -13,7 +13,8 @@ const btnCompleted = document.querySelector(".completed");
 const btnDelete = document.querySelectorAll(".delete");
 const numberComplated = btnCompleted.querySelector(".number-complated");
 
-const serverAPI = `http://localhost:3000`;
+// const serverAPI = `http://localhost:3000`;
+const serverAPI = `https://3f6tnp-3000.csb.app`;
 
 //Lấy dữ liệu từ server render ra giao diện.
 const getAndRenderTack = async () => {
