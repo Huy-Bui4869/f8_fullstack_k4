@@ -16,15 +16,14 @@ const numberComplated = btnCompleted.querySelector(".number-complated");
 // const serverAPI = `http://localhost:3000`;
 const serverAPI = `https://3f6tnp-3000.csb.app`;
 
-//Lấy dữ liệu từ server render ra giao diện.
-const getAndRenderTack = async () => {
-  const responseAPI = await fetch(`${serverAPI}/datas`);
-  const datas = await responseAPI.json();
-  // complete
-  const responseAPI2 = await fetch(`${serverAPI}/completed`);
-  const completedAPI = await responseAPI2.json();
-
-  taskTop.innerHTML = datas
+function renderHtml(arr) {
+  let check;
+  if (arr === "datas") {
+    check = true;
+  } else if (arr === "completedAPI") {
+    check = false;
+  }
+  return arr
     .map(
       ({ value, id, isCheck }) => `
               <div class="card-task">
@@ -36,7 +35,7 @@ const getAndRenderTack = async () => {
                       <button class="edit" onclick="editTack(${id}, ${isCheck})">
                         <i class="fa-solid fa-pen-to-square"></i>
                       </button>
-                      <button class="add" onclick="addTackCompleted(${id}, ${isCheck})" data-check="true">
+                      <button class="add" data-index=${id} onclick="addTackCompleted(${id}, ${isCheck})" data-check="${check}">
                         <i class="fa-regular fa-circle-check"></i>
                       </button>
                   </div>
@@ -44,30 +43,21 @@ const getAndRenderTack = async () => {
             `
     )
     .join("");
+}
+
+//Lấy dữ liệu từ server render ra giao diện.
+const getAndRenderTack = async () => {
+  const responseAPI = await fetch(`${serverAPI}/datas`);
+  const datas = await responseAPI.json();
+  // complete
+  const responseAPI2 = await fetch(`${serverAPI}/completed`);
+  const completedAPI = await responseAPI2.json();
+
+  taskTop.innerHTML = renderHtml(datas);
 
   numberComplated.innerText = completedAPI.length;
 
-  taskBottom.innerHTML = completedAPI
-    .map(
-      ({ value, id, isCheck }) => `
-                <div class="card-task">
-                    <span>${value}</span>
-                    <div class="tools">
-                        <button class="delete" onclick="deleteTack(${id}, ${isCheck})">
-                          <i class="fa-solid fa-trash"></i>
-                        </button>
-                        <button class="edit" onclick="editTack(${id}, ${isCheck})">
-                          <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button class="add" data-index=${id} onclick="addTackCompleted(${id}, ${isCheck})" data-check="false">
-                          <i class="fa-regular fa-circle-check"></i>
-                        </button>
-                    </div>
-                </div>
-              `
-    )
-    .join("");
-
+  taskBottom.innerHTML = renderHtml(completedAPI);
   clickButtonTools();
 };
 getAndRenderTack();
@@ -223,23 +213,19 @@ btnCompleted.addEventListener("click", () => {
 //_Xây dựng tính năng tìm kiếm
 inputSearch.addEventListener("keyup", () => {
   const valueCheck = inputSearch.value;
-  // console.log(valueCheck);
+
   getResultSearch(valueCheck);
 });
 
-const getResultSearch = async (valueCheck) => {
-  const responseAPI = await fetch(`${serverAPI}/datas`);
-  const datas = await responseAPI.json();
-
-  const responseAPI2 = await fetch(`${serverAPI}/completed`);
-  const completedAPI = await responseAPI2.json();
-  //   console.log(datas);
-  let css = {
-    "font-weight": 600,
-    "background-color": "#8bc7e8",
-  };
-
-  taskTop.innerHTML = datas
+//Render lại giao diện khi tìm kiếm.
+const renderHTMLSearch = (arr, valueCheck) => {
+  let check;
+  if (arr === "datas") {
+    check = true;
+  } else if (arr === "completedAPI") {
+    check = false;
+  }
+  return arr
     .map(({ value, id, isCheck }) => {
       if (value.includes(valueCheck)) {
         const newText = [...valueCheck.split("")];
@@ -249,35 +235,6 @@ const getResultSearch = async (valueCheck) => {
           `<b style="background: #7e9bac9e;">${newText.join("")}</b>`
         );
 
-        return `
-            <div class="card-task">
-              <span>${value}</span>
-              <div class="tools">
-                <button class="delete" onclick="deleteTack(${id}, ${isCheck})">
-                  <i class="fa-solid fa-trash"></i>
-                </button>
-                <button class="edit" onclick="editTack(${id}, ${isCheck})">
-                  <i class="fa-solid fa-pen-to-square"></i>
-                </button>
-                <button class="add" onclick="addTackCompleted(${id}, ${isCheck})" data-check="true">
-                  <i class="fa-regular fa-circle-check"></i>
-                </button>
-              </div>
-            </div>
-          `;
-      }
-    })
-    .join("");
-
-  taskBottom.innerHTML = completedAPI
-    .map(({ value, id, isCheck }) => {
-      if (value.includes(valueCheck)) {
-        const newText = [...valueCheck.split("")];
-
-        value = value.replaceAll(
-          valueCheck,
-          `<b style="background: #7e9bac9e;">${newText.join("")}</b>`
-        );
         return `
             <div class="card-task">
               <span>${value}</span>
@@ -299,11 +256,23 @@ const getResultSearch = async (valueCheck) => {
     .join("");
 };
 
+const getResultSearch = async (valueCheck) => {
+  const responseAPI = await fetch(`${serverAPI}/datas`);
+  const datas = await responseAPI.json();
+
+  const responseAPI2 = await fetch(`${serverAPI}/completed`);
+  const completedAPI = await responseAPI2.json();
+  //   console.log(datas);
+
+  taskTop.innerHTML = renderHTMLSearch(datas, valueCheck);
+  numberComplated.innerText = completedAPI.length;
+  taskBottom.innerHTML = renderHTMLSearch(completedAPI, valueCheck);
+};
+
 function clickButtonTools() {
   const tools = document.querySelectorAll(".tools");
 
   tools.forEach((tool) => {
-    // console.log(tool.children);
     Array.from(tool.children).forEach((but) => {
       but.addEventListener("mousedown", () => {
         if (!but.classList.contains("focus")) {
