@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+    />
+    <link rel="stylesheet" href="./assets/infinityScroll.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <h1 class="title-page">Tik Tok</h1>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="Tìm kiếm" />
+        <button class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <ul class="menu">
+        <li class="item">
+          <div>
+            <span></span>
+            <span>Tải lên</span>
+          </div>
+        </li>
+        <li class="item">
+          <a href="#!"><i class="fa-solid fa-paper-plane"></i></a>
+        </li>
+        <li class="item">
+          <a href="#!"><i class="fa-brands fa-twitch"></i></a>
+        </li>
+        <li class="item">
+          <a href="#!"></a>
+        </li>
+      </ul>
+    </header>
+
+    <aside class="slide-bar">
+      <ul class="navbar">
+        <li>
+          <a href="#!">
+            <span class="icon-navbar">
+              <i class="fa-solid fa-house"></i>
+            </span>
+            <span>Dành cho bạn</span></a
+          >
+        </li>
+        <li>
+          <a href="#!">
+            <span class="icon-navbar">
+              <i class="fa-solid fa-user-group"></i>
+            </span>
+            <span>Đang Follow</span></a
+          >
+        </li>
+        <li>
+          <a href="#!">
+            <span class="icon-navbar">
+              <i class="fa-regular fa-compass"></i>
+            </span>
+            <span>Khám phá</span></a
+          >
+        </li>
+        <li>
+          <a href="#!">
+            <span class="icon-navbar">
+              <i class="fa-solid fa-video"></i>
+            </span>
+            <span>LIVE</span></a
+          >
+        </li>
+      </ul>
+
+      <p class="title-list-follow">Các tài khoản đã follow</p>
+      <ul class="list-follow">
+        <li class="card-user">
+          <div class="avata-user"></div>
+          <div class="content">
+            <h3 class="name-user">thayreviewgame</h3>
+            <p class="desc-user">Thầy Review Ngọc Rồng</p>
+          </div>
+        </li>
+        <li class="card-user">
+          <div class="avata-user"></div>
+          <div class="content">
+            <h3 class="name-user">thayreviewgame</h3>
+            <p class="desc-user">Thầy Review Ngọc Rồng</p>
+          </div>
+        </li>
+        <li class="card-user">
+          <div class="avata-user"></div>
+          <div class="content">
+            <h3 class="name-user">thayreviewgame</h3>
+            <p class="desc-user">Thầy Review Ngọc Rồng</p>
+          </div>
+        </li>
+        <li class="card-user">
+          <div class="avata-user"></div>
+          <div class="content">
+            <h3 class="name-user">thayreviewgame</h3>
+            <p class="desc-user">Thầy Review Ngọc Rồng</p>
+          </div>
+        </li>
+        <p>Xem thêm</p>
+      </ul>
+      <div class="desc-bottom">
+        <ul>
+          <li>Trợ Giúp</li>
+          <li>An Toàn</li>
+          <li>Điều khoản</li>
+          <li>Quyền riêng tư</li>
+          <li>Cổng thông tin tác giả</li>
+          <li>Hướng dẫn cộng đồng</li>
+        </ul>
+        <p>Thêm</p>
+        <p>© 2023 TikTok</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div id="container-content">
+        <div id="rootEl"></div>
+      </div>
+    </main>
+
+    <div class="js-container-loading">
+      <span class="tiktok-loader"></span>
+    </div>
+
+    <script type="module" src="./assets/js/infinityScroll.js"></script>
+  </body>
+</html>

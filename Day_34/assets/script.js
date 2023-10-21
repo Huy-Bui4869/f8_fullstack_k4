@@ -13,8 +13,8 @@ const btnCompleted = document.querySelector(".completed");
 const btnDelete = document.querySelectorAll(".delete");
 const numberComplated = btnCompleted.querySelector(".number-complated");
 
-// const serverAPI = `http://localhost:3000`;
-const serverAPI = `https://3f6tnp-3000.csb.app`;
+const serverAPI = `http://localhost:3000`;
+// const serverAPI = `https://3f6tnp-3000.csb.app`;
 
 function renderHtml(arr) {
   let check;
@@ -60,6 +60,20 @@ const getAndRenderTack = async () => {
   taskBottom.innerHTML = renderHtml(completedAPI);
   clickButtonTools();
 };
+
+const getResultSearch = async (valueCheck) => {
+  const responseAPI = await fetch(`${serverAPI}/datas`);
+  const datas = await responseAPI.json();
+
+  const responseAPI2 = await fetch(`${serverAPI}/completed`);
+  const completedAPI = await responseAPI2.json();
+  //   console.log(datas);
+
+  taskTop.innerHTML = renderHTMLSearch(datas, valueCheck);
+  numberComplated.innerText = completedAPI.length;
+  taskBottom.innerHTML = renderHTMLSearch(completedAPI, valueCheck);
+};
+
 getAndRenderTack();
 
 //
@@ -254,19 +268,6 @@ const renderHTMLSearch = (arr, valueCheck) => {
       }
     })
     .join("");
-};
-
-const getResultSearch = async (valueCheck) => {
-  const responseAPI = await fetch(`${serverAPI}/datas`);
-  const datas = await responseAPI.json();
-
-  const responseAPI2 = await fetch(`${serverAPI}/completed`);
-  const completedAPI = await responseAPI2.json();
-  //   console.log(datas);
-
-  taskTop.innerHTML = renderHTMLSearch(datas, valueCheck);
-  numberComplated.innerText = completedAPI.length;
-  taskBottom.innerHTML = renderHTMLSearch(completedAPI, valueCheck);
 };
 
 function clickButtonTools() {
