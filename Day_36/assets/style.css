@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container .app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+/* Khởi động */
+.start-up .btn-start-up {
+    font-size: 45px;
+    font-weight: 700;
+    padding: 12px 24px;
+    background: transparent;
+    border: 3px solid #333;
+    border-radius: 12px;
+}
+
+.start-up .time-start-up {
+    font-size: 90px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Giao diện game */
+.range {
+    margin: 4px auto 0;
+    width: calc(100vw - 30px);
+    height: 6px;
+    background: yellowgreen;
+}
+
+.currRange {
+    width: 100%;
+    height: 6px;
+    background-color: orangered;
+}
+
+.container .currTime .counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.container .currTime .counter .pages {
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+.container .currTime .counter .pages > span:first-of-type {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container .currTime .counter .streak {
+    width: 284px;
+    height: 42px;
+    margin-right: auto;
+    border: 2px solid red;
+    border-radius: 6px;
+    position: relative;
+}
+
+.container .currTime .counter .streak::before,
+.container .currTime .counter .streak::after {
+    content: "";
+    width: 2px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.container .currTime .counter .streak::before {
+    left: calc(284px / 3);
+}
+
+.container .currTime .counter .streak::after {
+    right: calc(284px / 3);
+}
+
+.container .currTime .counter .score {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* test 2 */
+.text-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    justify-content: space-between;
+}
+
+.text-bottom .question,
+.text-bottom .answer {
+    color: #fff;
+    border: 2px solid red;
+    border-radius: 99px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    /* margin-top: 30px 10px 0; */
+    /* position: relative; */
+    background: rgb(84, 84, 251);
+}
+
+.text-bottom .question {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
+    min-height: 63px;
+    text-align: center;
+}
+
+.text-bottom .answer {
+    flex-basis: 48%;
+    max-width: 48%;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.text-bottom .answer.correct {
+    background: green;
+}
+
+.text-bottom .answer.incorrect {
+    background: red;
+}
+
+/* Giao diện kết thúc */
+.end-game {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid blue;
+    gap: 20px;
+}
+
+.end-game .content-end {
+    max-width: 560px;
+    width: 560px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.end-game .content-end .accuracy,
+.end-game .content-end .result-end {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.end-game .content-end .accuracy {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 10px 15px 15px;
+}
+
+.end-game .content-end .accuracy > h4 {
+    font-size: 16px;
+    color: #fff;
+}
+
+.end-game .content-end .accuracy > .sub-accuracy {
+    height: 16px;
+    width: 100%;
+    border-radius: 99px;
+    background-color: red;
+}
+
+.end-game .content-end .result-end {
+    flex-basis: 48%;
+    max-width: 48%;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.end-game .content-end .result-end > span {
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.end-game .content-end .result-end p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.end-game .btnPlayAgain {
+    background-color: #8854c0;
+    width: 560px;
+    height: 50.2px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
