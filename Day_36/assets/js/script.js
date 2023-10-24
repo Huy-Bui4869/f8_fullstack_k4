@@ -21,7 +21,7 @@ btnStartUp.addEventListener("click", () => {
   btnStartUp.style.display = "none";
   startUp.append(timeStartUp);
 
-  let count = 0;
+  let count = 5;
   startGame(count);
 });
 
