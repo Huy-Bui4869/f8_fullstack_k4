@@ -194,7 +194,17 @@ body {
     width: 100%;
     border-radius: 99px;
     background-color: red;
+    /* position: relative; */
 }
+
+/* .end-game .content-end .accuracy > .sub-accuracy {
+    height: 16px;
+    background-color: greenyellow;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
 
 .end-game .content-end .result-end {
     flex-basis: 48%;

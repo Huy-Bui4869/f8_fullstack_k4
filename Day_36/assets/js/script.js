@@ -8,20 +8,21 @@ const btnStartUp = document.querySelector(".btn-start-up");
 const timeStartUp = document.createElement("div");
 timeStartUp.classList.add("time-start-up");
 
-let questionCounter = 2; //STT của các câu hỏi
+let questionCounter = 0; //STT của các câu hỏi
 let acceptingAnswers = false;
 let global; //lưu đáp án đúng lấy từ server.
 const SCORE = 1000;
 let TOTAL_SCORE = 0; //Tổng điểm
 let numberCorrect = 0; //Số câu đúng.
 let numberIncorrect = 0; //Số câu sai.
+let count = 5;
 
 //Sự kiện bắt đầu khi bấm Start.
 btnStartUp.addEventListener("click", () => {
   btnStartUp.style.display = "none";
+  // btnStartUp.remove();
   startUp.append(timeStartUp);
 
-  let count = 5;
   startGame(count);
 });
 
@@ -106,9 +107,8 @@ const multipleChoice = {
   getNewQuestion: function (newMultiples, multiples) {
     if (newMultiples.length === 0) {
       console.log("Heets caau hoit");
-      this.rootEl.innerHTML = "";
       this.renderEndGame();
-      return;
+      return null;
     }
     //Lấy và tăng STT của câu hỏi.
     const currPage = this.rootEl.querySelector(".currPage"); //stt câu hoit
@@ -228,44 +228,37 @@ const multipleChoice = {
       <button class="btnPlayAgain">Play Again</button>
     </div>
     `;
+    // this.handlePlayAgain();
   },
 
+  // handlePlayAgain: function () {
+  //   const playAgain = this.rootEl.querySelector(".btnPlayAgain");
+  //   // console.log(playAgain);
+  //   const that = this;
+  //   playAgain.addEventListener("click", () => {
+  //     console.log("play again");
+  //     that.rootEl.innerHTML = `
+  //       <div class="start-up">
+  //         <button class="btn-start-up">START</button>
+  //       </div>
+  //     `;
+  //     that.rootEl.style.justifyContent = "center";
+  //     questionCounter = 0;
+  //     acceptingAnswers = false;
+  //     TOTAL_SCORE = 0;
+  //     numberCorrect = 0;
+  //     numberIncorrect = 0;
+  //     //   that.start();
+  //     // count = 5;
+  //     startGame();
+  //   });
+  // },
+
   start: function () {
-    this.rootEl.querySelector(".start-up").remove();
+    startUp.style.display = "none";
     this.rootEl.style.justifyContent = "space-between";
-    questionCounter = 0;
+    // questionCounter = 0;
     this.getmultiplesAPI(this.query);
     this.renderHtml();
   },
 };
-
-// const textBottom = this.rootEl.querySelector(".text-bottom");
-// const that = this;
-// console.log(correct); //owr dday van dung
-// let result = correct;
-// textBottom.addEventListener("click", (e) => {
-//   let elClick;
-//   if (!acceptingAnswers) return;
-
-//   acceptingAnswers = false;
-//   if (e.target.classList.contains("content")) {
-//     elClick = e.target.parentElement;
-//   }
-//   if (e.target.classList.contains("answer")) {
-//     elClick = e.target;
-//   }
-
-//   let checkId = +elClick.dataset["id"]; //Lấy id của đáp án
-
-//   // console.log(`đã chọn_${checkId}, dapAn_${correct}}`);
-//   // console.log(multiples[questionIndex].correct, multiples[questionIndex]);
-//   let classToApp = checkId === correct ? "correct" : "incorrect";
-
-//   // multiples.splice(questionIndex, 1);
-//   elClick.classList.add(classToApp);
-
-//   setTimeout(() => {
-//     elClick.classList.remove(classToApp);
-//     that.getNewQuestion(newMultiples, multiples);
-//   }, 1500);
-// });
