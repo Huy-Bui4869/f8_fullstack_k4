@@ -1,0 +1,372 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 10px;
+    color: var(--text);
+    /* background-color: #333333bb; */
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.btn-login {
+    font-size: 1.6rem;
+    padding: 8px 12px;
+    margin: 40px auto;
+    border: 3px solid red;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+:root {
+    --mycolor:#ff574d;
+    --text: #717171;
+}
+
+#root {
+    background: #1c1c1c;
+    min-height: 100vh;
+    /* width: 100vh; */
+}
+
+section {
+    background-color: #333333bb;
+    /* background: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg) no-repeat 0 100% gray; */
+    /* background-size: cover; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width: 630px;
+    /* height: 370px; */
+    background-color: palegreen;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+
+/* first column */
+.container .just-log {
+    /* flex: 2; */
+    width: 42%;
+    background-color: var(--mycolor);
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.just-log .arrow {
+    --height: 34px;
+    display: block;
+    width: var(--height);
+    height: var(--height);
+    color: var(--mycolor);
+    background-color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: var(--height);
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.just-log .sub-just-log {
+    padding: 8px;
+}
+
+.sub-just-log .title {
+    padding-bottom: 14px;
+    font-size: 1.3rem;
+}
+
+.logo-just-log {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    color: var(--mycolor);
+    background-color: #fff;
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.sub-just-log .btn {
+    padding: 8px 24px;
+    border: none;
+    color: var(--mycolor);
+    margin: 25px 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sub-just-log .icon {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.icon .item-icon > a > i {
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    display: block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.icon .item-icon > a > i:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* second column */
+.container .form-container {
+    /* flex: 3; */
+    width: 58%;
+    padding: 30px 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+}
+
+.form-container .title {
+    color: #272323;
+    padding: 12px 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.form-container .title::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: var(--mycolor);
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    transform: translateX(-50%);
+}
+
+.form-container .title > span {
+    color: var(--mycolor);
+}
+
+.form input {
+    border: 2px solid #ddd;
+    outline: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+.form input:not(input[type="checkbox"]) {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.form input:not(input[type="checkbox"])::placeholder {
+    color: var(--text);
+}
+
+.form .sub-login {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.form .btn {
+    width: 100%;
+    padding: 12px 0;
+    background-color: var(--mycolor);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.sub-just-log .btn:active,
+.form .btn:active {
+    transform: scale(0.95);
+}
+
+.form .btn-register {
+    margin-top: 20px;
+}
+
+.form .showError {
+    font-size: 13px;
+    color: red;
+    font-style: italic;
+    text-align: start;
+    margin-top: 20px;
+}
+
+/* Sau khi đăng nhập */
+.container-user {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: greenyellow;
+}
+
+
+.container-user .user h2 {
+    text-align: center;
+}
+
+.container-user .user .profile {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding-top: 25px;
+}
+
+.container-user .user .profile a.logout {
+    color: greenyellow;
+    font-weight: 500;
+}
+
+.container-user .user .profile a.logout:hover {
+    font-weight: 800;
+    text-decoration: underline;
+    color: red;
+}
+
+.container-user .post {
+    max-width: 350px;
+}
+
+.container-user .post .div_post {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+
+.container-user .post .div_post > textarea,
+.container-user .post .div_post > input {
+    padding: 10px 16px;
+    border: 2px solid #e4e4e4;
+    border-radius: 5px;
+    background-color: #1d3a52;
+    /* background-color: #012846; */
+    color: #ddd;
+    font-size: 1.4rem;
+}
+
+.container-user .post .div_post > textarea::placeholder,
+.container-user .post .div_post > input::placeholder {
+    color: #ddd;
+}
+
+.container-user .post .div_post > textarea {
+    height: 130px;
+}
+
+.container-user .post > button {
+    color: greenyellow;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border: 2px solid greenyellow;
+    border-radius: 6px;
+    margin-top: 15px;
+    margin-left: 100%;
+    translate: -100% 0;
+    text-wrap: nowrap;
+    cursor: pointer;
+}
+
+/* card-blog */
+.list-blog {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid red; */
+    color: #ddd;
+}
+
+.list-blog .card-blog {
+    /* border: 1px solid greenyellow; */
+    padding: 20px;
+    border-bottom: 2px solid #e4e4e4;
+}
+
+.list-blog .card-blog .card-blog-user {
+    display: flex;
+    gap: 8px;
+    justify-content: start;
+    align-items: center;
+}
+
+.list-blog .card-blog .card-blog-user .avata-user {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: greenyellow;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-blog .card-blog .card-blog-user .name-user {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.list-blog .card-blog .card-blog-title {
+    font-size: 2.2rem;
+    color: greenyellow;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.loading_container {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.loading_container.active {
+    display: block;
+}
