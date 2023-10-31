@@ -135,7 +135,7 @@ export const toastMy = function ({
     };
     const icon = icons[type];
     boxToast.classList.add("toastMy");
-    boxToast.classList.add("type");
+    boxToast.classList.add(type);
     boxToast.innerHTML = `
       <div class="toast__icon">
         <i class="${icon}"></i>
