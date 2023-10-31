@@ -1,10 +1,12 @@
 import { client } from "./client.js";
 import { config } from "./config.js";
 import {
+  htmlHome,
   htmlLayout,
   htmlFormLogin,
   htmlFormRegister,
   htmlUser,
+  toastMy,
 } from "./html.js";
 const { SERVER_API_AUTH } = config;
 const { PAGE_LIMIT } = config;
@@ -14,81 +16,124 @@ console.log(client.serverApi);
 
 let currentPage = 1;
 
+const main = document.createElement("div");
+main.classList.add("list-toast");
+document.body.prepend(main);
+
 const app = {
   rootEl: document.querySelector("#root"),
   query: {
-    _sort: "id",
+    // _sort: "id",
     _order: "desc", //Sắp xếp desc_mới nhất, asc_cũ nhất
     _limit: PAGE_LIMIT, //Giới hạn số lượng bài viết.
     _page: currentPage,
   },
 
-  loading: function (hidden = true) {
+  isLogin: function () {
+    const status = localStorage.getItem("userData") ? true : false;
+    return status;
+  },
+
+  render: function () {
+    let html;
+
+    if (this.isLogin()) {
+      html = htmlUser;
+      //Lấy thông tin user, render ra giao diện
+      this.getProfile();
+    } else {
+      html = htmlHome;
+    }
+
+    this.rootEl.innerHTML = html;
+    //render danh sách các bài post
+    this.renderListPost(this.query);
+  },
+
+  //xây dựng hiệu ứng loading.
+  loading: function () {
     const loadingEl = document.createElement("div");
     loadingEl.classList.add("loading_container");
     loadingEl.innerHTML = `
-      <div class="spinner-border text-danger" role="status">
-        <span class="visually-hidden">Loading...</span>
-      </div>
-    `;
-    this.rootEl.append(loadingEl);
-    console.log(hidden);
+        <div class="spinner-border text-danger" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      `;
+    document.body.prepend(loadingEl);
+  },
 
-    if (hidden) {
-      loadingEl.classList.add("active");
+  //hành động loading.
+  handleLoading: function (a = true) {
+    const loadEl = document.querySelector(".loading_container");
+
+    if (a) {
+      loadEl.classList.add("active");
     } else {
-      loadingEl.classList.remove("active");
+      loadEl.classList.remove("active");
     }
   },
 
-  renderHome: function () {
-    this.rootEl.innerHTML = "";
-    const container = document.createElement("div");
-    const btnLogin = document.createElement("button");
-    btnLogin.innerText = "Đăng nhập";
-    btnLogin.classList.add("btn-login");
+  showError: function (message) {
+    const showError = this.rootEl.querySelector(".showError");
 
-    const listPosiEl = document.createElement("div");
-    listPosiEl.classList.add("list-blog");
-    container.append(btnLogin);
-
-    this.rootEl.append(container);
-    this.rootEl.append(listPosiEl);
-    this.renderListPost(this.query);
+    //reset tránh khi còn những lỗi cũ.
+    showError.innerText = "";
+    showError.innerText = message;
   },
 
   //hành động đăng nhập.
   handleLoginFromHome: function () {
     const btnLogin = this.rootEl.querySelector(".btn-login");
+    if (btnLogin === null) {
+      return;
+    }
 
     btnLogin.addEventListener("click", (e) => {
-      //   console.log("click");
-      this.rootEl.innerHTML = "";
       this.rootEl.innerHTML = htmlLayout;
       const formContainer = this.rootEl.querySelector(".form-container");
       formContainer.innerHTML = htmlFormLogin;
-      this.renderFormLoginOrRegister();
+      this.renderFormLoginOrRegister(formContainer);
     });
   },
 
   //giao diện đăng nhập và đăng ký.
-  renderFormLoginOrRegister: function () {
-    const linkReg = this.rootEl.querySelector(".js-link");
+  renderFormLoginOrRegister: function (formContainer) {
+    if (formContainer === undefined) {
+      return;
+    }
 
-    linkReg.addEventListener("click", (e) => {
+    const linklogin = formContainer.querySelector(".js-link");
+    const btnMore = this.rootEl.querySelector(".js-btnHome");
+
+    //render trang chủ.
+    btnMore.addEventListener("click", () => {
+      console.log("Về trang chủ");
+      this.render();
+      this.handleLoginFromHome();
+    });
+
+    linklogin.addEventListener("click", (e) => {
       e.preventDefault();
-      const formContainer = this.rootEl.querySelector(".form-container");
-      formContainer.innerHTML = "";
 
-      if (e.target.classList.contains("link-register")) {
+      if (linklogin.classList.contains("link-register")) {
         formContainer.innerHTML = htmlFormRegister;
-      } else if (e.target.classList.contains("link-login")) {
+        const linkLogin = document.querySelector(".link-login");
+        linkLogin.addEventListener("click", () => {
+          formContainer.innerHTML = htmlFormLogin;
+        });
+      }
+      if (linklogin.classList.contains("link-login")) {
         formContainer.innerHTML = htmlFormLogin;
+        const linkRes = document.querySelector(".link-register");
+        console.log(linkRes);
+        linkRes.addEventListener("click", () => {
+          formContainer.innerHTML = htmlFormRegister;
+        });
       }
     });
   },
 
-  //Lấy dữ liệu khi submit form
+  //Lấy dữ liệu khi submit form đăng ký, đăng nhập.
   addEvent: function () {
     this.rootEl.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -111,73 +156,82 @@ const app = {
     });
   },
 
-  showError: function (message) {
-    const showError = this.rootEl.querySelector(".showError");
-
-    //reset tránh khi còn những lỗi cũ.
-    showError.innerText = "";
-    showError.innerText = message;
-  },
-
   register: async function (data) {
-    console.log(data);
-    this.loading();
+    this.handleLoading();
     try {
       const { response, data: token } = await client.post(
         "/auth/register",
         data
       );
-      this.loading(false);
+      this.handleLoading(false);
 
       if (!response.ok) {
         if (token.message.includes("tồn tại")) {
-          console.log("okokok");
           throw new Error("Tài khoản đã tồn tại");
         }
         throw new Error("Tạo tài khoản thất bại");
       }
 
       this.showError("Tạo tài khoản thành công");
+      toastMy({
+        title: "Tạo tài khoản thành công",
+        msg: "Vui lòng đợi 1 giây",
+        type: "success",
+      });
+
+      //Chuyển sang form đăng nhập khi đăng ký thành công.
+      const formContainer = this.rootEl.querySelector(".form-container");
+      setTimeout(() => {
+        formContainer.innerHTML = htmlFormLogin;
+      }, 1000);
     } catch (e) {
-      this.showError(e.message);
+      toastMy({
+        title: e,
+        msg: "vui lòng thực hiện lại",
+        type: "error",
+      });
+      this.handleLoading(false);
     }
   },
 
   login: async function (data) {
-    // console.log(data); //{email, password}
-    this.loading();
+    this.handleLoading();
     try {
       const { response, data: token } = await client.post("/auth/login", data);
-      this.loading(false);
+      this.handleLoading(false);
 
       //Khi xảy ra lỗi
       if (!response.ok) {
         throw new Error("Email hoặc mật khẩu không hợp lệ");
       }
-      // console.log(token.data);
 
       //Thêm token vào Storage (localStorage)
       localStorage.setItem("userData", JSON.stringify(token.data));
       //Render
-      this.rootEl.innerHTML = "";
-      this.rootEl.innerHTML = htmlUser;
-      this.renderListPost(this.query);
-      this.getProfile();
+      this.render();
+      toastMy({
+        title: "Đăng nhập thành công",
+        msg: "...",
+        type: "info",
+      });
     } catch (e) {
-      this.showError(e);
+      toastMy({
+        title: "Đăng nhập thất bại",
+        msg: `${e.message}}`,
+        type: "error",
+      });
     }
   },
 
   //Lấy thông tin user
   getProfile: async function () {
     try {
-      const token = JSON.parse(localStorage.getItem("userData"));
+      let token = JSON.parse(localStorage.getItem("userData"));
       let accessToken;
 
       if (token) {
         accessToken = token["accessToken"];
       }
-      console.log(`accessToken_bđ: ${accessToken}`);
 
       if (!accessToken) {
         throw new Error("accessToken not null");
@@ -196,13 +250,7 @@ const app = {
 
       formPosts.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log("đăng bài");
-        const titlePost = formPosts.querySelector(".titlePost");
-        const contentPost = formPosts.querySelector(".contentPost");
-        const titleValue = titlePost.value;
-        const contentValue = contentPost.value;
-
-        this.handlePostBlogs(titleValue, contentValue);
+        this.handlePostBlogs(formPosts);
       });
 
       //Đăng suất
@@ -214,31 +262,61 @@ const app = {
         this.logout();
       });
     } catch (e) {
-      console.log(e);
-      console.log(e.message);
+      this.logout();
     }
   },
 
-  handlePostBlogs: async function (title, content) {
+  handlePostBlogs: async function (formPosts) {
+    this.handleLoading();
+    const titlePost = formPosts.querySelector(".titlePost");
+    const contentPost = formPosts.querySelector(".contentPost");
+    const timePost = formPosts.querySelector("#timePost");
+    const title = titlePost.value;
+    const content = contentPost.value;
+    const timeValue = timePost.value;
+
+    if (!title || !content) {
+      console.log("vui lòng nhập đầy đủ thông tin");
+      toastMy({
+        title: "thông tin không hợp lệ",
+        msg: "Vui lòng nhập đầy đủ thông tin",
+        type: "warning",
+      });
+      this.handleLoading(false);
+      return;
+    }
+
+    if (timeValue) {
+      this.handlDelayDatePost(title, content, timeValue);
+      this.handleLoading(false);
+      return;
+    }
+
     const { response: res, data } = await client.post("/blogs", {
       title,
       content,
     });
-    // console.log(res);
-    console.log(data);
 
     if (!res.ok) {
-      console.log("Không đăng bài được");
       this.handleRefreshToken().then(async () => {
         await client.post("/blogs", {
           title,
           content,
         });
-        this.renderListPost(this.query);
       });
     }
     //Render lại giao diện
     this.renderListPost(this.query);
+    this.handleLoading(false);
+    console.log("đăng bài hoàn thành");
+    toastMy({
+      title: "Đăng bài thành công",
+      msg: "...",
+      type: "success",
+    });
+    titlePost.value = "";
+    contentPost.value = "";
+    timePost.value = "";
   },
 
   //Hàm cấp "accessToken" và "refreshToken" mới.
@@ -262,20 +340,62 @@ const app = {
       console.log("userData_mới", JSON.parse(localStorage.getItem("userData")));
       client.setToken(JSON.parse(localStorage.getItem("userData")).accessToken);
     } else {
-      console.log("logout");
       this.logout();
     }
   },
 
-  logout: async function () {
-    const { response, data } = await client.post("/auth/logout");
-    console.log(response);
-    console.log(data);
-    if (response.ok) {
+  handlDelayDatePost: function (delayDate, titlePost, contentPost, timePost) {
+    const currTimes = new Date();
+    const time = new Date(delayDate);
+    const gio = time.getHours();
+    const phut = time.getMinutes();
+    const ngay = time.getDate();
+    const thang = time.getMonth() + 1;
+    const text = `Bài viết được đăg vào lúc ${gio}:${phut} ngày ${ngay} tháng ${thang}`;
+
+    if (time - currTimes > 0) {
+      console.log("tương lai");
+      toastMy({
+        title: `${text}`,
+        msg: "",
+        type: "success",
+      });
+      titlePost.value = "";
+      contentPost.value = "";
+      timePost.value = "";
+    } else {
+      console.log("quá khứ");
+      toastMy({
+        title: `Thời gian không hợp lệ`,
+        msg: "Vui lòng chọn lại thời gian đăng bài",
+        type: "warning",
+      });
     }
-    localStorage.removeItem("userData");
-    this.renderHome();
-    this.handleLoginFromHome();
+  },
+
+  getDate: function (date) {
+    const currTime = new Date();
+    const khoangTs = Math.floor((currTime.getTime() - date) / 1000); //s
+    const phut = Math.floor(khoangTs / 60);
+    const gio = Math.floor(khoangTs / 60 / 60);
+    const ngay = Math.floor(khoangTs / 60 / 60 / 24);
+    const tuan = Math.floor(khoangTs / 60 / 60 / 24 / 7);
+    const thang = Math.floor(tuan / 4);
+
+    let text;
+    if (khoangTs < 60) {
+      text = `${khoangTs} giây`;
+    } else if (60 <= khoangTs && khoangTs < 3600) {
+      text = `${phut} phút`;
+    } else if (khoangTs >= 3600 && khoangTs < 86400) {
+      text = `${gio} giờ`;
+    } else if (gio > 24 && gio < 168) {
+      text = `${ngay} ngày`;
+    } else if (ngay > 7) {
+      text = `${tuan} tuần`;
+    }
+    // console.log(text);
+    return `${text} trước`;
   },
 
   renderListPost: async function (query = {}) {
@@ -286,34 +406,101 @@ const app = {
 
     const { data } = await client.get(`/blogs${queryString}`);
     arrPost = [...data.data];
-    // console.log(arrPost);
+
     //Biểu thức để nhận biết 1 thẻ HTML__xử lý XSS.
     const stripHtml = (html) => html.replace(/(<([^>]+)>)/gi, "");
 
     listBlogEl.innerHTML = `
       ${arrPost
         .map((item) => {
+          const dates = new Date(item.timeUp);
+          const timePost = `${dates.getHours()}:${dates.getMinutes()} | ${dates.getDate()}-${
+            dates.getMonth() + 1
+          }-${dates.getFullYear()}`;
+
           return `
-          <div class="card-blog">
-            <div class="card-blog-user">
-              <div class="avata-user"></div>
-              <h3 class="name-user">${stripHtml(item.userId.name)}</h3>
+            <div class="card-blog">
+              <div class="card-blog-user">
+                <div class="avata-user"></div>
+                <div class="info-user">
+                  <h3 class="name-user">${stripHtml(item.userId.name)}</h3>
+                  <p>${this.getDate(dates)}</p>
+                </div>
+              </div>
+              <div class="card-blog-title">${stripHtml(item.title)}</div>
+              <p class="card-blog-content">${stripHtml(item.content)}</p>
+              <span class="timePost">${timePost}</span>
             </div>
-            <div class="card-blog-title">${stripHtml(item.title)}</div>
-            <p class="card-blog-content">${stripHtml(item.content)}</p>
-          </div>
-        `;
+          `;
         })
         .join("")}    
     `;
   },
 
+  logout: async function () {
+    this.handleLoading();
+    await client.post("/auth/logout");
+    localStorage.removeItem("userData");
+
+    this.render();
+    this.handleLoading(false);
+    this.handleLoginFromHome();
+  },
+
   start: function () {
-    this.renderHome();
+    this.loading();
+    this.handleLoading();
+    this.render();
+    this.renderFormLoginOrRegister();
     this.handleLoginFromHome();
     this.addEvent();
-    // this.submitFormPosts();
   },
 };
 
 app.start();
+window.onload = () => {
+  app.handleLoading(false);
+};
+
+// const toastMy = function ({
+//   title = "",
+//   msg = "",
+//   type = "info",
+//   duration = 3000,
+// }) {
+//   // const main = document.querySelector(".list-toast");
+//   console.log(main);
+//   if (main) {
+//     console.log("thông báo nổi");
+//     const boxToast = document.createElement("div");
+//     const icons = {
+//       success: "fas fa-check-circle",
+//       info: "fas fa-info-circle",
+//       error: "fas fa-exclamation-circle",
+//       warning: "fas fa-exclamation-circle",
+//     };
+//     const icon = icons[type];
+//     boxToast.classList.add("toastMy");
+//     boxToast.innerHTML = `
+//       <div class="toast__icon">
+//         <i class="${icon}"></i>
+//       </div>
+//       <div class="toast__body">
+//         <h3 class="toast__title">${title}</h3>
+//         <p class="toast__msg">${msg}</p>
+//       </div>
+//       <div class="toast__close">
+//         <i class="fas fa-times"></i>
+//       </div>
+//     `;
+//     main.append(boxToast);
+
+//     boxToast.classList.add("hien");
+//     setTimeout(() => {
+//       boxToast.classList.remove("hien");
+//       setTimeout(() => {
+//         main.removeChild(boxToast);
+//       }, 850);
+//     }, duration);
+//   }
+// };

@@ -17,12 +17,26 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-.btn-login {
+.box-btn-login {
+    display: flex;
+    justify-content: end;
+    padding-top: 40px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.box-btn-login .btn-login {
     font-size: 1.6rem;
+    color: greenyellow;
+    background-color: transparent;
     padding: 8px 12px;
-    margin: 40px auto;
-    border: 3px solid red;
+    border: 3px solid greenyellow;
     border-radius: 5px;
+}
+
+.btn-login:hover {
+    border-color: red;
+    color: red;
 }
 
 a {
@@ -38,13 +52,10 @@ a {
 #root {
     background: #1c1c1c;
     min-height: 100vh;
-    /* width: 100vh; */
 }
 
 section {
     background-color: #333333bb;
-    /* background: url(http://uiwebsoft.com/justlog/login-one/images/login-bg2.jpg) no-repeat 0 100% gray; */
-    /* background-size: cover; */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -55,6 +66,7 @@ section {
 
 .container {
     width: 630px;
+    max-width: 630px;
     /* height: 370px; */
     background-color: palegreen;
     display: flex;
@@ -65,7 +77,6 @@ section {
 
 /* first column */
 .container .just-log {
-    /* flex: 2; */
     width: 42%;
     background-color: var(--mycolor);
     border-radius: 10px 0 0 10px;
@@ -116,20 +127,24 @@ section {
 }
 
 .sub-just-log .btn {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #fff;
+    /* color: var(--mycolor); */
     padding: 8px 24px;
-    border: none;
-    color: var(--mycolor);
     margin: 25px 0;
-    border-radius: 3px;
+    border: 2px solid #fff;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 .sub-just-log .icon {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 0 auto;
+    justify-content: center;
+    /* width: 50%; */
+    gap: 10px;
+    /* margin: 0 auto; */
 }
 
 .icon .item-icon > a > i {
@@ -322,7 +337,7 @@ section {
 
 .list-blog .card-blog {
     /* border: 1px solid greenyellow; */
-    padding: 20px;
+    padding: 20px 20px 10px;
     border-bottom: 2px solid #e4e4e4;
 }
 
@@ -344,9 +359,16 @@ section {
     align-items: center;
 }
 
-.list-blog .card-blog .card-blog-user .name-user {
+.list-blog .card-blog .card-blog-user .info-user .name-user {
     font-size: 2rem;
     font-weight: 700;
+    margin: 0;
+}
+
+.list-blog .card-blog .card-blog-user .info-user > p {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.4rem;
 }
 
 .list-blog .card-blog .card-blog-title {
@@ -364,9 +386,123 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .loading_container.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.timePost {
     display: block;
+    font-size: 1.4rem;
+    color: greenyellow;
+    margin-left: auto;
+    text-wrap: nowrap;
+    text-align: end;
+}
+
+.js-link:hover {
+    text-decoration: underline;
+    color: #5050b2;
+    font-weight: 600;
+}
+
+/* TOAST MESAGE */
+.list-toast {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+}
+
+.toastMy {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 8px 0;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .8);
+    min-width: 300px;
+    translate: calc(100% + 25px) 0;
+    opacity: 0;
+    transition: translate .8s linear, opacity .8s linear;
+    margin-top: 15px;
+    /* delay 3s */
+    /* forwards_dừng ở điểm cuối */
+    /* animation: cut ease .3s, out linear 5s 8s forwards; */
+}
+
+.toastMy.info {
+    background-color: #183bba;
+}
+.toastMy.error {
+    background-color: #fe2525;
+}
+.toastMy.warning {
+    background-color: #818101;
+}
+.toastMy.success {
+    background-color: rgb(58, 95, 1)
+}
+
+.toastMy.hien {
+    translate: 0 0;
+    opacity: 1;
+}
+
+.toast__success .toast__icon {
+    color: #47d864;
+}
+
+.toast__icon {
+    font-size: 3.4rem;
+    color: #ddd;
+    padding: 0 10px;
+}
+
+.toast__close {
+    padding-right: 10px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.toast__msg {
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+}
+
+.toast__close {
+    font-size: 2rem;
+    color: #5d5d5d;
+    padding: 0 10px;
+}
+
+@keyframes cut {
+    from {
+        opacity: 0;
+        ttranslate: calc(100% + 25px) 0;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes out {
+    to {
+        opacity: 0;
+    }
 }
