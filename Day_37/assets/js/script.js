@@ -16,6 +16,7 @@ console.log(client.serverApi);
 
 let currentPage = 1;
 
+//Giao diện thông báo.
 const main = document.createElement("div");
 main.classList.add("list-toast");
 document.body.prepend(main);
@@ -63,22 +64,14 @@ const app = {
   },
 
   //hành động loading.
-  handleLoading: function (a = true) {
+  handleLoading: function (check = true) {
     const loadEl = document.querySelector(".loading_container");
 
-    if (a) {
+    if (check) {
       loadEl.classList.add("active");
     } else {
       loadEl.classList.remove("active");
     }
-  },
-
-  showError: function (message) {
-    const showError = this.rootEl.querySelector(".showError");
-
-    //reset tránh khi còn những lỗi cũ.
-    showError.innerText = "";
-    showError.innerText = message;
   },
 
   //hành động đăng nhập.
@@ -172,7 +165,6 @@ const app = {
         throw new Error("Tạo tài khoản thất bại");
       }
 
-      this.showError("Tạo tài khoản thành công");
       toastMy({
         title: "Tạo tài khoản thành công",
         msg: "Vui lòng đợi 1 giây",
@@ -287,7 +279,14 @@ const app = {
     }
 
     if (timeValue) {
-      this.handlDelayDatePost(title, content, timeValue);
+      this.handlDelayDatePost(
+        title,
+        content,
+        timeValue,
+        titlePost,
+        contentPost,
+        timePost
+      );
       this.handleLoading(false);
       return;
     }
@@ -344,17 +343,25 @@ const app = {
     }
   },
 
-  handlDelayDatePost: function (delayDate, titlePost, contentPost, timePost) {
+  handlDelayDatePost: function (
+    title,
+    content,
+    delayDate,
+    titlePost,
+    contentPost,
+    timePost
+  ) {
     const currTimes = new Date();
     const time = new Date(delayDate);
-    const gio = time.getHours();
-    const phut = time.getMinutes();
-    const ngay = time.getDate();
-    const thang = time.getMonth() + 1;
-    const text = `Bài viết được đăg vào lúc ${gio}:${phut} ngày ${ngay} tháng ${thang}`;
+    const hours = time.getHours();
+    const minutes = time.getMinutes();
+    const date = time.getDate();
+    const month = time.getMonth() + 1;
+    const year = time.getFullYear();
+    const text = `Bài viết được đăg vào lúc ${hours}:${minutes} ngày ${date} tháng ${month} năm ${year}`;
+    console.log(title, content);
 
-    if (time - currTimes > 0) {
-      console.log("tương lai");
+    if (time - currTimes > 0 && year < 9999) {
       toastMy({
         title: `${text}`,
         msg: "",
@@ -364,7 +371,6 @@ const app = {
       contentPost.value = "";
       timePost.value = "";
     } else {
-      console.log("quá khứ");
       toastMy({
         title: `Thời gian không hợp lệ`,
         msg: "Vui lòng chọn lại thời gian đăng bài",
@@ -444,6 +450,11 @@ const app = {
 
     this.render();
     this.handleLoading(false);
+    toastMy({
+      title: "Đăng xuất thành công",
+      msg: "...",
+      type: "success",
+    });
     this.handleLoginFromHome();
   },
 
@@ -461,46 +472,3 @@ app.start();
 window.onload = () => {
   app.handleLoading(false);
 };
-
-// const toastMy = function ({
-//   title = "",
-//   msg = "",
-//   type = "info",
-//   duration = 3000,
-// }) {
-//   // const main = document.querySelector(".list-toast");
-//   console.log(main);
-//   if (main) {
-//     console.log("thông báo nổi");
-//     const boxToast = document.createElement("div");
-//     const icons = {
-//       success: "fas fa-check-circle",
-//       info: "fas fa-info-circle",
-//       error: "fas fa-exclamation-circle",
-//       warning: "fas fa-exclamation-circle",
-//     };
-//     const icon = icons[type];
-//     boxToast.classList.add("toastMy");
-//     boxToast.innerHTML = `
-//       <div class="toast__icon">
-//         <i class="${icon}"></i>
-//       </div>
-//       <div class="toast__body">
-//         <h3 class="toast__title">${title}</h3>
-//         <p class="toast__msg">${msg}</p>
-//       </div>
-//       <div class="toast__close">
-//         <i class="fas fa-times"></i>
-//       </div>
-//     `;
-//     main.append(boxToast);
-
-//     boxToast.classList.add("hien");
-//     setTimeout(() => {
-//       boxToast.classList.remove("hien");
-//       setTimeout(() => {
-//         main.removeChild(boxToast);
-//       }, 850);
-//     }, duration);
-//   }
-// };

@@ -441,7 +441,8 @@ section {
     background-color: #fe2525;
 }
 .toastMy.warning {
-    background-color: #818101;
+    background-color: #9b9b00;
+    /* background-color: #818101; */
 }
 .toastMy.success {
     background-color: rgb(58, 95, 1)

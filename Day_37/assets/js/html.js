@@ -87,7 +87,6 @@ export const htmlFormRegister = `
         <input type="name" class="name" placeholder="Please enter the name" required/>
         <input type="email" class="email" placeholder="Please enter the email" required/>
         <input type="password" class="password" placeholder="Please enter the password" required/>
-        <div class="showError"></div>
         <button class="btn btn-register">REGISTER</button>
         <div>
             <span>You like to return to the? </span>
@@ -108,7 +107,6 @@ export const htmlFormLogin = `
             </label>
             <a href="#!">Forgot Password</a>
         </div>
-        <div class="showError"></div>
         <button class="btn btn-login">LOGIN</button>
         <div>
             <span>Don't have an account? </span>
