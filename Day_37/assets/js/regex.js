@@ -10,10 +10,6 @@ export function regexLink(content) {
     .replace(number, `<a href="tel:$1" target="_blank">$1</a>`)
     .replace(email, `<a href="mailto:$1" target="_blank">$1</a>`)
     .replace(link, function (link) {
-      if (!link.includes("http")) {
-        link = `https://` + link;
-      }
-
       if (link.includes("youtube")) {
         const id = link.match(youtube);
         // const index = id[4].indexOf("=");
@@ -30,7 +26,9 @@ export function regexLink(content) {
           allowFullScreen></iframe>
         `;
       } else {
-        return `<a href="${link}" target="_blank">${link}</a>`;
+        return `<a href="${
+          link.includes("http") ? link : `https://` + link
+        }" target="_blank">${link}</a>`;
       }
     });
   return content;
