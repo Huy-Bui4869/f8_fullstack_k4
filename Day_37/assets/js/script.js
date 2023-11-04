@@ -8,7 +8,7 @@ import {
   htmlUser,
   toastMy,
 } from "./html.js";
-import { getLink } from "./regex.js";
+import { regexLink } from "./regex.js";
 
 const { SERVER_API_AUTH } = config;
 const { PAGE_LIMIT } = config;
@@ -459,7 +459,7 @@ const app = {
                 </div>
               </div>
               <div class="card-blog-title">${stripHtml(item.title)}</div>
-              <p class="card-blog-content">${getLink(
+              <p class="card-blog-content">${regexLink(
                 stripHtml(item.content)
               )}</p>
               <span class="timePost">${timePost}</span>

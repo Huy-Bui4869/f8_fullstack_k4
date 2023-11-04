@@ -5,7 +5,7 @@ const link =
 const youtube =
   /((?:((https|http):\/\/)|)(?:[a-z0-9][a-z0-9\.]*\.|)youtube\.com\/([^\s]+))/;
 
-export function getLink(content) {
+export function regexLink(content) {
   content = content
     .replace(number, `<a href="tel:$1" target="_blank">$1</a>`)
     .replace(email, `<a href="mailto:$1" target="_blank">$1</a>`)
