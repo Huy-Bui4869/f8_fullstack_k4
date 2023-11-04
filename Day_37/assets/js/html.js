@@ -123,7 +123,6 @@ export const toastMy = function ({
 }) {
   const main = document.querySelector(".list-toast");
   if (main) {
-    console.log("thông báo nổi");
     const boxToast = document.createElement("div");
     const icons = {
       success: "fas fa-check-circle",

@@ -8,6 +8,8 @@ import {
   htmlUser,
   toastMy,
 } from "./html.js";
+import { getLink } from "./regex.js";
+
 const { SERVER_API_AUTH } = config;
 const { PAGE_LIMIT } = config;
 
@@ -74,7 +76,7 @@ const app = {
     }
   },
 
-  //hành động đăng nhập.
+  //hành động đăng nhập từ trang chủ.
   handleLoginFromHome: function () {
     const btnLogin = this.rootEl.querySelector(".btn-login");
     if (btnLogin === null) {
@@ -132,6 +134,7 @@ const app = {
       e.preventDefault();
 
       if (e.target.classList.contains("form")) {
+        // console.log("submit form đăng nhập");
         const emailEl = e.target.querySelector(".email");
         const passwordEl = e.target.querySelector(".password");
         const email = emailEl.value;
@@ -145,6 +148,10 @@ const app = {
         } else if (e.target.classList.contains("form-login")) {
           this.login({ email, password });
         }
+      }
+
+      if (e.target.classList.contains("post")) {
+        this.handlePostBlogs(e.target);
       }
     });
   },
@@ -178,7 +185,7 @@ const app = {
       }, 1000);
     } catch (e) {
       toastMy({
-        title: e,
+        title: e.message,
         msg: "vui lòng thực hiện lại",
         type: "error",
       });
@@ -187,10 +194,13 @@ const app = {
   },
 
   login: async function (data) {
+    // console.log(data);
     this.handleLoading();
     try {
       const { response, data: token } = await client.post("/auth/login", data);
       this.handleLoading(false);
+      // console.log(response);
+      // console.log(token);
 
       //Khi xảy ra lỗi
       if (!response.ok) {
@@ -199,6 +209,7 @@ const app = {
 
       //Thêm token vào Storage (localStorage)
       localStorage.setItem("userData", JSON.stringify(token.data));
+      console.log("chuẩn bị render");
       //Render
       this.render();
       toastMy({
@@ -207,11 +218,14 @@ const app = {
         type: "info",
       });
     } catch (e) {
-      toastMy({
-        title: "Đăng nhập thất bại",
-        msg: `${e.message}}`,
-        type: "error",
-      });
+      console.log(e);
+      if (e.message === "Email hoặc mật khẩu không hợp lệ") {
+        toastMy({
+          title: "Đăng nhập thất bại",
+          msg: `${e.message}}`,
+          type: "error",
+        });
+      }
     }
   },
 
@@ -224,37 +238,41 @@ const app = {
       if (token) {
         accessToken = token["accessToken"];
       }
+      // console.log(`accessToken:${accessToken}`);
 
       if (!accessToken) {
         throw new Error("accessToken not null");
       }
-
       client.setToken(accessToken);
-      const { data } = await client.get("/users/profile");
-      const user = data.data;
+      const { response, data } = await client.get("/users/profile");
+
+      if (!response.ok) {
+        throw new Error("Unauthorized");
+      }
 
       const profileEl = this.rootEl.querySelector(".profile");
       const nameEl = profileEl.querySelector(".name");
-      nameEl.innerText = user.name;
+      nameEl.innerText = data.data.name;
 
-      //Đăng bài mới
-      const formPosts = this.rootEl.querySelector(".container-user .post");
-
-      formPosts.addEventListener("submit", (e) => {
-        e.preventDefault();
-        this.handlePostBlogs(formPosts);
-      });
-
-      //Đăng suất
-      const logoutEl = this.rootEl.querySelector(".logout");
-
-      logoutEl.addEventListener("click", (e) => {
-        e.preventDefault();
+      const out = profileEl.querySelector(".logout");
+      console.log(out);
+      out.addEventListener("click", (e) => {
         console.log("click logout");
         this.logout();
       });
     } catch (e) {
-      this.logout();
+      if (e.message === "Unauthorized") {
+        this.handleRefreshToken().then(async () => {
+          client.setToken(
+            JSON.parse(localStorage.getItem("userData")).accessToken
+          );
+          const { data } = await client.get("/users/profile");
+
+          const profileEl = this.rootEl.querySelector(".profile");
+          const nameEl = profileEl.querySelector(".name");
+          nameEl.innerText = data.data.name;
+        });
+      }
     }
   },
 
@@ -268,7 +286,7 @@ const app = {
     const timeValue = timePost.value;
 
     if (!title || !content) {
-      console.log("vui lòng nhập đầy đủ thông tin");
+      // console.log("vui lòng nhập đầy đủ thông tin");
       toastMy({
         title: "thông tin không hợp lệ",
         msg: "Vui lòng nhập đầy đủ thông tin",
@@ -298,16 +316,20 @@ const app = {
 
     if (!res.ok) {
       this.handleRefreshToken().then(async () => {
+        client.setToken(
+          JSON.parse(localStorage.getItem("userData")).accessToken
+        );
+
         await client.post("/blogs", {
           title,
           content,
         });
+        this.renderListPost(this.query);
       });
     }
     //Render lại giao diện
     this.renderListPost(this.query);
     this.handleLoading(false);
-    console.log("đăng bài hoàn thành");
     toastMy({
       title: "Đăng bài thành công",
       msg: "...",
@@ -320,7 +342,7 @@ const app = {
 
   //Hàm cấp "accessToken" và "refreshToken" mới.
   handleRefreshToken: async function () {
-    // console.log(`refreToken_bđ: ${JSON.parse(localStorage.getItem("userData")).refreshToken}`);
+    // console.log("khởi động refreToken");
     const { response: refresh, data } = await client.post(
       "/auth/refresh-token",
       {
@@ -329,6 +351,9 @@ const app = {
         ],
       }
     );
+    // console.log("refresh, data");
+    // console.log(refresh);
+    // console.log(data);
 
     if (refresh.ok) {
       const userData = JSON.parse(localStorage.getItem("userData"));
@@ -336,9 +361,8 @@ const app = {
       userData.refreshToken = data.data.token.refreshToken;
 
       localStorage.setItem("userData", JSON.stringify(userData));
-      console.log("userData_mới", JSON.parse(localStorage.getItem("userData")));
-      client.setToken(JSON.parse(localStorage.getItem("userData")).accessToken);
     } else {
+      // console.log("logout nhé");
       this.logout();
     }
   },
@@ -359,7 +383,7 @@ const app = {
     const month = time.getMonth() + 1;
     const year = time.getFullYear();
     const text = `Bài viết được đăg vào lúc ${hours}:${minutes} ngày ${date} tháng ${month} năm ${year}`;
-    console.log(title, content);
+    // console.log(title, content);
 
     if (time - currTimes > 0 && year < 9999) {
       toastMy({
@@ -412,6 +436,7 @@ const app = {
 
     const { data } = await client.get(`/blogs${queryString}`);
     arrPost = [...data.data];
+    // console.log(arrPost);
 
     //Biểu thức để nhận biết 1 thẻ HTML__xử lý XSS.
     const stripHtml = (html) => html.replace(/(<([^>]+)>)/gi, "");
@@ -434,7 +459,9 @@ const app = {
                 </div>
               </div>
               <div class="card-blog-title">${stripHtml(item.title)}</div>
-              <p class="card-blog-content">${stripHtml(item.content)}</p>
+              <p class="card-blog-content">${getLink(
+                stripHtml(item.content)
+              )}</p>
               <span class="timePost">${timePost}</span>
             </div>
           `;
@@ -465,6 +492,7 @@ const app = {
     this.renderFormLoginOrRegister();
     this.handleLoginFromHome();
     this.addEvent();
+    this.renderListPost();
   },
 };
 
