@@ -15,11 +15,11 @@ export const router = (routerA, Default) => {
       let htmls = Default().replace(html, item.component(e));
       return render(htmls);
     });
+    routerEl.notFound(function () {
+      return render(Error());
+    });
+    routerEl.resolve();
   });
-  routerEl.notFound(function () {
-    return render(Error());
-  });
-  routerEl.resolve();
 };
 
 //Back
