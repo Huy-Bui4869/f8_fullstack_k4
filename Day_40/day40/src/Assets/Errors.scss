@@ -1,8 +1,8 @@
-// .error-page {
-//     width: 100vw;
-//     height: 100vh;
-//     display: flex;
-//     overflow: hidden;
-//     justify-content: center;
-//     align-items: center;
-// }
+.error-page {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
