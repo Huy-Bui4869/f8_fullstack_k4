@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Navigoooo</title>
+  </head>
+  <body>
+    <div id="app">
+      <a href="/home" data-navigo title="Home">Home</a>
+      <a href="/about" data-navigo title="About">About</a>
+      <a href="/products/1" data-navigo title="Product 1">Product 1</a>
+    </div>
+    <script type="module">
+      import Navigo from "navigo";
+      const router = new Navigo("/");
+      const a = document.createElement("div");
+      document.querySelector("#app").append(a);
+
+      function render(content) {
+        a.innerHTML = content;
+      }
+
+      router.on("/home", function () {
+        render("<h1>Home page</h1><p>Welcome to the home page.</p>");
+      });
+
+      router.on("/about", function () {
+        render("<h1>About page</h1><p>This is the about page.</p>");
+      });
+
+      router.on("/products/:id", function (params) {
+        render(
+          `<h1>Product page</h1><p>This is the product page with id ${params.id}.</p>`
+        );
+      });
+
+      router.notFound(function () {
+        render(
+          "<h1>Not found</h1><p>The page you are looking for does not exist.</p>"
+        );
+      });
+
+      router.resolve();
+    </script>
+  </body>
+</html> -->

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../hocReact"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "day40"
+	}
+}
