@@ -1,0 +1,23 @@
+.tools-listItem {
+    margin-top: 16px;
+    display: flex;
+    justify-content: start;
+
+    .editBtn,
+    .deleteBtn {
+        padding: 8px 16px;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .editBtn {
+        margin-right: 8px;
+        background: var(--primary);
+    }
+
+    .deleteBtn {
+        background: var(--primaryTwo);
+    }
+}

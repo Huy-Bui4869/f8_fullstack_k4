@@ -1,0 +1,63 @@
+//font 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+    --primary: #14b8a6;
+    --primaryTwo: #ef4444;
+    --background: #334155;
+    --bgBtnExit: #f97316;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    text-rendering: optimizeSpeed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+button, input {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app {
+    padding: 32px;
+}
+
+.wrapper {
+    padding: 16px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.listTodo {
+    max-width: 768px;
+    width: 100%;
+    // background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 40px;
+}

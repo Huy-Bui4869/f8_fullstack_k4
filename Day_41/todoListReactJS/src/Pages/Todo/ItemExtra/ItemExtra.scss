@@ -1,0 +1,48 @@
+.tools-listItem_extra {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+
+    .isCheck {
+        input {
+            width: 20px;
+            height: 20px;
+        }
+        label {
+            text-wrap: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+
+    .btnTools {
+        display: flex;
+        gap: 8px;
+
+        .exitBtn,
+        .editBtn,
+        .deleteBtn {
+            padding: 4px 16px;
+            border-radius: 5px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .exitBtn {
+            background: var(--bgBtnExit);
+        }
+    
+        .editBtn {
+            background: var(--primary);
+        }
+    
+        .deleteBtn {
+            background: var(--primaryTwo);
+        }
+    }
+
+}

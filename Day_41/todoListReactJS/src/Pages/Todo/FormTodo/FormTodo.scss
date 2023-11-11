@@ -1,0 +1,39 @@
+// @import "../../../components/GlobalStyles/GlobalStyles"
+
+.innerTop {
+    h2 {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 2.4;
+        text-align: center;
+    }
+
+    form {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--primary);
+
+        input {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #fff;
+            padding: 4px 8px;
+            margin-right: 12px;
+            background-color: transparent;
+            width: 256px;
+
+            &::placeholder {
+                color: #c4c4c4;
+            }
+        }
+
+        .addTodo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 8px 16px;
+            background-color: var(--primary);
+            border-radius: 5px;
+        }
+    }
+}
