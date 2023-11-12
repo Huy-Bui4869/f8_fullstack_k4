@@ -351,9 +351,6 @@ const app = {
         ],
       }
     );
-    // console.log("refresh, data");
-    // console.log(refresh);
-    // console.log(data);
 
     if (refresh.ok) {
       const userData = JSON.parse(localStorage.getItem("userData"));

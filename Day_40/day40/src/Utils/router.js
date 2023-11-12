@@ -1,5 +1,5 @@
 import Navigo from "navigo";
-import { Error } from "../Error";
+import { Error } from "../Pages/Error";
 
 const routerEl = new Navigo("/", { linksSelector: "a" });
 

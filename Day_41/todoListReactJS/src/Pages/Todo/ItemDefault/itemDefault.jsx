@@ -3,7 +3,7 @@ import React from "react";
 import "./itemDefault.scss";
 import { Logger } from "sass";
 
-export default function itemDefault({ onRemove, onEdit }) {
+export default function ItemDefault({ onRemove, onEdit }) {
   return (
     <div className="tools-listItem">
       <button

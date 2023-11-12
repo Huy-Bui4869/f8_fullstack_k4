@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../bundle"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501
+	}
+}

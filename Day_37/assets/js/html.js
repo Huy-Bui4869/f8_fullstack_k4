@@ -11,7 +11,7 @@ export const htmlUser = `
       <h2 class="text-center">Chào mừng bạn đã quay trở lại</h2>
       <ul class="profile">
         <li>Chào bạn: <span class="name">Loading...</span></li>
-        <li><a href="#" class="logout">Đăng xuất</a></li>
+        <li class="box-logout"><a href="#" class="logout">Đăng xuất</a></li>
       </ul>
     </div>
     <form class="post">

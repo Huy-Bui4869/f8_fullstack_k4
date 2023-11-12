@@ -11,20 +11,23 @@ export function regexLink(content) {
     .replace(email, `<a href="mailto:$1" target="_blank">$1</a>`)
     .replace(link, function (link) {
       if (link.includes("youtube")) {
-        const id = link.match(youtube);
-        // const index = id[4].indexOf("=");
-        const video = id[4].slice(id[4].indexOf("=") + 1);
-        return `
-        <iframe
-          width='560'
-          height='315'
-          src='https://www.youtube.com/embed/${video}'
-          title='YouTube video player'
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write;
-          encrypted-media; gyroscope; picture-in-picture; web-share'
-          allowFullScreen></iframe>
-        `;
+        // const id = link.match(youtube);
+        // // const index = id[4].indexOf("=");
+        // // const video = id[4].slice(id[4].indexOf("=") + 1);
+        // return `
+        // <iframe
+        //   width='560'
+        //   height='315'
+        //   src='https://www.youtube.com/embed/'
+        //   title='YouTube video player'
+        //   frameBorder='0'
+        //   allow='accelerometer; autoplay; clipboard-write;
+        //   encrypted-media; gyroscope; picture-in-picture; web-share'
+        //   allowFullScreen></iframe>
+        // `;
+        return `<a href="${
+          link.includes("http") ? link : `https://` + link
+        }" target="_blank">${link}</a>`;
       } else {
         return `<a href="${
           link.includes("http") ? link : `https://` + link

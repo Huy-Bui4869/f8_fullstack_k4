@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Logger } from "sass";
-import ItemDefault from "../ItemDefault/itemDefault";
+import ItemDefault from "../itemDefault/itemDefault";
 import ItemExtra from "../ItemExtra/ItemExtra";
 
 import "./TodoItem.scss";

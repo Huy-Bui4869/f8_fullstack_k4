@@ -1,5 +1,6 @@
 import React from "react";
-import "./itemExtra.scss";
+import "./ItemExtra.scss";
+import { Logger } from "sass";
 
 export default function ItemExtra({
   key,
