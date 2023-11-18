@@ -1,0 +1,40 @@
+//font 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+:root {
+    --primary: #22c55e;
+    --btnEmail: #4f46e5;
+    --priceColor: #f97316;
+    --titleColor: #6b7280;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    text-rendering: optimizeSpeed;
+    // overflow: hidden;
+}
+
+button, input {
+    font-family: 'Poppins', sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

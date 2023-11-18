@@ -1,0 +1,36 @@
+.box {
+    background: #cbd5e1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        max-width: 232px;
+        background: #fff;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1);
+
+        label {
+            font-size: 1.4rem;
+        }
+
+        input {
+            padding: 8px 12px;
+            border: 1px solid rgba(128, 128, 128, 0.6);
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 12px;
+            border-radius: 5px;
+            background-color: var(--btnEmail);
+            color: #fff;
+            padding: 8px 12px;
+        }
+    }
+}
