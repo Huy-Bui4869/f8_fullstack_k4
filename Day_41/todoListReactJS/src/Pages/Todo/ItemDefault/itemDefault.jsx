@@ -3,28 +3,25 @@ import React from "react";
 import "./itemDefault.scss";
 import { Logger } from "sass";
 
-export default function ItemDefault({ onRemove, onEdit }) {
+export default function ItemDefault({ todo, onEdit, onRemove }) {
+  //xóa.
+  const handleDelete = (e) => {
+    e.preventDefault();
+    onRemove(todo._id);
+  };
+
+  //sửa.
+  const handleEdit = (e) => {
+    e.preventDefault();
+    onEdit(false);
+  };
+
   return (
     <div className="tools-listItem">
-      <button
-        className="editBtn"
-        onClick={(e) => {
-          e.preventDefault();
-          onEdit(false);
-        }}
-      >
+      <button className="editBtn" onClick={handleEdit}>
         Sửa
       </button>
-      <button
-        className="deleteBtn"
-        onClick={(e) => {
-          e.preventDefault();
-          let el = e.target.parentElement.parentElement;
-          console.log(el);
-          console.log(el.key);
-          // onRemove(key);
-        }}
-      >
+      <button className="deleteBtn" onClick={handleDelete}>
         Xóa
       </button>
     </div>
