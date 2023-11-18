@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
+import { toast } from "react-toastify";
 
 import "./TableCart.scss";
-import { useDispatch, useStateCustom } from "../../core/hook";
-import { ordersProduct } from "../../helpers/ordersProduct";
-import { toast } from "react-toastify";
+import { useDispatch } from "../../../core/hook";
+import { ordersProduct } from "../../../helpers/ordersProduct";
 
 export default function TableCart({ orderList }) {
   const dispatch = useDispatch();

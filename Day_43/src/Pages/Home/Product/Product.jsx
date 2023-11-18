@@ -1,11 +1,11 @@
 import React, { useEffect, useState, Fragment } from "react";
+import { toast } from "react-toastify";
 
 import "./Product.scss";
-import { getListProduct } from "../../helpers/getListProducts";
-import { useDispatch, useStateCustom } from "../../core/hook";
-import Loading from "../../components/Loading/Loading";
+import { getListProduct } from "../../../helpers/getListProducts";
+import { useDispatch, useStateCustom } from "../../../core/hook";
+import Loading from "../../../components/Loading/Loading";
 import Cart from "../Cart/Cart";
-import { toast } from "react-toastify";
 
 export default function Product() {
   const [loading, setLoading] = useState(true);

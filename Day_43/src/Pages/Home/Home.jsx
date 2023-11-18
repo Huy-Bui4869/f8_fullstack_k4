@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Home.scss";
-import Product from "../Product/Product";
+import Product from "./Product/Product";
 
 export default function Home() {
   return (

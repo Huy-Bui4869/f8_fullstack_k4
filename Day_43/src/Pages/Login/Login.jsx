@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "./Login.scss";
 import { getApiKey } from "../../helpers/getApiKey";
 import Loading from "../../components/Loading/Loading";
-import { checkRegexEmail } from "../../helpers/gerex";
+import { checkRegexEmail } from "../../helpers/regex";
 
 export default function Login({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -30,7 +30,6 @@ export default function Login({ onLogin }) {
   };
 
   const handleChange = (e) => {
-    // e.preventDefault();
     setEmail(e.target.value);
   };
 
