@@ -6,11 +6,11 @@ import { toast } from "react-toastify";
 import { getProfile } from "./helpers/getProfile";
 
 function App() {
-  console.log("1.bđ");
+  // console.log("1.bđ");
   const [check, setCheck] = useState(false);
 
   useEffect(() => {
-    console.log("3.useEffect");
+    // console.log("3.useEffect");
     // console.log("useEffect");
     const email = localStorage.getItem("email");
     const apikey = localStorage.getItem("apiKey");
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <Fragment>
-      {console.log("2.render")}
+      {/* {console.log("2.render")} */}
       <button
         onClick={(e) => {
           e.preventDefault();

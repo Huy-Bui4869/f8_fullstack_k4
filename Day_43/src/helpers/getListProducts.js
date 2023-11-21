@@ -6,6 +6,7 @@ export const getListProduct = async (query = {}) => {
     let queryString = new URLSearchParams(query).toString();
     queryString = queryString ? "?" + queryString : "";
     const { response: res, data } = await client.get(`/products${queryString}`);
+    console.log(data);
 
     if (!res.status === 401) {
       throw new Error("Unauthorize");

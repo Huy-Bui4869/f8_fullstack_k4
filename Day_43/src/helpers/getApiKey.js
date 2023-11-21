@@ -5,8 +5,8 @@ export const getApiKey = async (email) => {
   try {
     const { response: res, data } = await client.get(`/api-key?email=${email}`);
 
-    console.log(res);
-    console.log(data);
+    // console.log(res);
+    // console.log(data);
     if (res.status === 401) {
       throw new Error("Unauthorize");
     }

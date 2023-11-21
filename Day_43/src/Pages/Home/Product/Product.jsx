@@ -16,7 +16,7 @@ export default function Product() {
   useEffect(() => {
     getListProduct({ limit: 8 }).then((response) => {
       const { res, listProduct } = response;
-      console.log(listProduct);
+      // console.log(listProduct);
       dispatch({
         type: "GET_LIST_PRODUCT",
         payload: listProduct,
