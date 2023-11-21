@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+// letter-spacing
+
+body {
+    color: #2c2c2c;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+:root {
+    --primary: rgb(255, 87, 34);
+    --sub-primary: rgb(76, 175, 80);
+}
+
+a {
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c2c2c;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    text-transform: uppercase;
+}

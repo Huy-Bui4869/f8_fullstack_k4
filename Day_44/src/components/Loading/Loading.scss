@@ -1,0 +1,75 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(128, 128, 128, 0.4);
+    z-index: 1;
+
+    .loaderSmall {
+        width: 42px;
+        height: 42px;
+        border: 7px solid;
+        border-color: red transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        animation: spinner 1s linear infinite;
+    }
+
+    .loader {
+        width: 60px;
+        height: 60px;
+        border: 7px solid;
+        border-color: greenyellow transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        animation: spinnerReverse 1s linear infinite;
+    }
+
+    .loaderBig {
+        width: 79px;
+        height: 79px;
+        border: 8px solid;
+        border-color: rgb(18, 217, 228) transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        animation: spinnerBig 1s linear infinite;
+    }
+}
+
+@keyframes spinner {
+    from {
+        rotate: 90deg;
+    }
+
+    to {
+        rotate: 450deg;
+    }
+}
+
+@keyframes spinnerReverse {
+    from {
+        rotate: 0;
+    }
+
+    to {
+        rotate: -360deg;
+    }
+}
+
+@keyframes spinnerBig {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
