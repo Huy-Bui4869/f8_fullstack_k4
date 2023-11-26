@@ -1,0 +1,18 @@
+@import "./parts/variable";
+@import "../fonts/font.scss";
+@import "./parts/reset";
+// @import "./parts/mixin";
+
+.toggelMode {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 6px;
+    position: fixed;
+    right: 11px;
+    top: 15px;
+}

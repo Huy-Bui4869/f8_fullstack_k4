@@ -1,0 +1,36 @@
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 3px;
+
+    & > label {
+        font-weight: 500;
+        color: var(--textColor-light-teal);
+    }
+
+    & > input {
+        height: 40px;
+        padding: 0 16px;
+        border: 1px solid var(--boder-color-gray);
+        background: transparent;
+        color: #fff;
+        border-radius: 0.6rem;
+
+        &:focus {
+            border-color: rgb(99, 179, 273);
+            box-shadow: rgb(99, 179, 273) 0px 0px 0px 1px;
+        }
+    }
+}
+
+.playAgain {
+    margin-top: 3px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #1a202c;
+    padding: 0 16px;
+    height: 40px;
+    background: var(--sub-slider-bg);
+    border-radius: 4px;
+}

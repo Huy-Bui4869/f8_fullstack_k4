@@ -1,0 +1,44 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #09090980;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .boxModel {
+        max-width: 448px;
+        background: #2D3748;
+        border-radius: 8px;
+        padding: 16px 24px;
+        margin-top: 70px;
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            padding-bottom: 24px;
+        }
+
+        .card-btn {
+            display: flex;
+            gap: 12px;
+            justify-content: end;
+            padding-top: 24px;
+            
+            .confirm {
+                font-size: 1.6rem;
+                font-weight: 500;
+                padding: 0 16px;
+                height: 40px;
+                border-radius: 6px;
+                background-color: var(--sub-slider-bg);
+
+                &.del {
+                    background: var(--btn-color-red);
+                }
+            }
+        }
+    }
+}

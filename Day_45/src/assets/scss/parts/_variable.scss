@@ -1,0 +1,43 @@
+$primaryColor: #46b20f;
+$secondaryColor: #ff6916;
+
+$fontFamily: 'Roboto', sans-serif;
+$fontSize:1.6rem; // 1rem = 10px
+
+$textColor: #2c2c2c;
+$linkColor: #2c2c2c;
+$headingColor: #2c2c2c;
+
+$textColorLightTeal: #319795;
+$textColormediumTeal: #2c7a7b;
+$textColorDarkTeal: #285e61;
+
+$boderColorGray: #E2E8F0;
+
+$btnColorRed: #E53E3E;
+$btnColorTeal: #319795;
+
+//Chế độ tối
+$bgDarkInterface: #1A202C;
+$bgLightInterface: #ffffff;
+
+//đậm_dark__medium_light
+:root {
+    --textColor-light-teal: #319795;
+    --textColor-medium-teal: #2c7a7b;
+    --textColor-dark-teal: #285e61;
+
+    //bg input range
+    --slider-bg: #ffffff14;
+    --sub-slider-bg: #81e6d9;
+
+    --boder-color-gray: #ffffff14;
+
+    --btn-color-red: #E53E3E;
+    --btn-color-teal: #319795;
+
+    //Chế độ tối
+    --bg-dark-interface: #1A202C;
+    --bg-light-interface: #ffffff;
+
+}
