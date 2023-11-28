@@ -1,0 +1,51 @@
+@import "../font//font.scss";
+@import "./variable.scss";
+@import "./reset.scss";
+
+
+.wrapper {
+    margin-top: 65px;
+
+    h1.title_page {
+        font-size: 3.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 30px 0;
+    }
+}
+
+.btnGoHome {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--light-violet);
+    padding: 8px 24px;
+    background: transparent;
+    border: 2px solid var(--light-violet);
+    border-radius: 99px;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 4%;
+        width: 92%;
+        height: 100%;
+        border-radius: 99px;
+        transition: transform .3s linear;
+        transform: scale(.9);
+        z-index: -1;
+    } 
+
+    &:hover::before {
+        transform: scale(1.1);
+        box-shadow: 0 0 15px ;
+      }
+      
+    &:hover {
+        color: #ff00ff;
+        box-shadow: 0 0 5px #ff00ff;
+        text-shadow: 0 0 5px #ff00ff;
+    }
+}

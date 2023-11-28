@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    font-weight:  400;
+    font-family: $fontFamily;
+    line-height: 1.5;
+    background: $bgColor2 url(../images/logo_page.png) no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $textColor;
+    font-family: $fontTitle;
+}
+
+ul,
+ol {
+    list-style: none;   
+}
+
+button {
+    cursor: pointer;
+    transition: transform .3s linear;
+    &:active {
+        transform: scale(0.8);
+    }
+}
