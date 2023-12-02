@@ -1,0 +1,40 @@
+.box-auth {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+        padding: 20px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border: 2px solid var(--text-color);
+        border-radius: 12px;
+
+        & > label {
+            font-size: 2rem;
+        }
+
+        & > #email {
+            padding: 6px 16px;
+            max-width: 250px;
+            width: 100%;
+            border: 2px solid var(--text-color);
+            border-radius: 8px;
+        }
+
+        & > button {
+           @extend #email;
+
+           &:hover {
+            background-color: #ffffff55;
+            color: #6d304d;
+           }
+
+           &:active {
+            scale: .9;
+           }
+        }
+    }
+}
