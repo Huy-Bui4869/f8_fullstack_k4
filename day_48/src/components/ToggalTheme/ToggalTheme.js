@@ -2,52 +2,57 @@
 import { useState, useEffect } from "react";
 
 const ToggalTheme = () => {
-  const storedTheme = localStorage.getItem("prefered-theme");
+  const [isLight, setIsLight] = useState(null);
 
-  const checkTheme = () => {
-    if (storedTheme === "darkTheme") {
-      return false;
+  const setTheme = () => {
+    const root = document.documentElement;
+    const operatingSystemThemeDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    if (isLight && operatingSystemThemeDark.matches) {
+      root.classList.add("dark");
     }
-    return true;
+
+    if (!isLight) {
+      root.classList.remove("dark");
+    }
   };
 
-  const [isLight, setIsLight] = useState(checkTheme);
-
-  function setDarkTheme() {
+  const handleDarkMode = () => {
     setIsLight(!isLight);
-    if (!isLight) {
-      localStorage.setItem("prefered-theme", "lightTheme");
-    } else {
-      localStorage.setItem("prefered-theme", "darkTheme");
-    }
-  }
+  };
 
   useEffect(() => {
-    const setTheme = () => {
-      const root = document.documentElement;
-      const operatingSystemThemeDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      );
-      if (storedTheme === "darkTheme" && operatingSystemThemeDark.matches) {
-        root.classList.add("dark");
-      }
-      //   if (storedTheme === "darkTheme") {
-      //     root.classList.add("dark");
-      //   }
-      if (storedTheme === "lightTheme") {
-        root.classList.remove("dark");
-      }
-    };
+    const theme = localStorage.getItem("prefered-theme");
+
+    if (theme === null || theme === "lightTheme") {
+      console.log("treen");
+      setIsLight(false);
+      localStorage.setItem("prefered-theme", "lightTheme");
+    } else if (theme === "darkTheme") {
+      console.log("duoi");
+      setIsLight(true);
+      localStorage.setItem("prefered-theme", "darkTheme");
+    }
     setTheme();
-  }, [storedTheme]);
+  }, []);
+
+  useEffect(() => {
+    // console.log(`[isLight]`);
+    if (isLight) {
+      localStorage.setItem("prefered-theme", "darkTheme");
+    } else {
+      localStorage.setItem("prefered-theme", "lightTheme");
+    }
+    setTheme();
+  }, [isLight]);
 
   return (
     <div className="theme-switcher items-center text--colors_default bg--default">
       <button
         className={`${isLight ? "dark" : "light"}-mode-switch`}
-        onClick={setDarkTheme}
+        onClick={handleDarkMode}
       >
-        {/* cursor-pointer  w-[40px] h-[40px] pl-12 */}
         <i
           className={`fa-solid ${!isLight ? "fa-sun" : "fa-moon"}`}
           style={{ fontSize: "2rem", padding: "2px", color: "#71717a" }}
@@ -75,3 +80,34 @@ export default ToggalTheme;
         <i className={`fa-solid fa-sun`}></i>
       </button> */
 }
+// useEffect(() => {
+//   const theme = localStorage.getItem("prefered-theme");
+//   console.log(theme);
+//   if (theme === null) {
+//     setIsLight(true);
+
+//   } else {
+//     setIsLight(theme === "darkTheme" ? false : true);
+//   }
+//   if (!isLight) {
+//     localStorage.setItem("prefered-theme", "lightTheme");
+//   } else {
+//     localStorage.setItem("prefered-theme", "darkTheme");
+//   }
+
+//   const setTheme = () => {
+//     const root = document.documentElement;
+//     const operatingSystemThemeDark = window.matchMedia(
+//       "(prefers-color-scheme: dark)"
+//     );
+//     if (theme === "darkTheme" && operatingSystemThemeDark.matches) {
+//       root.classList.add("dark");
+//     }
+
+//     if (theme === "lightTheme" || theme === null) {
+//       root.classList.remove("dark");
+//     }
+//   };
+
+//   setTheme();
+// }, []);

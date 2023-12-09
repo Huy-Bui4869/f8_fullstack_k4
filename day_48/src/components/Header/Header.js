@@ -12,7 +12,7 @@ const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const [language, setLanguage] = useState(localStorage.getItem("lang"));
+  const [language, setLanguage] = useState("en");
 
   const handleMultiLanguage = (e) => {
     if (!pathname || pathname === "/null") return `/${i18n.defaultLocale}`;
@@ -25,7 +25,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // router.push(`/${language}`);
+    const lang = localStorage.getItem("lang");
+    setLanguage(lang);
   }, []);
 
   return (
@@ -57,7 +58,8 @@ const Header = () => {
         </li>
         <li className="item">
           <Link href={"https://www.facebook.com"} target="_blank">
-            <i className="fa-brands fa-square-facebook fa-bounce"></i>
+            {/* <i className="fa-brands fa-square-facebook fa-bounce"></i> */}
+            <i className="fa-brands fa-square-facebook"></i>
           </Link>
         </li>
         <li className="item">
@@ -65,7 +67,8 @@ const Header = () => {
             href={"https://github.com/Huy-Bui4869/f8_fullstack_k4"}
             target="_blank"
           >
-            <i class="fa-brands fa-github fa-shake"></i>
+            {/* <i className="fa-brands fa-github fa-shake"></i> */}
+            <i className="fa-brands fa-github"></i>
           </Link>
         </li>
         <li>

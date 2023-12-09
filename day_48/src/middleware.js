@@ -25,11 +25,6 @@ function getLocale(request) {
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
-  // if (pathname.startsWith("/") || !pathname) {
-  //   const urlLogin = `${request.nextUrl.origin}/en`;
-  //   return NextResponse.redirect(urlLogin);
-  // }
-
   //Kiểm tra xem có ngôn ngữ nào được hỗ trợ trong tên đường dẫn không
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = i18n.locales.some(
@@ -41,19 +36,13 @@ export function middleware(request) {
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) return;
 
-  // const response = NextResponse.next();
-  const locale = getLocale(request);
+  if (!pathname || pathname === "/") {
+    // const response = NextResponse.next();
+    const locale = getLocale(request);
 
-  // response.cookies.set({
-  //   name: "lang",
-  //   value: locale,
-  //   path: "",
-  //   httpOnly: true,
-  //   maxAge: 86400,
-  // });
-  // The new URL is now /en
-  const urlLogin = `${request.nextUrl.origin}/${locale}`;
-  return NextResponse.redirect(urlLogin);
+    const urlLogin = `${request.nextUrl.origin}/${locale}`;
+    return NextResponse.redirect(urlLogin);
+  }
 }
 
 export const config = {

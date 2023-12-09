@@ -8,6 +8,9 @@ import { getDictionary } from "../../../getDictionaries";
 
 const Home = async ({ params }) => {
   const { lang } = params;
+  if (!lang) {
+    console.log("ok");
+  }
 
   const dictionary = await getDictionary(lang);
 

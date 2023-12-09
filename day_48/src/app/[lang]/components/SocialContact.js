@@ -4,7 +4,6 @@ import "./component.scss";
 
 const SocialContact = ({ about }) => {
   const { title, phone, zalo, email, facebook, youtube } = about;
-  console.log(phone);
 
   return (
     <div className="socialContact">
