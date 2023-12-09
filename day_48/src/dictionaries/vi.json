@@ -1,0 +1,80 @@
+{
+    "home": {
+        "title": "Fullstack.edu.vn",
+
+        "about": {
+            "title": "Thông tin liên hệ",
+            "phone": "0365381304",
+            "zalo": "https://zalo.me",
+            "email": "huybui2451@gmail.com",
+            "facebook": "https://www.facebook.com/groups/f8official",
+            "youtube": "https://www.youtube.com"
+        },
+
+        "project": {
+            "title": "Các dự án cá nhân",
+            "desc_title": "Bắt đầu tiếp xúc với ngôn ngữ lập trình đầu tiên từ năm 2023, không ngừng cố gắng và học hỏi để hoàn thiện bản thân.",
+            "pro": [
+                {
+                    "name": "Project Trello",
+                    "subTitle": "Một dự án đang được tiến hành",
+                    "desc": "",
+                    "code": "https://github.com/Huy-Bui4869/f8_fullstack_k4/tree/main/Day_47",
+                    "link": "https://day-47-six.vercel.app/"
+                },
+                {
+                    "name": "Project Blog",
+                    "subTitle": "Một dự án lớn hơn được thực hiện trong ba ngày",
+                    "desc": "Một trang blog cá nhân với các bài viết về lập trình và học tập.",
+                    "code": " https://github.com/Huy-Bui4869/f8_fullstack_k4/tree/main/Day_37/assets/js",
+                    "link": "https://huy-bui4869.github.io/f8_fullstack_k4/Day_37/index.html"
+                }
+            ]
+        },
+       
+        "hobbies": {
+            "title": "Sở thích cá nhân",
+            "content": [
+                "Thưởng Thức Nhạc Nhẹ, Nhạc Rap Của Đen Vâu Và Các Nghệ Sĩ Khác,…",
+                "Đọc Sách, Học Hỏi Thêm Về Các Ngôn Ngữ Lập Trình Mới Mẻ.",
+                "Theo Dõi Các Xu Hướng Công Nghệ, Tin Tức Về Các Sản Phẩm Nổi Tiếng Như Iphone, Huawei, GoogleAI,…"
+            ]
+        },
+
+        "skill": {
+            "title": "Các kỹ năng của tôi",
+            "content": [
+                {
+                    "title": "Kỹ năng làm việc",
+                    "content": "REST API, React.js, Next.js, Redux, Context, CSS3, HTML5, UI/UX, Figma, Photoshop..."
+                },
+                {
+                    "title": "Các kỹ năng khác",
+                    "content": "Kỹ năng nghiên cứu và tìm kiếm tương đối tốt. Tư duy làm việc, kỹ năng làm việc nhóm tốt so với độ tuổi."
+                }
+            ]
+        },
+
+        "history": {
+            "title": "Lịch sử",
+            "arr": [
+                {
+                    "time": "2016",
+                    "content": "Trường Trung học Cơ sở nào đó"
+                },
+                {
+                    "time": "2017-2019",
+                    "content": "Trường Trung học Cơ sở khác"
+                },
+                {
+                    "time": "2019-2021",
+                    "content": "Trường Trung học Phổ thông khác"
+                },
+                {
+                    "time": "2022-2023",
+                    "content": "Học đại học"
+                }
+            ]
+        }
+    }
+}

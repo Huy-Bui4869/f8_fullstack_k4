@@ -1,0 +1,82 @@
+{
+    "home": {
+        "title": "The Example Name",
+
+        "about": {
+            "title": "Social contact",
+            "phone": "0365381304",
+            "zalo": "https://zalo.me",
+            "email": "huybui2451@gmail.com",
+            "facebook": "https://www.facebook.com/groups/f8official",
+            "youtube": "https://www.youtube.com"
+        },
+
+        "project": {
+            "title": "Self project",
+            "pro": [
+                {
+                    "name": "Project Trello",
+                    "subTitle": "A project is underway",
+                    "desc": "",
+                    "code": "https://github.com/Huy-Bui4869/f8_fullstack_k4/tree/main/Day_47",
+                    "link": "https://day-47-six.vercel.app/"
+                },
+                {
+                    "name": "Project Blog",
+                    "subTitle": "A bigger project done in three days",
+                    "desc": "A personal blog website with posts about programming and learning.",
+                    "code": " https://github.com/Huy-Bui4869/f8_fullstack_k4/tree/main/Day_37/assets/js",
+                    "link": "https://huy-bui4869.github.io/f8_fullstack_k4/Day_37/index.html"
+                }
+            ]
+        },
+       
+        "githubLink": "https://github.com/Huy-Bui4869/f8_fullstack_k4",
+
+        "hobbies": {
+            "title": "My hobbies",
+            "content": [
+                "Enjoy Relaxing Music, Rap Music From Đen Vâu And Other Artists,…",
+                "Read Books, Learn More About New Programming Languages.",
+                "Follow The Technology Trends, News About Famous Products Like Iphone, Huawei, GoogleAI,…"
+            ]
+        },
+
+        "skill": {
+            "title": "My skills",
+            "desc_title": "Begin kontak met jou eerste programmeertaal vanaf 2023, probeer voortdurend en leer om jouself te verbeter.",
+            "content": [
+                {
+                    "title": " Web developer",
+                    "content": "REST API, React.js, Next.js, Redux, Context, CSS3, HTML5, UI/UX, Figma, Photoshop..."
+                },
+                {
+                    "title": "Other skills",
+                    "content": "Relatively good research and search skills. Working thinking, good teamwork skills compared to age."
+                }
+            ]
+        },
+
+        "history": {
+            "title": "Histories",
+            "arr": [
+                {
+                    "time": "2016",
+                    "content": "One of junior high school"
+                },
+                {
+                    "time": "2017-2019",
+                    "content": "Other Junior high school"
+                },
+                {
+                    "time": "2019-2021",
+                    "content": "Other high school"
+                },
+                {
+                    "time": "2022-2023",
+                    "content": "College studies"
+                }
+            ]
+        }
+    }
+}
