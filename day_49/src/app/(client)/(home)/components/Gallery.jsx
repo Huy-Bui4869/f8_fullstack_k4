@@ -30,7 +30,11 @@ const Gallery = ({ galleryBox, listPage }) => {
                   những bức ảnh đẹp nhất về chuyến du lịch của bạn sx được chia
                   sẻ lên đây
                 </p>
-                <Link href={"/gallery"} className="btnGlobals">
+                <Link
+                  href={"/gallery"}
+                  className="btnGlobals"
+                  style={{ fontWeight: 700 }}
+                >
                   Xem thêm
                 </Link>
               </div>

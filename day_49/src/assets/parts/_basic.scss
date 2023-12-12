@@ -23,6 +23,7 @@ section {
 
 .btnGlobals {
     font-size: 1.7rem;
+    font-weight: 600;
     display: inline-block;
     margin-top: 1rem;
     border: 0.2rem solid $orange;
@@ -33,6 +34,7 @@ section {
   
     &:hover {
       background: $subOrange;
+      color: $orange;
       scale: 1.02;
       transition:  scale .3s ease-in-outs;
     } 

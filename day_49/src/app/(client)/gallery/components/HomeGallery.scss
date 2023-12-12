@@ -1,0 +1,47 @@
+.pageGallery {
+    section {
+        .boxContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+    
+            .box {
+                overflow: hidden;
+                box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+                border: 1rem solid #fefefe;
+                border-radius: 0.5rem;
+                flex: 1 1 30rem;
+                height: 25rem;
+                position: relative;
+    
+                &:hover {
+                    & > .content {
+                        top: 0;
+                    }
+                }
+            }
+    
+            .content {
+                @include absolute(left 0 top -100%);
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                background: rgba(0,0,0,.7);
+                padding: 5rem 2rem 2rem;
+                transition: top .3s linear;
+    
+                & > h3 {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    color: $orange;
+                }
+    
+                & > p {
+                    font-size: 1.5rem;
+                    color: #eee;
+                    padding: 0.5rem 0;
+                }
+            }
+        }
+    }
+}

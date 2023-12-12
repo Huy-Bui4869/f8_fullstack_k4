@@ -17,19 +17,9 @@ const getPages = async () => {
   return response.json();
 };
 
-// const getListImage = async () => {
-//   const response = await fetch(
-//     `https://api-pages.vercel.app/%60IMAGE_LINK.jpg%60`
-//   );
-//   console.log("response");
-//   console.log(response);
-// };
-
 const HomePages = async () => {
   const listPage = await getPages();
   const { servicesBox, galleryBox } = listPage[0];
-
-  // console.log(listPage);
 
   return (
     <>

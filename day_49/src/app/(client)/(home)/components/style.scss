@@ -187,6 +187,10 @@
                         text-decoration: line-through;
                     }
                 }
+
+                .btnGlobals:hover {
+                    color: $orange;
+                }
             }
         }
     }
@@ -270,6 +274,10 @@
                 font-size: 1.5rem;
                 color: #eee;
                 padding: 0.5rem 0;
+            }
+
+            .btnGlobals {
+                color: #fefefe;
             }
         }
     }
