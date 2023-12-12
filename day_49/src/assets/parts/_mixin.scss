@@ -1,0 +1,48 @@
+@mixin flexCenter($gap: 0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin flexStart($gap: 0) {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin flexSpaceBetween($gap: 0) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $gap;
+}
+
+@mixin box($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position, $args) {
+    @each $o in top right bottom left {
+      $i: index($args, $o);
+      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+        #{$o}: nth($args, $i + 1);
+      }
+    }
+    position: $position;
+  }
+  
+  // Positioning helpers
+  @mixin absolute($args: '') {
+    @include position(absolute, $args);
+  }
+  
+  @mixin fixed($args: '') {
+    @include position(fixed, $args);
+  }
+  
+  @mixin relative($args: '') {
+    @include position(relative, $args);
+  }

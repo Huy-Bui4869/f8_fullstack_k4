@@ -1,0 +1,46 @@
+#header {
+    max-width: 100vw;
+    width: 100%;
+    height: 64px;
+    padding: 0 15px;
+    @include flexSpaceBetween;
+    @include fixed(0 0 _ 0);
+    background: $bgHeader;
+    z-index: 10;
+
+    .logoPages {
+        font-size: 2.5rem;
+        font-weight: 700;
+        & > span {
+            color: $orange;
+        }
+    }
+
+    .navbar {
+        & > ul {
+            font-size: 2rem;
+            @include flexCenter(16px);
+
+            & > li {
+                &:hover > a {
+                    color: $orange;
+                }
+            }
+        }
+    }
+
+    .list-tool {
+        font-size: 2.5rem;
+        @include flexCenter(1.6rem);
+
+        button:hover {
+            & > i {
+                color: $orange;
+            }
+        }
+        
+        i {
+            padding: 0.4rem;
+        }
+    }
+}

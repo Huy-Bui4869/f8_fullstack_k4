@@ -1,0 +1,29 @@
+{
+    "heading": "Tìm Ưu đãi",
+    "datas": [
+        {
+            "title": "Hãy Liên Hệ Với Tôi Bằng :",
+            "type": "text",
+            "place": "Email, hoặc số điện thoại"
+        },
+        {
+            "title": "Tôi Muốn Đến :",
+            "type": "text",
+            "place": "Đia điểm chính xác",
+            "section": ["VietNam", "Spain", "Nepaj"]
+        },
+        {
+            "title": "Chúng Tôi Có :",
+            "type": "number",
+            "place": "Số người"
+        },
+        {
+            "title": "Bắt Đầu Từ :",
+            "type": "date"
+        },
+        {
+            "title": "Kết thúc vào :",
+            "type": "date"
+        }
+    ]
+}

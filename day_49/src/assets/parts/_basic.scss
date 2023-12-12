@@ -1,0 +1,39 @@
+section {
+    padding: 2rem 9%;
+  
+    .headingSection {
+      @include flexCenter(3px);
+      padding: 22px 0;
+    
+      & > span {
+        font-size: 3.1rem;
+        font-weight: 700;
+        padding: 1.7px 8.8px;
+        color: $orange;
+        background: $subOrange;
+    
+        &.space {
+          width: 17px;
+          padding: 22px 0;
+          background: transparent;
+        }
+      }
+    }
+  }
+
+.btnGlobals {
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-top: 1rem;
+    border: 0.2rem solid $orange;
+    background: $orange;
+    padding: 0.8rem 3rem;
+    cursor: pointer;
+    @apply text-[#fefefe] dark:text-[#111111];
+  
+    &:hover {
+      background: $subOrange;
+      scale: 1.02;
+      transition:  scale .3s ease-in-outs;
+    } 
+  }

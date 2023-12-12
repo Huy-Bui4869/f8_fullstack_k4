@@ -1,0 +1,58 @@
+{
+    "packages": [
+        {
+            "id": 1,
+            "src": "images/p-1.jpg",
+            "title": "Mumbai",
+            "desc": "Mumbai-Thành Phố Của Nơi Giao Thoa Giữa Quá Khứ-Hiện Tại",
+            "introduce": "Chuyến Đi Dành Cho Gia Đình 3N/2Đ",
+            "price": "30.000.000",
+            "subPrice": "52.845.245"
+        },
+        {
+            "id": 2,
+            "src": "images/p-2.jpg",
+            "title": "Hawaii",
+            "desc": "Hawaii-Hòn Đảo Muôn Màu Và Thiên Đường Của Người Chơi Lướt Ván",
+            "introduce": "Chuyến Đi Dành Cho Gia Đình 5N/6Đ",
+            "price": "50.000.000",
+            "subPrice": "65.124.756"
+        },
+        {
+            "id": 3,
+            "src": "images/p-3.jpg",
+            "title": "Sydney",
+            "desc": "Sydney-Xứ Sở Chuột Túi Và Nhà Hát SYDNEY OPERA HOUSE",
+            "introduce": "Chuyến Đi Dành Cho Gia Đình 2N/3Đ",
+            "price": "35.000.000",
+            "subPrice": "43.354.657"
+        },
+        {
+            "id": 4,
+            "src": "images/p-4.jpg",
+            "title": "Paris",
+            "desc": "Paris-Kinh Đô Thời Trang Và Thành Phố Về Đêm",
+            "introduce": "Chuyến Đi Dành Cho Gia Đình 5N/6Đ",
+            "price": "70.000.000",
+            "subPrice": "83.534.978"
+        },
+        {
+            "id": 5,
+            "src": "images/p-5.jpg",
+            "title": "Tokyo",
+            "desc": "Tokyo-Thủ Đô Có Sư Giao Thoa Hài Hoà Giữa Truyền Thống Và Hiện Đại",
+            "introduce": "Chuyến Đi Tự Túc Cho 1 Người/7Ngày",
+            "price": "6.500.000",
+            "subPrice": "10.000.000"
+        },
+        {
+            "id": 6,
+            "src": "images/p-6.jpg",
+            "title": "Egypt",
+            "desc": "Egypt-Vùng Đất Của Pharaohs Và Kỳ Quan Thế Giới Cổ Đại",
+            "introduce": "Chuyến Đi Dành Cho Đoàn 7-10 Người/7Ngày",
+            "price": "48.000.000",
+            "subPrice": "54.346.456"
+        }
+    ]
+}

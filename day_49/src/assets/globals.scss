@@ -1,0 +1,102 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+@import "./parts/variable.scss";
+@import "./parts/mixin.scss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size:  1.6rem;
+  font-weight: 400;
+  line-height: 1.25;
+  font-family: 'Nunito', sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  color: #333333;
+}
+
+button, a {
+  cursor: pointer;
+  color: $textcolor;
+}
+
+input, textarea {
+  @apply text-[#333] dark:text-[#fefefe];
+  resize: none;
+  background: transparent;
+}
+
+//
+.text--colors_primary {
+  @apply text-blue-500 dark:text-blue-300;
+}
+
+.text--white_orange {
+  @apply text-white dark:text-[#ffa500];
+}
+
+.text--black_while {
+  @apply text-black dark:text-white;
+}
+
+.text--gray_orange {
+  @apply text-[#666666] dark:text-[#ffa500];
+}
+
+.text--black_orange {
+  @apply text-[#333] dark:text-[#ffa500];
+}
+
+.text--white_black {
+  @apply text-white dark:text-[#111111];
+}
+
+//
+.border--gray_orange {
+  @apply border-[#0000001a] dark:border-[#ffa500];
+}
+
+//
+.bg--input {
+  @apply bg-[#f7f7f7] dark:bg-[#333];
+  @apply border-[transparent] dark:border-[#ffa500];
+}
+
+.bg--default {
+  @apply bg-white dark:bg-[#333];
+}
+
+
+
