@@ -1,0 +1,28 @@
+<h1>Sửa thông tin users</h1>
+
+<form action="" method="post">
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" placeholder="Name..."
+    value="<%= getOld(old, "name") %>" />
+    <div style="color: red"><%= getError(errors, "name") %></div>
+  </div>
+
+  <div>
+    <div class="mb-3">
+      <label for="" class="form-label">Email</label>
+      <input type="text" class="form-control" name="email"
+      placeholder="Email..." value="<%= getOld(old, "email") %>" />
+      <div style="color: red"><%= getError(errors, "email") %></div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Status</label>
+    <select name="status" class="form-select">
+      <option value="true">Kích hoạt</option>
+      <option value="false">Chưa kích hoạt</option>
+    </select>
+  </div>
+  <button class="btn btn-primary">Chỉnh sửa</button>
+  <a href="/users" class="btn btn-danger">Trở lại</a>
+</form>
